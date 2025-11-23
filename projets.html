@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio BTS SIO SISR — Projets</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="theme-toggle.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Portfolio BTS&nbsp;SIO&nbsp;SISR</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html" class="active">Projets</a></li>
+          <li><a href="stage.html">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="lab.html">Lab</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème">🌙</button>
+    </div>
+  </header>
+  <main>
+    <section class="section">
+      <h2>Mes projets</h2>
+      <p>
+        Voici un aperçu de quelques projets réalisés durant ma formation en BTS&nbsp;SIO option&nbsp;SISR. Ces travaux
+        m’ont permis de mettre en pratique des compétences en réseaux, systèmes, virtualisation et sécurité.
+      </p>
+      <div class="project-list">
+        <!-- Projet 1 : Wampserver & FileZilla -->
+        <div class="project-card">
+          <h3>Installation de Wampserver et configuration de FileZilla</h3>
+          <p>
+            Dans le cadre d’un travail pratique, j’ai installé Wampserver sur un serveur Windows afin d’héberger
+            des applications web (Apache, PHP et MySQL). Après avoir vérifié les modules requis (Visual C++ Packages)
+            et assuré le bon fonctionnement via l’outil <em>Check_vredist</em>, j’ai configuré la plateforme pour
+            accéder à <em>phpMyAdmin</em> depuis un poste client.
+          </p>
+          <p>
+            La seconde partie consistait à mettre en place un serveur FTP avec <strong>FileZilla Server</strong> :
+            création d’un utilisateur (<code>dev_gsb</code>), définition des droits (lecture, écriture, suppression)
+            et choix d’un répertoire partagé. Un port range personnalisé (42000‑42300) a été défini et ouvert dans
+            le pare‑feu Windows. Une règle entrante et sortante a été ajoutée pour les ports 21, 80, 443 et 990 afin
+            de permettre les connexions FTP/FTPS.
+          </p>
+          <p>
+            Une fois la configuration terminée, la connexion avec <em>FileZilla Client</em> a permis de transférer
+            des fichiers entre le poste client et le serveur via l’adresse IP locale. Ce projet a également inclus
+            le déploiement d’un site web et la modification d’un fichier de configuration PHP afin de corriger un
+            problème d’authentification.
+          </p>
+          <div>
+            <img src="assets/filezilla1.png" alt="Installation de Wampserver" style="max-width:100%; margin-bottom:10px;">
+            <img src="assets/filezilla2.png" alt="Configuration de FileZilla" style="max-width:100%;">
+          </div>
+          <p><strong>Compétences&nbsp;:</strong> Wampserver, Windows Server, FileZilla Server, phpMyAdmin, pare‑feu Windows</p>
+          <p><a href="docs/compte_rendu_filezilla.pdf" target="_blank">Voir le compte‑rendu (PDF)</a></p>
+        </div>
+
+        <!-- Projet 2 : Mise en place de services réseau -->
+        <div class="project-card">
+          <h3>Mise en place de services réseau (DHCP, DNS, Active Directory)</h3>
+          <p>
+            Déploiement et configuration de services réseau essentiels pour une infrastructure d’entreprise : serveur
+            DHCP pour l’attribution d’adresses IP, serveur DNS pour la résolution de noms, et annuaire Active Directory
+            (Windows Server 2019) pour la gestion des utilisateurs et des postes. Mise en place du routage et du NAT/PAT
+            pour l’accès Internet, ainsi que des filtrages ACL sur les commutateurs Cisco.
+          </p>
+          <p><strong>Compétences&nbsp;:</strong> DHCP, DNS, Active Directory, routage, NAT/PAT, ACL Cisco</p>
+        </div>
+
+        <!-- Projet 3 : Administration de postes Windows & Linux -->
+        <div class="project-card">
+          <h3>Administration de postes Windows & Linux</h3>
+          <p>
+            Gestion et maintenance de parcs informatiques sous Windows 10/11 et distributions Linux. Création de
+            comptes utilisateurs, définition des droits d’accès (NTFS, FAT), configuration des stratégies de groupe
+            (GPO) et déploiement d’outils de supervision. Mise en place de scripts d’automatisation pour la
+            sauvegarde et la mise à jour des postes.
+          </p>
+          <p><strong>Compétences&nbsp;:</strong> Windows Server, Linux (Ubuntu/Debian), administration système,
+            gestion des droits, scripts Bash/PowerShell</p>
+        </div>
+
+        <!-- Projet 4 : Virtualisation & Conteneurisation -->
+        <div class="project-card">
+          <h3>Virtualisation et conteneurisation</h3>
+          <p>
+            Utilisation d’outils de virtualisation (Hyper‑V, Proxmox) et de conteneurisation (Docker) pour créer des
+            environnements isolés. Mise en place d’un cluster de machines virtuelles pour simuler une infrastructure
+            complète et déploiement d’une application multi‑services avec Docker Compose.
+          </p>
+          <p><strong>Compétences&nbsp;:</strong> Hyper‑V, Proxmox, Docker, réseaux virtuels, orchestration de
+            conteneurs</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <!--
+      Footer personnalisé : affiche mon nom et l’année courante pour toutes les pages du site.
+      Cette section remplace l’ancien libellé générique « Votre Nom » par ma signature complète.
+    -->
+    <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
+  </footer>
+</body>
+</html>
