@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio BTS SIO SISR — Lab</title>
+  <title>Portfolio BTS SIO SISR — Veilles</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
@@ -18,7 +18,7 @@
           <li><a href="projets.html">Projets</a></li>
           <li><a href="stage.html">Stage</a></li>
           <li><a href="competences.html">Compétences</a></li>
-          <li><a href="lab.html" class="active">Lab</a></li>
+          <li><a href="veilles.html" class="active">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -27,24 +27,43 @@
   </header>
   <main>
     <section class="section">
-      <h2>Lab et ressources techniques</h2>
+      <h2>Veille Technologique</h2>
       <p>
-        Cette section regroupe quelques notes, tutoriels et expérimentations que j’ai menés en dehors des projets
-        principaux. Elle illustre ma curiosité et mon envie d’approfondir certains sujets.
+        Sujet de veille : <strong>Les vulnérabilités critiques et la sécurisation des infrastructures (2025-2026)</strong>.
       </p>
-      <ul class="lab-list">
-        <li>Installation d’un cluster Kubernetes sur Raspberry Pi.</li>
-        <li>Tests d’automatisation avec Ansible pour déployer des serveurs.</li>
-        <li>Exploration de protocoles de sécurisation (HTTPS, SSH, VPN).</li>
-        <li>Scripts de sauvegarde et de restauration automatisés.</li>
+      
+      <div class="project-list">
+        <div class="project-card">
+          <h3>Mars 2026 : Faille Shadow Admin</h3>
+          <p>Analyse de la vulnérabilité CVE-2026-1422 impactant Active Directory sur Windows Server 2022. Risque d'attaque DCSync.</p>
+          <p class="meta">Outils : Feedly, CERT-FR</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Janvier 2026 : Patch Tuesday critique</h3>
+          <p>Suivi de la correction de 113 failles, avec un focus sur les composants d'identité des serveurs Windows.</p>
+          <p class="meta">Outils : Feedly, MSRC</p>
+        </div>
+
+        <div class="project-card">
+          <h3>Décembre 2025 : Relais NTLM</h3>
+          <p>Étude des méthodes d'élévation de privilèges "Domain Admin" via l'usurpation de protocoles anciens.</p>
+          <p class="meta">Outils : Flux RSS, ANSSI</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Méthodologie de veille</h2>
+      <p>Pour répondre aux exigences du Bloc 1, j'ai mis en place les outils suivants :</p>
+      <ul class="skills-list">
+        <li><strong>Feedly :</strong> Agrégateur pour la collecte d'informations (flux RSS)[cite: 7, 21].</li>
+        <li><strong>Notion :</strong> Organisation et synthèse des articles pour le dossier final[cite: 19].</li>
+        <li><strong>YouTube :</strong> Veille sur les démonstrations techniques et Proof of Concept (PoC)[cite: 13, 16].</li>
       </ul>
-      <p>De nouvelles ressources seront ajoutées régulièrement.</p>
     </section>
   </main>
   <footer>
-    <!--
-      Signature : uniformise le pied de page sur toutes les pages avec mon nom.
-    -->
     <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
   </footer>
 </body>
