@@ -33,37 +33,37 @@
       <div class="project-list">
         <div class="project-card">
           <h3>Mars 2026 : Faille Shadow Admin</h3>
-          <p>Analyse de la vulnérabilité CVE-2026-1422 sur Active Directory. Risque d'attaque DCSync.</p>
+          <p>Analyse de la vulnérabilité CVE-2026-1422 sur Active Directory. Elle permet une attaque <strong>DCSync</strong> pour usurper l'identité d'un contrôleur de domaine et extraire les mots de passe.</p>
           <p><a href="https://msrc.microsoft.com/update-guide" target="_blank">Source : Microsoft MSRC</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Février 2026 : MFA Bypass</h3>
-          <p>Techniques de vol de cookies de session post-MFA et protection via FIDO2.</p>
+          <h3>Février 2026 : Contournement MFA</h3>
+          <p>Étude des techniques de "Session Hijacking" permettant de voler des cookies de session après une authentification Multi-Facteurs (MFA). Remédiation via les clés <strong>FIDO2</strong>.</p>
           <p><a href="https://www.cert.ssi.gouv.fr/" target="_blank">Source : CERT-FR</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Janvier 2026 : Patch Tuesday critique</h3>
-          <p>Correction de 113 failles sur Windows Server 2022, focus sur les composants d'identité.</p>
+          <h3>Janvier 2026 : Vulnérabilité Cluster DoS</h3>
+          <p>Identification d'une faille dans le service de clustering de Windows Server 2022 provoquant des arrêts de service critiques (BSOD) sur les serveurs de fichiers en haute disponibilité.</p>
           <p><a href="https://www.itpro.fr/" target="_blank">Source : iTPro.fr</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Décembre 2025 : Relais NTLM</h3>
-          <p>Étude des risques d'élévation de privilèges via l'usurpation de protocoles anciens.</p>
+          <h3>Décembre 2025 : Attaques par Relais NTLM</h3>
+          <p>Analyse des risques d'élévation de privilèges vers "Domain Admin". Utilisation de la signature SMB et de <strong>Kerberos</strong> pour protéger l'infrastructure Active Directory.</p>
           <p><a href="https://www.ssi.gouv.fr/agence/publication/recommandations-de-securite-relatives-a-active-directory/" target="_blank">Source : ANSSI</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Novembre 2025 : RCE VPN Gateways</h3>
-          <p>Faille critique sur les accès distants VPN SSL permettant une exécution de code à distance.</p>
+          <h3>Novembre 2025 : Failles RCE sur VPN SSL</h3>
+          <p>Alerte sur les passerelles VPN SSL permettant l'exécution de code à distance (RCE) sans authentification. Nécessité de mettre à jour les Firmwares des pare-feu de bordure.</p>
           <p><a href="https://www.fortiguard.com/psirt" target="_blank">Source : FortiGuard Labs</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Octobre 2025 : Corruption WSUS</h3>
-          <p>Injection de faux patchs via le service de mise à jour Windows Server Update Services.</p>
+          <h3>Octobre 2025 : Corruption du flux WSUS</h3>
+          <p>Exploitation du service de mise à jour WSUS pour injecter des scripts malveillants sur les postes clients. Passage obligatoire au protocole <strong>HTTPS/TLS</strong> pour sécuriser les flux.</p>
           <p><a href="https://msrc.microsoft.com/" target="_blank">Source : Microsoft Security</a></p>
         </div>
       </div>
@@ -71,19 +71,14 @@
 
     <section class="section">
       <h2>Méthodologie de veille</h2>
-      <p>Pour répondre aux exigences du Bloc 1, j'ai mis en place les outils suivants :</p>
+      <p>Conformément au Bloc 1 du BTS SIO, j'ai mis en place les outils suivants pour organiser mon développement professionnel :</p>
       <ul class="skills-list">
-        <li><strong>Feedly :</strong> Agrégateur pour la collecte d'informations (flux RSS)[cite: 7].</li>
-        <li><strong>Notion :</strong> Organisation et synthèse des articles pour le dossier final[cite: 19].</li>
-        <li><strong>YouTube :</strong> Veille sur les démonstrations techniques et PoC[cite: 13, 16].</li>
+        <li><strong>Feedly :</strong> Agrégateur de flux RSS pour centraliser les alertes du CERT-FR et de Microsoft[cite: 1456].</li>
+        <li><strong>Notion :</strong> Outil de synthèse pour organiser mes sources et rédiger mes fiches de remédiation[cite: 1468].</li>
+        <li><strong>YouTube :</strong> Suivi de chaînes spécialisées pour comprendre les démonstrations techniques (PoC)[cite: 1467].</li>
       </ul>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
-  </footer>
-</body>
-</html>
   <footer>
     <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
   </footer>
