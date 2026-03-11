@@ -28,20 +28,19 @@
   <main>
     <section class="section">
       <h2>Expériences en Milieu Professionnel</h2>
-      <p>Mes deux stages m'ont permis de passer de la théorie à la pratique en travaillant sur des solutions réelles pour optimiser les coûts et l'efficacité des entreprises.</p>
+      <p>Au cours de mon cursus, j'ai réalisé deux stages qui m'ont permis de passer de la théorie apprise en cours à la réalité technique des entreprises.</p>
 
       <div class="project-card" style="margin-bottom: 30px;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-          <h3>Stage de 1ère Année : Migration vers une infrastructure Open-Source</h3>
+          <h3>Stage de 1ère Année : Modernisation et Économies d'Infrastructure</h3>
           <span class="meta">Mai - Juin 2025</span>
         </div>
-        <p><strong>L'enjeu :</strong> Passer d'une solution payante et coûteuse (VMware vSphere) vers une solution gratuite et performante (Proxmox).</p>
-        <p><em>Explication simple :</em> Imaginez que l'entreprise paie un loyer très cher pour faire tourner ses serveurs virtuels. Mon rôle a été de déménager tous ces serveurs vers une "maison gratuite" (Proxmox) sans perdre de données et sans couper le service.</p>
+        <p><strong>L'enjeu :</strong> Remplacer une solution logicielle payante et coûteuse (VMware vSphere) par une alternative gratuite et performante (Proxmox VE)[cite: 1, 21, 22].</p>
+        <p><em>Explication simple :</em> Les entreprises utilisent souvent des logiciels payants pour faire tourner leurs serveurs. Mon rôle a été de transférer toutes les données et les machines vers un nouveau système gratuit (Open Source). Cela permet à l'entreprise d'économiser sur ses licences tout en gardant un système puissant.</p>
         <ul style="margin-top: 15px; color: var(--text-color);">
-          <li><strong>Audit de l'existant :</strong> Inventaire des serveurs virtuels sous VMware vSphere.</li>
-          <li><strong>Préparation de l'accueil :</strong> Installation et configuration de serveurs Proxmox VE (version communautaire non payante).</li>
-          <li><strong>Déménagement technique :</strong> Migration des disques virtuels et reconfiguration du réseau pour que les serveurs fonctionnent à l'identique.</li>
-          <li><strong>Économie :</strong> Cette transition a permis à l'entreprise de supprimer ses coûts de licence logicielle annuelle.</li>
+          <li><strong>Audit et Préparation :</strong> Étude comparative des systèmes et installation de test pour garantir que tout fonctionnera sans panne.</li>
+          <li><strong>Migration Technique :</strong> Déplacement des machines virtuelles (VM) de l'ancien système vSphere vers le nouveau cluster Proxmox.</li>
+          <li><strong>Configuration Réseau :</strong> Paramétrage des accès et du routage pour que les serveurs migrés restent accessibles aux utilisateurs[cite: 21].</li>
         </ul>
       </div>
 
@@ -50,23 +49,23 @@
           <h3>Stage de 2ème Année : Automatisation et Gestion de Parc</h3>
           <span class="meta">Janvier - Février 2026</span>
         </div>
-        <p><strong>L'enjeu :</strong> Utiliser le serveur OPSI pour automatiser l'installation des ordinateurs et des logiciels.</p>
-        <p><em>Explication simple :</em> Au lieu d'installer Windows et chaque logiciel (Chrome, Office, etc.) un par un à la main sur chaque ordinateur de l'entreprise, j'ai configuré un système central (OPSI) qui "envoie" automatiquement tout ce dont l'employé a besoin sur son PC via le réseau.</p>
+        <p><strong>L'enjeu :</strong> Utiliser l'outil <strong>OPSI</strong> pour gérer automatiquement l'ensemble des ordinateurs et des logiciels de l'entreprise.</p>
+        <p><em>Explication simple :</em> Au lieu d'installer Windows et chaque logiciel un par un à la main sur chaque PC, j'ai mis en place un système "magique". On branche un nouvel ordinateur au réseau, et le serveur OPSI lui installe automatiquement tout ce dont il a besoin (Windows, navigateurs, antivirus) sans que je n'aie à intervenir sur place.</p>
         <ul style="margin-top: 15px; color: var(--text-color);">
-          <li><strong>Mise en place d'OPSI :</strong> Configuration du serveur pour qu'il reconnaisse les nouveaux ordinateurs du parc.</li>
-          <li><strong>Création de paquets :</strong> Préparation des logiciels pour qu'ils s'installent tout seuls sans intervention humaine.</li>
-          <li><strong>Support et Maintenance :</strong> Gestion des incidents via l'outil GLPI et assistance aux utilisateurs.</li>
-          <li><strong>Gain de temps :</strong> Une installation qui prenait plusieurs heures manuellement se fait désormais en quelques clics de façon uniforme.</li>
+          <li><strong>Déploiement Automatisé :</strong> Configuration du serveur OPSI pour installer les systèmes d'exploitation à distance.</li>
+          <li><strong>Gestion du Stockage :</strong> Installation de matériel de stockage haute capacité (HPE Alletra 4120) et configuration de la sécurité des données (RAID 6).</li>
+          <li><strong>Support Utilisateur :</strong> Utilisation de l'outil GLPI pour recevoir et traiter les demandes d'aide technique des employés[cite: 21].</li>
+          <li><strong>Sécurisation :</strong> Mise à jour des programmes internes des serveurs (firmwares) et sécurisation des accès distants.</li>
         </ul>
       </div>
     </section>
 
     <section class="section">
-      <h2>Documents justificatifs</h2>
-      <p>Retrouvez ici le détail administratif et technique de mes missions :</p>
+      <h2>Documents Justificatifs</h2>
+      <p>Vous pouvez consulter les tableaux officiels détaillant l'ensemble de mes missions durant ces périodes :</p>
       <div style="display: flex; gap: 15px; margin-top: 10px;">
         <a href="docs/e5 (1).pdf" class="btn" target="_blank">Tableau E5 (Stage 1)</a>
-        <a href="docs/tableau de suis de stage Mohamed-ali Filali(1)(1).odt" class="btn" target="_blank">Suivi de stage (Stage 2)</a>
+        <a href="docs/suivi-stage-2.odt" class="btn" target="_blank">Suivi de stage (Stage 2)</a>
       </div>
     </section>
   </main>
