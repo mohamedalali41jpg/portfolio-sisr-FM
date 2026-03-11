@@ -28,27 +28,43 @@
   <main>
     <section class="section">
       <h2>Veille Technologique</h2>
-      <p>
-        Sujet de veille : <strong>Les vulnérabilités critiques et la sécurisation des infrastructures (2025-2026)</strong>.
-      </p>
+      <p>Sujet : <strong>Les vulnérabilités critiques et la sécurisation des infrastructures (2025-2026)</strong>.</p>
       
       <div class="project-list">
         <div class="project-card">
           <h3>Mars 2026 : Faille Shadow Admin</h3>
-          <p>Analyse de la vulnérabilité CVE-2026-1422 impactant Active Directory sur Windows Server 2022. Risque d'attaque DCSync.</p>
-          <p class="meta">Outils : Feedly, CERT-FR</p>
+          <p>Analyse de la vulnérabilité CVE-2026-1422 sur Active Directory. Risque d'attaque DCSync.</p>
+          <p><a href="https://msrc.microsoft.com/update-guide" target="_blank">Source : Microsoft MSRC</a></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Février 2026 : MFA Bypass</h3>
+          <p>Techniques de vol de cookies de session post-MFA et protection via FIDO2.</p>
+          <p><a href="https://www.cert.ssi.gouv.fr/" target="_blank">Source : CERT-FR</a></p>
         </div>
 
         <div class="project-card">
           <h3>Janvier 2026 : Patch Tuesday critique</h3>
-          <p>Suivi de la correction de 113 failles, avec un focus sur les composants d'identité des serveurs Windows.</p>
-          <p class="meta">Outils : Feedly, MSRC</p>
+          <p>Correction de 113 failles sur Windows Server 2022, focus sur les composants d'identité.</p>
+          <p><a href="https://www.itpro.fr/" target="_blank">Source : iTPro.fr</a></p>
         </div>
 
         <div class="project-card">
           <h3>Décembre 2025 : Relais NTLM</h3>
-          <p>Étude des méthodes d'élévation de privilèges "Domain Admin" via l'usurpation de protocoles anciens.</p>
-          <p class="meta">Outils : Flux RSS, ANSSI</p>
+          <p>Étude des risques d'élévation de privilèges via l'usurpation de protocoles anciens.</p>
+          <p><a href="https://www.ssi.gouv.fr/agence/publication/recommandations-de-securite-relatives-a-active-directory/" target="_blank">Source : ANSSI</a></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Novembre 2025 : RCE VPN Gateways</h3>
+          <p>Faille critique sur les accès distants VPN SSL permettant une exécution de code à distance.</p>
+          <p><a href="https://www.fortiguard.com/psirt" target="_blank">Source : FortiGuard Labs</a></p>
+        </div>
+
+        <div class="project-card">
+          <h3>Octobre 2025 : Corruption WSUS</h3>
+          <p>Injection de faux patchs via le service de mise à jour Windows Server Update Services.</p>
+          <p><a href="https://msrc.microsoft.com/" target="_blank">Source : Microsoft Security</a></p>
         </div>
       </div>
     </section>
@@ -57,12 +73,17 @@
       <h2>Méthodologie de veille</h2>
       <p>Pour répondre aux exigences du Bloc 1, j'ai mis en place les outils suivants :</p>
       <ul class="skills-list">
-        <li><strong>Feedly :</strong> Agrégateur pour la collecte d'informations (flux RSS)[cite: 7, 21].</li>
+        <li><strong>Feedly :</strong> Agrégateur pour la collecte d'informations (flux RSS)[cite: 7].</li>
         <li><strong>Notion :</strong> Organisation et synthèse des articles pour le dossier final[cite: 19].</li>
-        <li><strong>YouTube :</strong> Veille sur les démonstrations techniques et Proof of Concept (PoC)[cite: 13, 16].</li>
+        <li><strong>YouTube :</strong> Veille sur les démonstrations techniques et PoC[cite: 13, 16].</li>
       </ul>
     </section>
   </main>
+  <footer>
+    <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
+  </footer>
+</body>
+</html>
   <footer>
     <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
   </footer>
