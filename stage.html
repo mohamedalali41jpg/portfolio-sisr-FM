@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio BTS SIO SISR — Stage</title>
+  <title>Portfolio BTS SIO SISR — Stages</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
@@ -18,7 +18,7 @@
           <li><a href="projets.html">Projets</a></li>
           <li><a href="stage.html" class="active">Stage</a></li>
           <li><a href="competences.html">Compétences</a></li>
-          <li><a href="veilles.html">veilles</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
@@ -27,32 +27,48 @@
   </header>
   <main>
     <section class="section">
-      <h2>Recherche de stage</h2>
-      <p>
-        Dans le cadre de ma deuxième année de BTS SIO SISR, je suis à la recherche d’un stage en entreprise de
-        six semaines, prévu du <strong>5 janvier 2026</strong> au <strong>13 février 2026</strong>. Ce stage représente
-        une occasion d’appliquer les connaissances acquises en formation et de participer à la mise en place d’une
-        infrastructure réseau complète.
-      </p>
-      <h3>Objectifs de stage</h3>
-      <ul class="lab-list">
-        <li>Mise en place et administration de services réseau (DHCP, DNS, Active Directory, FTP…)</li>
-        <li>Déploiement et sécurisation de serveurs Windows et Linux</li>
-        <li>Configuration de routage inter‑VLAN, NAT/PAT et pare‑feu</li>
-        <li>Participation au support utilisateur et à la documentation technique</li>
+      <h2>Expériences Professionnelles (Stages)</h2>
+      <p>Au cours de ma formation en BTS SIO option SISR, j'ai réalisé deux stages significatifs qui m'ont permis de confronter mes connaissances théoriques aux réalités du terrain.</p>
+
+      <div class="project-card" style="margin-bottom: 30px;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Stage de 2ème Année : Infrastructure et Virtualisation</h3>
+          <span class="meta">Janvier 2026 - Février 2026</span>
+        </div>
+        <p>Ce stage a été marqué par des missions de haute technicité sur des infrastructures de stockage et de virtualisation moderne.</p>
+        <ul style="margin-top: 10px; color: var(--muted);">
+          <li><strong>Ingénierie du Stockage & Hardware :</strong> Rackage de serveurs HPE Alletra 4120, configuration de volumes RAID 6 (64 To) et sécurisation du boot en RAID 1 sur SSD.</li>
+          <li><strong>Virtualisation Proxmox :</strong> Migration de machines virtuelles depuis VMware vCenter vers un cluster Proxmox (utilisation de <code>qm importdisk</code>) et optimisation des ressources (TPM 2.0, EFI, VirtIO-GPU).</li>
+          <li><strong>Administration Réseau :</strong> Reconfiguration de switchs Ubiquiti pour optimiser les débits (passage de 1 à 2,5 Gbit/s) et gestion de serveurs DHCP sous Debian.</li>
+          <li><strong>Sécurité et Maintenance :</strong> Gestion des accès distants via HPE iLO 6, sécurisation des mots de passe d'usine et mise à jour de firmwares critiques.</li>
+        </ul>
+      </div>
+
+      <div class="project-card">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h3>Stage de 1ère Année : Support et Administration Système</h3>
+          <span class="meta">Mai 2025 - Juin 2025</span>
+        </div>
+        <p>Une immersion centrée sur le support utilisateur et la gestion quotidienne d'un parc informatique d'entreprise.</p>
+        <ul style="margin-top: 10px; color: var(--muted);">
+          <li><strong>Support Utilisateur :</strong> Traitement des tickets d'incidents via l'outil GLPI et assistance technique de proximité.</li>
+          <li><strong>Gestion d'Annuaire (Active Directory) :</strong> Création d'utilisateurs, migration de comptes et gestion des habilitations d'accès.</li>
+          <li><strong>Déploiement Système :</strong> Utilisation d'un serveur OPSI pour l'installation automatisée de logiciels et le déploiement de configurations sur les postes de travail.</li>
+          <li><strong>Sécurité et Sauvegarde :</strong> Surveillance des journaux (logs) et alertes de sécurité, mise en place de scripts de sauvegarde et vérification de la continuité de service.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Documents de synthèse</h2>
+      <p>Vous pouvez consulter les documents officiels récapitulant mes activités durant ces périodes :</p>
+      <ul class="skills-list">
+        <li><a href="docs/tableau de suis de stage Mohamed-ali Filali(1)(1).odt" target="_blank">Tableau de suivi (Stage 2)</a></li>
+        <li><a href="docs/e5 (1).pdf" target="_blank">Tableau de synthèse E5 (Stage 1)</a></li>
       </ul>
-      <p>
-        Je suis motivé, rigoureux et prêt à travailler en équipe pour contribuer au bon fonctionnement d’un
-        service informatique. N’hésitez pas à me contacter si vous souhaitez en savoir plus ou discuter d’une
-        opportunité de stage.
-      </p>
     </section>
   </main>
   <footer>
-    <!--
-      Signature du portfolio : indique clairement l’identité de l’auteur et son cursus.
-      L’année 2025 est utilisée comme référence et peut être ajustée.
-    -->
     <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
   </footer>
 </body>
