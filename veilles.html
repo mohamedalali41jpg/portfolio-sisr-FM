@@ -27,55 +27,68 @@
   </header>
   <main>
     <section class="section">
-      <h2>Veille Technologique</h2>
-      <p>Sujet : <strong>Les vulnérabilités critiques et la sécurisation des infrastructures (2025-2026)</strong>.</p>
+      <h2>Veille Technologique : Failles Critiques et Remédiations</h2>
+      <p>Sujet : <strong>Sécurisation des infrastructures système et réseau (2025-2026)</strong>.</p>
       
-      <div class="project-list">
+      <div class="project-list" style="display: flex; flex-direction: column; gap: 25px;">
+        
         <div class="project-card">
-          <h3>Mars 2026 : Faille Shadow Admin</h3>
-          <p>Analyse de la vulnérabilité CVE-2026-1422 sur Active Directory. Elle permet une attaque <strong>DCSync</strong> pour usurper l'identité d'un contrôleur de domaine et extraire les mots de passe.</p>
-          <p><a href="https://msrc.microsoft.com/update-guide" target="_blank">Source : Microsoft MSRC</a></p>
+          <h3>📅 Mars 2026 : Faille "Shadow Admin" sur Active Directory</h3>
+          <p><strong>La Faille :</strong> Vulnérabilité CVE-2026-1422 impactant les services AD DS. Un utilisateur standard peut exploiter une erreur de réplication des descripteurs de sécurité.</p>
+          <p><strong>Impact SISR :</strong> Permet une attaque <strong>DCSync</strong>. L'attaquant simule un contrôleur de domaine pour extraire les condensats (hashes) de tous les mots de passe sans laisser de traces d'ouverture de session.</p>
+          <p><strong>Remédiation :</strong> Application du pack cumulatif de mars 2026 et surveillance des journaux (ID 4662) pour détecter des accès inhabituels aux partitions de configuration AD.</p>
+          <p><a href="https://msrc.microsoft.com/update-guide" target="_blank">🔗 Source : Microsoft Security Update Guide</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Février 2026 : Contournement MFA</h3>
-          <p>Étude des techniques de "Session Hijacking" permettant de voler des cookies de session après une authentification Multi-Facteurs (MFA). Remédiation via les clés <strong>FIDO2</strong>.</p>
-          <p><a href="https://www.cert.ssi.gouv.fr/" target="_blank">Source : CERT-FR</a></p>
+          <h3>📅 Février 2026 : Contournement MFA via Session Hijacking</h3>
+          <p><strong>La Faille :</strong> Utilisation de proxys inverses pour voler les cookies de session "post-MFA" des administrateurs système.</p>
+          <p><strong>Impact SISR :</strong> Accès direct à la console Azure ou au centre d'administration Windows Server sans que le code MFA ne soit redemandé, l'attaquant utilisant une session déjà validée.</p>
+          <p><strong>Remédiation :</strong> Déploiement de l'accès conditionnel basé sur la conformité de l'appareil et adoption de clés de sécurité physiques <strong>FIDO2</strong>.</p>
+          <p><a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank">🔗 Source : Alertes CERT-FR</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Janvier 2026 : Vulnérabilité Cluster DoS</h3>
-          <p>Identification d'une faille dans le service de clustering de Windows Server 2022 provoquant des arrêts de service critiques (BSOD) sur les serveurs de fichiers en haute disponibilité.</p>
-          <p><a href="https://www.itpro.fr/" target="_blank">Source : iTPro.fr</a></p>
+          <h3>📅 Janvier 2026 : Fail-Over Cluster & Déni de Service (DoS)</h3>
+          <p><strong>La Faille :</strong> Vulnérabilité dans le service de clustering de Windows Server 2022 lors de la réception de paquets réseau malformés.</p>
+          <p><strong>Impact SISR :</strong> Arrêt brutal (BSOD) des serveurs en haute disponibilité, entraînant une interruption totale des services de virtualisation Hyper-V ou des partages de fichiers.</p>
+          <p><strong>Remédiation :</strong> Installation de la mise à jour cumulative de janvier 2026 et isolation du réseau de "Heartbeat" (battement de cœur) du cluster.</p>
+          <p><a href="https://learn.microsoft.com/fr-fr/windows/release-health/windows-server-2022" target="_blank">🔗 Source : Windows Server Release Health</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Décembre 2025 : Attaques par Relais NTLM</h3>
-          <p>Analyse des risques d'élévation de privilèges vers "Domain Admin". Utilisation de la signature SMB et de <strong>Kerberos</strong> pour protéger l'infrastructure Active Directory.</p>
-          <p><a href="https://www.ssi.gouv.fr/agence/publication/recommandations-de-securite-relatives-a-active-directory/" target="_blank">Source : ANSSI</a></p>
+          <h3>📅 Décembre 2025 : Attaque par Relais NTLM sur l'AD</h3>
+          <p><strong>La Faille :</strong> Exploitation de la faiblesse du protocole NTLM pour capturer et relayer des hashs d'authentification vers un serveur cible.</p>
+          <p><strong>Impact SISR :</strong> Élévation de privilèges vers "Domain Admin" en quelques minutes à partir d'un simple poste utilisateur compromis sur le réseau local.</p>
+          <p><strong>Remédiation :</strong> Désactivation de NTLM au profit de <strong>Kerberos</strong>, activation impérative du "SMB Signing" et restriction de l'audit NTLM.</p>
+          <p><a href="https://www.ssi.gouv.fr/guide/recommandations-de-securite-relatives-a-active-directory/" target="_blank">🔗 Source : Guide Durcissement AD - ANSSI</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Novembre 2025 : Failles RCE sur VPN SSL</h3>
-          <p>Alerte sur les passerelles VPN SSL permettant l'exécution de code à distance (RCE) sans authentification. Nécessité de mettre à jour les Firmwares des pare-feu de bordure.</p>
-          <p><a href="https://www.fortiguard.com/psirt" target="_blank">Source : FortiGuard Labs</a></p>
+          <h3>📅 Novembre 2025 : Exécution de code à distance (RCE) sur Gateway VPN</h3>
+          <p><strong>La Faille :</strong> Dépassement de tampon (Buffer Overflow) dans la gestion mémoire des protocoles de tunneling SSL sur les passerelles Fortinet/Cisco.</p>
+          <p><strong>Impact SISR :</strong> Prise de contrôle totale de l'équipement périmétrique sans authentification, ouvrant un tunnel non filtré vers le LAN de l'entreprise.</p>
+          <p><strong>Remédiation :</strong> Mise à jour critique du Firmware et limitation de l'accès à l'interface d'administration aux seules adresses IP de management.</p>
+          <p><a href="https://www.fortiguard.com/psirt" target="_blank">🔗 Source : FortiGuard PSIRT Advisories</a></p>
         </div>
 
         <div class="project-card">
-          <h3>Octobre 2025 : Corruption du flux WSUS</h3>
-          <p>Exploitation du service de mise à jour WSUS pour injecter des scripts malveillants sur les postes clients. Passage obligatoire au protocole <strong>HTTPS/TLS</strong> pour sécuriser les flux.</p>
-          <p><a href="https://msrc.microsoft.com/" target="_blank">Source : Microsoft Security</a></p>
+          <h3>📅 Octobre 2025 : Corruption de flux WSUS</h3>
+          <p><strong>La Faille :</strong> Interception et modification des paquets de mise à jour entre le serveur WSUS et ses clients via une attaque Man-in-the-Middle.</p>
+          <p><strong>Impact SISR :</strong> Distribution massive de faux correctifs contenant des scripts PowerShell malveillants exécutés avec les privilèges <strong>SYSTEM</strong> sur le parc informatique.</p>
+          <p><strong>Remédiation :</strong> Sécurisation des communications WSUS par le protocole <strong>HTTPS</strong> (port 8531) et activation de la validation par certificat.</p>
+          <p><a href="https://msrc.microsoft.com/update-guide" target="_blank">🔗 Source : MSRC Update Guide</a></p>
         </div>
+
       </div>
     </section>
 
     <section class="section">
-      <h2>Méthodologie de veille</h2>
-      <p>Conformément au Bloc 1 du BTS SIO, j'ai mis en place les outils suivants pour organiser mon développement professionnel :</p>
+      <h2>Méthodologie de veille informationnelle</h2>
+      <p>Pour assurer la pérennité et la pertinence de mon environnement d'apprentissage[cite: 1453], j'ai structuré ma veille autour de deux axes :</p>
       <ul class="skills-list">
-        <li><strong>Feedly :</strong> Agrégateur de flux RSS pour centraliser les alertes du CERT-FR et de Microsoft[cite: 1456].</li>
-        <li><strong>Notion :</strong> Outil de synthèse pour organiser mes sources et rédiger mes fiches de remédiation[cite: 1468].</li>
-        <li><strong>YouTube :</strong> Suivi de chaînes spécialisées pour comprendre les démonstrations techniques (PoC)[cite: 1467].</li>
+        <li><strong>Collecte (Push) :</strong> Utilisation de <strong>Feedly</strong> pour agréger les flux RSS du CERT-FR, de l'ANSSI et des bulletins de sécurité Microsoft[cite: 1456, 1470].</li>
+        <li><strong>Organisation :</strong> Utilisation de <strong>Notion</strong> pour documenter chaque faille et préparer les fiches de remédiation technique utilisables en entreprise[cite: 1468].</li>
       </ul>
     </section>
   </main>
