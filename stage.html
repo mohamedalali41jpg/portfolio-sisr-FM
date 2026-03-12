@@ -28,55 +28,57 @@
   <main>
     <section class="section">
       <h2>Parcours Professionnel</h2>
-      <p>Mes deux périodes de stage m'ont permis d'évoluer d'un rôle de support technique et d'automatisation vers des projets complexes d'infrastructure et de virtualisation.</p>
+      <p>Retrouvez ici le détail de mes missions réalisées en entreprise, illustrant ma progression technique entre ma première et ma deuxième année.</p>
 
       <div class="project-card" style="margin-bottom: 40px;">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-          <h3>Stage de 1ère Année : Support et Gestion du Patrimoine</h3>
+          <h3 style="color: var(--primary);">Stage de 1ère Année : Support et Maintenance du Parc</h3>
           <span class="meta">Mai - Juin 2025</span>
         </div>
-        <p><strong>L'enjeu :</strong> Assurer le maintien en condition opérationnelle du parc informatique et optimiser les déploiements logiciels.</p>
-        <p><em>Explication globale :</em> Ce premier stage s'est concentré sur la réactivité face aux demandes des utilisateurs et la mise en place d'outils permettant d'installer automatiquement des logiciels sur plusieurs PC à la fois.</p>
+        <p><strong>L'enjeu :</strong> Maintenir le parc informatique opérationnel et optimiser la gestion des logiciels.</p>
+        <p><em>Explication globale :</em> Ce stage était axé sur l'assistance directe aux utilisateurs et l'automatisation des installations système pour gagner en efficacité lors des déploiements.</p>
         
         <div style="margin-top: 20px;">
-          <h4 style="font-size: 1rem; color: var(--text);">Missions réalisées :</h4>
+          <h4 style="font-size: 1rem;">Missions détaillées :</h4>
           <ul style="margin-top: 10px; color: var(--muted); list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 10px;">🛠️ <strong>Support Utilisateur :</strong> Collecte, suivi et traitement des tickets d'incidents via l'outil <strong>GLPI</strong>.</li>
-            <li style="margin-bottom: 10px;">⚙️ <strong>Automatisation avec OPSI :</strong> Administration du serveur OPSI pour le déploiement automatisé de logiciels sur le parc.</li>
-            <li style="margin-bottom: 10px;">🔑 <strong>Gestion Active Directory :</strong> Migration d'utilisateurs et gestion des habilitations d'accès au sein du domaine.</li>
-            <li style="margin-bottom: 10px;">💾 <strong>Sauvegarde et Supervision :</strong> Surveillance des logs et alertes, et mise en œuvre de scripts (cron) pour automatiser les sauvegardes.</li>
+            <li style="margin-bottom: 10px;">🛠️ <strong>Support GLPI :</strong> Traitement des tickets d'incidents et des demandes d'assistance matérielle et logicielle.</li>
+            <li style="margin-bottom: 10px;">⚙️ <strong>Déploiement OPSI :</strong> Administration du serveur OPSI pour automatiser l'installation et la mise à jour des logiciels sur les postes clients.</li>
+            <li style="margin-bottom: 10px;">🔑 <strong>Gestion Active Directory :</strong> Migration d'utilisateurs et configuration fine des habilitations d'accès au réseau.</li>
+            <li style="margin-bottom: 10px;">💾 <strong>Scripts de Sauvegarde :</strong> Mise en œuvre de tâches planifiées (cron) pour automatiser la sécurisation des données.</li>
           </ul>
         </div>
       </div>
 
       <div class="project-card">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-          <h3>Stage de 2ème Année : Migration et Ingénierie Système</h3>
+          <h3 style="color: var(--primary);">Stage de 2ème Année : Infrastructure et Virtualisation</h3>
           <span class="meta">Janvier - Février 2026</span>
         </div>
-        <p><strong>L'enjeu :</strong> Moderniser l'infrastructure serveurs en migrant vers des solutions Open Source performantes tout en déployant du matériel de stockage haute capacité.</p>
-        <p><em>Explication globale :</em> L'objectif était de réduire les coûts de licence en passant d'un système payant à <strong>Proxmox</strong> (gratuit), tout en installant physiquement de nouveaux serveurs capables de stocker d'énormes volumes de données (64 To).</p>
+        <p><strong>L'enjeu :</strong> Moderniser l'infrastructure en migrant vers des solutions Open Source et déployer du stockage haute performance.</p>
+        <p><em>Explication globale :</em> Un projet d'envergure consistant à remplacer VMware par Proxmox pour réduire les coûts, tout en mettant en service des serveurs HPE de grande capacité.</p>
 
         <div style="margin-top: 20px;">
-          <h4 style="font-size: 1rem; color: var(--text);">Missions réalisées :</h4>
+          <h4 style="font-size: 1rem;">Missions détaillées :</h4>
           <ul style="margin-top: 10px; color: var(--muted); list-style-type: none; padding-left: 0;">
-            <li style="margin-bottom: 10px;">🔄 <strong>Migration vCenter vers Proxmox :</strong> Étude comparative et importation de machines virtuelles (VM) depuis VMware vSphere vers Proxmox VE (version communautaire).</li>
-            <li style="margin-bottom: 10px;">🏢 <strong>Installation Matérielle :</strong> Rackage et configuration de serveurs <strong>HPE Alletra 4120</strong>, incluant la gestion distante via iLO 6.</li>
-            <li style="margin-bottom: 10px;">📦 <strong>Ingénierie du Stockage :</strong> Configuration de volumes <strong>RAID 6</strong> (64 To) pour les données et RAID 1 (SSD) pour le système de boot.</li>
-            <li style="margin-bottom: 10px;">🌐 <strong>Optimisation Réseau :</strong> Reconfiguration de switchs <strong>Ubiquiti</strong> pour augmenter les débits de 1 Gbit/s à 2,5 Gbit/s.</li>
-            <li style="margin-bottom: 10px;">🖥️ <strong>Déploiement Postes :</strong> Préparation de nouveaux PC sous Windows 11 avec résolution de contraintes matérielles (TPM 2.0, EFI).</li>
+            <li style="margin-bottom: 10px;">🔄 <strong>Migration Proxmox :</strong> Importation de machines virtuelles depuis VMware vSphere vers un cluster Proxmox VE (version communautaire).</li>
+            <li style="margin-bottom: 10px;">🏢 <strong>Installation HPE Alletra :</strong> Rackage physique, raccordement et configuration du management distant via iLO 6.</li>
+            <li style="margin-bottom: 10px;">📦 <strong>Configuration RAID :</strong> Mise en place d'un volume RAID 6 de 64 To pour les données et d'un RAID 1 (SSD) pour le système.</li>
+            <li style="margin-bottom: 10px;">🌐 <strong>Réseau Ubiquiti :</strong> Optimisation de switchs pour passer d'un débit de 1 Gbit/s à 2,5 Gbit/s réels.</li>
+            <li style="margin-bottom: 10px;">🖥️ <strong>Postes Windows 11 :</strong> Déploiement de nouveaux PC avec gestion des contraintes matérielles (TPM 2.0, Secure Boot).</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Documents Justificatifs</h2>
-      <p>Consultez les tableaux officiels récapitulant mes activités professionnelles :</p>
-      <div style="display: flex; gap: 15px; margin-top: 10px; flex-wrap: wrap;">
-        <a href="docs/e5%20(1).pdf" class="btn" target="_blank" style="text-decoration:none; padding: 10px 20px; background:var(--primary); color:white; border-radius:var(--radius);">Tableau E5 (Stage 1)</a>
+    <section class="section" style="background: var(--surface); border: 1px solid var(--card-border); padding: 25px; border-radius: var(--radius);">
+      <h2>Documents de synthèse</h2>
+      <p>Cliquez sur les boutons ci-dessous pour ouvrir les documents justificatifs (PDF et ODT) :</p>
+      <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
         
-        <a href="docs/suivi-stage-2.odt" class="btn" target="_blank" style="text-decoration:none; padding: 10px 20px; background:var(--primary); color:white; border-radius:var(--radius);">Suivi de stage (Stage 2)</a>
+        <a href="docs/e5%20(1).pdf" class="btn" target="_blank" style="text-decoration: none; padding: 12px 25px; background: var(--primary); color: white; border-radius: 5px; font-weight: 600;">Ouvrir Tableau E5 (Stage 1)</a>
+        
+        <a href="docs/tableau%20de%20suis%20de%20stage%20Mohamed-ali%20Filali(1)(1).odt" class="btn" target="_blank" style="text-decoration: none; padding: 12px 25px; background: var(--primary); color: white; border-radius: 5px; font-weight: 600;">Ouvrir Suivi de Stage (Stage 2)</a>
+        
       </div>
     </section>
   </main>
