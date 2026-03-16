@@ -1,44 +1,27 @@
-/* PORTFOLIO HIGH-END - DESIGN SISR 2026 
-   Concept : Glassmorphism, Fluid Typography, Micro-Interactions
+/* DESIGN CYBER-TECH PRO 2026
+   Thème : Console Administrateur / Datacenter 
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
 
 :root {
-    /* Palette Chromatique - Mode Clair (Inspiration Azure/Cloud) */
-    --bg-app: #f4f7ff;
-    --glass-bg: rgba(255, 255, 255, 0.7);
-    --glass-border: rgba(255, 255, 255, 0.4);
-    --card-bg: #ffffff;
-    --primary: #0062ff;
-    --primary-soft: rgba(0, 98, 255, 0.1);
-    --secondary: #6366f1;
-    --accent: #00d4ff;
-    --text-head: #0f172a;
-    --text-body: #475569;
-    --success: #10b981;
+    /* Couleurs Informatiques (SISR) */
+    --bg-dark-pro: #020617;
+    --terminal-black: #0f172a;
+    --neon-blue: #3b82f6;
+    --neon-cyan: #22d3ee;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --border-color: #1e293b;
+    --glass-effect: rgba(15, 23, 42, 0.8);
     
-    /* Variables de design */
-    --radius-lg: 24px;
-    --radius-md: 16px;
-    --radius-sm: 10px;
-    --shadow-soft: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-    --shadow-glow: 0 15px 35px -5px rgba(0, 98, 255, 0.2);
-    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    /* Espacements & Rayons */
+    --inner-padding: 40px; /* Évite que l'écriture colle aux bords */
+    --card-radius: 12px;
+    --transition-fast: 0.2s ease;
 }
 
-/* --- THEME SOMBRE (AUTOMATIQUE & TOGGLE) --- */
-[data-theme="dark"] {
-    --bg-app: #020617;
-    --glass-bg: rgba(15, 23, 42, 0.6);
-    --glass-border: rgba(255, 255, 255, 0.05);
-    --card-bg: #0f172a;
-    --text-head: #f8fafc;
-    --text-body: #94a3b8;
-    --shadow-soft: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
-}
-
-/* --- RESET & BASE --- */
+/* --- RESET & STRUCTURE --- */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -47,159 +30,140 @@
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-app);
-    color: var(--text-body);
+    background-color: var(--bg-dark-pro);
+    color: var(--text-primary);
     line-height: 1.6;
-    overflow-x: hidden;
-    transition: var(--transition);
 }
 
 .container {
-    max-width: 1240px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 40px;
+    padding: 0 30px; /* Marge de sécurité sur les côtés */
 }
 
-/* --- HEADER EFFET VERRE (GLASSMORPHISM) --- */
+/* --- NAVIGATION STYLE "SERVER BLADE" --- */
 header {
-    position: sticky;
-    top: 20px;
-    margin: 0 20px;
-    background: var(--glass-bg);
-    backdrop-filter: blur(12px) saturate(180%);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-md);
+    background: var(--glass-effect);
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid var(--neon-blue);
     padding: 15px 0;
+    position: sticky;
+    top: 0;
     z-index: 1000;
-    box-shadow: var(--shadow-soft);
-}
-
-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 header h1 {
+    font-family: 'Fira Code', monospace;
     font-size: 1.1rem;
-    font-weight: 800;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.5px;
+    color: var(--neon-cyan);
+    text-transform: uppercase;
 }
 
 nav ul {
     display: flex;
-    gap: 8px;
+    gap: 15px;
     list-style: none;
 }
 
 nav a {
     text-decoration: none;
-    color: var(--text-body);
-    font-size: 0.9rem;
+    color: var(--text-secondary);
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: var(--radius-sm);
-    transition: var(--transition);
+    font-size: 0.85rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: var(--transition-fast);
 }
 
-nav a:hover {
-    background: var(--primary-soft);
-    color: var(--primary);
+nav a:hover, nav a.active {
+    color: var(--neon-cyan);
+    border-color: var(--neon-blue);
+    background: rgba(59, 130, 246, 0.1);
 }
 
-nav a.active {
-    background: var(--primary);
-    color: white;
-    box-shadow: var(--shadow-glow);
-}
-
-/* --- TYPOGRAPHIE DES TITRES --- */
+/* --- TITRES DE SECTION --- */
 h2 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--text-head);
-    margin-bottom: 50px;
-    letter-spacing: -1px;
-    position: relative;
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    color: var(--neon-blue);
+    margin: 50px 0 30px 0;
+    padding-left: 15px;
+    border-left: 5px solid var(--neon-cyan);
 }
 
-h2::before {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 0;
-    width: 80px;
-    height: 6px;
-    background: linear-gradient(90deg, var(--primary), var(--accent));
-    border-radius: 10px;
-}
-
-/* --- CARTES ULTRA-DÉTAILLÉES (PROJETS/STAGES) --- */
+/* --- CARTES STYLE "UNITÉ RÉSEAU" --- */
 .project-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 35px;
+    gap: 30px;
 }
 
 .project-card {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    box-shadow: var(--shadow-soft);
-    transition: var(--transition);
+    background: var(--terminal-black);
+    border: 1px solid var(--border-color);
+    border-radius: var(--card-radius);
+    padding: var(--inner-padding); /* Texte bien décollé des bords */
+    transition: var(--transition-fast);
     position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-.project-card::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: var(--radius-lg);
-    padding: 2px; 
-    background: linear-gradient(135deg, var(--primary), transparent);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    opacity: 0;
-    transition: var(--transition);
+    overflow: hidden;
 }
 
 .project-card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: var(--shadow-glow);
-}
-
-.project-card:hover::after {
-    opacity: 1;
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+    transform: translateY(-5px);
 }
 
 .project-card h3 {
-    font-size: 1.4rem;
-    color: var(--text-head);
+    font-size: 1.25rem;
     margin-bottom: 15px;
-    font-weight: 700;
+    color: var(--text-primary);
 }
 
+.project-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    text-align: justify; /* Pour une lecture plus pro */
+}
+
+/* Style Terminal pour les petits détails */
 .project-card .meta {
+    font-family: 'Fira Code', monospace;
     font-size: 0.8rem;
-    font-weight: 700;
-    color: var(--primary);
-    text-transform: uppercase;
-    background: var(--primary-soft);
-    padding: 4px 12px;
-    border-radius: 20px;
-    align-self: flex-start;
+    color: var(--neon-cyan);
+    background: rgba(34, 211, 238, 0.1);
+    padding: 4px 10px;
+    border-radius: 4px;
+    display: inline-block;
     margin-bottom: 15px;
 }
 
-/* --- LISTES DE COMPÉTENCES (STYLE TAGS) --- */
+/* --- BOUTONS ACTIONS --- */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background: var(--neon-blue);
+    color: white !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    transition: 0.3s;
+    border: none;
+    box-shadow: 0 4px 0px #1e40af; /* Effet bouton physique */
+}
+
+.btn:hover {
+    background: var(--neon-cyan);
+    box-shadow: 0 4px 0px #0891b2;
+    transform: translateY(-2px);
+}
+
+/* --- LISTES DE COMPÉTENCES --- */
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -208,87 +172,26 @@ h2::before {
 }
 
 .skills-list li {
-    background: var(--card-bg);
-    border: 1px solid var(--glass-border);
-    padding: 12px 22px;
-    border-radius: 50px;
-    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    background: #1e293b;
+    border: 1px solid var(--neon-blue);
+    padding: 8px 18px;
+    border-radius: 4px;
     font-size: 0.85rem;
-    transition: var(--transition);
-    box-shadow: var(--shadow-sm);
-}
-
-.skills-list li:hover {
-    background: var(--primary);
-    color: white;
-    transform: scale(1.1) rotate(2deg);
-    box-shadow: var(--shadow-glow);
-}
-
-/* --- BOUTONS D'ACTION (CTA) --- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 14px 28px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white !important;
-    text-decoration: none !important;
-    border-radius: var(--radius-sm);
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: var(--transition);
-    margin-top: 20px;
-    border: none;
-    box-shadow: 0 8px 20px rgba(0, 98, 255, 0.25);
-}
-
-.btn:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-    box-shadow: 0 12px 25px rgba(0, 98, 255, 0.4);
-}
-
-/* --- THEME TOGGLE --- */
-.theme-toggle {
-    background: var(--primary-soft);
-    border: 1px solid var(--glass-border);
-    color: var(--primary);
-    width: 48px;
-    height: 48px;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.theme-toggle:hover {
-    background: var(--primary);
-    color: white;
+    color: var(--neon-cyan);
 }
 
 /* --- FOOTER --- */
 footer {
-    margin-top: 100px;
-    padding: 60px 0;
-    background: var(--text-head);
-    color: white;
+    margin-top: 80px;
+    background: #000;
+    padding: 40px 0;
     text-align: center;
-    border-radius: 40px 40px 0 0;
+    border-top: 1px solid var(--neon-blue);
 }
 
 footer p {
-    font-weight: 500;
-    opacity: 0.6;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-    .container { padding: 0 20px; }
-    h2 { font-size: 2rem; }
-    header { top: 10px; margin: 0 10px; }
-    nav ul { display: none; } /* On pourrait ajouter un menu burger ici */
+    font-family: 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: var(--text-secondary);
 }
