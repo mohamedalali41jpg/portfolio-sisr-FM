@@ -1,344 +1,251 @@
 /* ==========================================================================
-   PORTFOLIO INÉDIT - CONCEPT "HOLO-TECH BLUEPRINT" 2026
-   Création sur-mesure : Lumineux, Architectural, Holographique
+   PORTFOLIO "SPATIAL BENTO UI" - ÉLITE 2026
    ========================================================================== */
 
-/* Polices uniques : Space Grotesk (Futuriste/Tech) + DM Sans (Douceur/Lisibilité) */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* Palette Lumineuse et Prismatique */
-  --bg-base: #f9fafd;         /* Blanc nacré très doux */
-  --text-main: #141628;       /* Bleu marine très sombre (presque noir) pour lire */
-  --text-soft: #646881;       /* Gris bleuté */
+  /* Thème Clair (Ultra Premium & Lumineux) */
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.06);
+  --primary-color: #0066ff;
+  --primary-glow: rgba(0, 102, 255, 0.15);
   
-  /* Couleurs Holographiques (Aurore boréale claire) */
-  --holo-cyan: #84fab0;
-  --holo-blue: #8fd3f4;
-  --holo-lavender: #a1c4fd;
-  --holo-peach: #ffecd2;
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 102, 255, 0.1);
   
-  --glass-bg: rgba(255, 255, 255, 0.6);
-  --glass-border: rgba(255, 255, 255, 0.9);
+  --radius-lg: 32px;
+  --radius-md: 16px;
+  --radius-sm: 8px;
   
-  --radius-fluid: 24px;
-  --transition-magic: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ==========================================================================
-   FOND ANIMÉ & GRILLE ARCHITECTURALE
-   ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+[data-theme="dark"] {
+  /* Thème Sombre (Profondeur & Contraste) */
+  --bg-page: #050505;
+  --bg-card: #111111;
+  --text-main: #ffffff;
+  --text-muted: #a1a1aa;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --primary-color: #3b82f6;
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 0 40px rgba(59, 130, 246, 0.15);
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* --- RESET --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-page);
   color: var(--text-main);
-  background-color: var(--bg-base);
-  line-height: 1.7;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.4s ease;
   overflow-x: hidden;
-  position: relative;
-  
-  /* Grille technique subtile (Style plan d'ingénieur) */
-  background-image: 
-    linear-gradient(rgba(161, 196, 253, 0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(161, 196, 253, 0.15) 1px, transparent 1px);
-  background-size: 40px 40px;
 }
 
-/* Taches de lumière holographique qui flottent en arrière-plan */
-body::before, body::after {
+/* Motif de fond très subtil (Grille) */
+body::before {
   content: '';
   position: fixed;
-  width: 60vw;
-  height: 60vw;
-  border-radius: 50%;
+  inset: 0;
+  background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
   z-index: -1;
-  filter: blur(80px);
-  opacity: 0.5;
-  animation: floatHolo 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body::before {
-  top: -10%; left: -10%;
-  background: radial-gradient(circle, var(--holo-blue), var(--holo-lavender), transparent 70%);
-}
-
-body::after {
-  bottom: -10%; right: -10%;
-  background: radial-gradient(circle, var(--holo-peach), var(--holo-cyan), transparent 70%);
-  animation-delay: -10s;
-}
-
-@keyframes floatHolo {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(5vw, 10vh) scale(1.1); }
-  100% { transform: translate(-5vw, -5vh) scale(0.9); }
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 5vw;
 }
 
-/* ==========================================================================
-   TYPOGRAPHIE AVANT-GARDE
-   ========================================================================== */
+/* --- TYPOGRAPHIE --- */
 h1, h2, h3 {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.05em;
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-main);
+  letter-spacing: -0.03em;
 }
 
-h2 {
-  font-size: 3rem;
-  margin-bottom: 50px;
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(90deg, #141628, #5a608a);
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* ==========================================================================
-   HEADER "BULLE DE VERRE"
-   ========================================================================== */
+/* --- NAVIGATION EN VERRE (Flottante) --- */
 header {
   position: fixed;
-  top: 30px;
+  top: 24px;
   left: 50%;
   transform: translateX(-50%);
-  width: max-content;
-  max-width: 90vw;
   z-index: 1000;
-  background: var(--glass-bg);
+  background: rgba(var(--bg-card), 0.7);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 2px solid var(--glass-border);
+  border: 1px solid var(--border-color);
   border-radius: 100px;
-  padding: 10px 30px;
-  box-shadow: 0 10px 40px rgba(161, 196, 253, 0.2);
+  padding: 8px 16px;
+  box-shadow: var(--shadow-card);
+  width: max-content;
+  max-width: 90vw;
 }
 
 header .container {
   display: flex;
   align-items: center;
-  gap: 50px;
+  gap: 30px;
   padding: 0;
 }
 
-header h1 {
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  color: var(--text-main);
-}
+header h1 { font-size: 1.1rem; font-weight: 800; display: none; } /* Caché sur desktop pour épuré */
 
-nav ul {
-  display: flex;
-  gap: 10px;
-  list-style: none;
-}
+nav ul { display: flex; gap: 8px; list-style: none; }
 
 nav a {
   text-decoration: none;
-  color: var(--text-soft);
-  font-family: 'Space Grotesk', sans-serif;
+  color: var(--text-muted);
+  font-weight: 600;
   font-size: 0.95rem;
-  font-weight: 500;
-  padding: 8px 20px;
-  border-radius: 50px;
-  transition: var(--transition-magic);
+  padding: 10px 18px;
+  border-radius: 100px;
+  transition: var(--transition);
 }
 
 nav a:hover, nav a.active {
-  color: #fff;
-  background: linear-gradient(135deg, var(--holo-lavender), var(--holo-blue));
-  box-shadow: 0 4px 15px rgba(161, 196, 253, 0.4);
+  color: var(--bg-page);
+  background: var(--text-main);
 }
 
-/* ==========================================================================
-   STRUCTURE
-   ========================================================================== */
-main {
-  padding-top: 180px;
-  padding-bottom: 100px;
+.theme-toggle {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+.theme-toggle:hover { background: var(--border-color); }
+
+/* --- ARCHITECTURE BENTO GRID --- */
+main { padding-top: 150px; padding-bottom: 100px; }
+
+.page-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 50px;
+  text-align: center;
 }
 
-.section {
-  margin-bottom: 120px;
-}
-
-/* ==========================================================================
-   CARTES "PRISME" (Interaction Magique)
-   ========================================================================== */
-.project-list {
+.bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
 }
 
-.project-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255, 0.8);
-  border-radius: var(--radius-fluid);
-  padding: 45px; /* Espace immense, très luxueux */
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
   display: flex;
   flex-direction: column;
-  transition: var(--transition-magic);
   position: relative;
-  z-index: 10;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-/* L'ombre devient colorée au survol ! */
-.project-card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.9);
-  border-color: #fff;
-  box-shadow: 
-    0 20px 40px -10px rgba(161, 196, 253, 0.5),
-    0 0 20px rgba(132, 250, 176, 0.2);
+.bento-card:hover {
+  transform: translateY(-5px) scale(0.99); /* Effet Push Apple */
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-hover);
 }
 
-.project-card h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-  color: var(--text-main);
-}
+.bento-card h3 { font-size: 1.6rem; margin-bottom: 16px; }
+.bento-card p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; }
 
-.project-card p {
-  font-size: 1.05rem;
-  color: var(--text-soft);
-  margin-bottom: 30px;
-  flex-grow: 1;
-}
-
-.project-card .meta {
+.meta-tag {
   display: inline-block;
-  font-family: 'Space Grotesk', sans-serif;
+  background: var(--primary-glow);
+  color: var(--primary-color);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
-  color: var(--holo-blue);
-  background: rgba(161, 196, 253, 0.15);
+  letter-spacing: 1px;
   padding: 6px 14px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-/* ==========================================================================
-   TAGS COMPÉTENCES (Style Gélule)
-   ========================================================================== */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-}
-
-.skills-list li {
-  background: #ffffff;
-  color: var(--text-main);
-  border: 1px solid rgba(161, 196, 253, 0.3);
-  padding: 10px 22px;
   border-radius: 100px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
-  transition: var(--transition-magic);
+  margin-bottom: 20px;
+  width: max-content;
 }
 
-.skills-list li:hover {
-  background: linear-gradient(135deg, var(--holo-peach), var(--holo-lavender));
-  color: #141628;
-  border-color: transparent;
-  transform: scale(1.05) rotate(-1deg);
-  box-shadow: 0 8px 20px rgba(161, 196, 253, 0.3);
-}
-
-/* ==========================================================================
-   BOUTONS "AURA"
-   ========================================================================== */
+/* --- BOUTONS --- */
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 16px 36px;
+  gap: 8px;
+  padding: 14px 28px;
   background: var(--text-main);
-  color: #fff !important;
+  color: var(--bg-page) !important;
   text-decoration: none;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-weight: 700;
-  font-size: 1rem;
   border-radius: 100px;
-  transition: var(--transition-magic);
-  border: none;
-  margin-top: 20px;
+  transition: var(--transition);
+  border: 1px solid transparent;
   width: max-content;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Effet de brillance qui traverse le bouton au survol */
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0; left: -100%; width: 50%; height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-  transition: 0.5s;
 }
 
 .btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(20, 22, 40, 0.2);
+  transform: scale(1.05);
+  background: var(--primary-color);
+  color: #fff !important;
+  box-shadow: 0 10px 25px var(--primary-glow);
 }
 
-.btn:hover::after {
-  left: 150%;
+/* --- TAGS COMPÉTENCES --- */
+.skills-tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
+.skills-tags li {
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  border-radius: 100px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition);
+  background: var(--bg-card);
+}
+.skills-tags li:hover {
+  background: var(--text-main);
+  color: var(--bg-page);
+  border-color: var(--text-main);
 }
 
-/* ==========================================================================
-   FOOTER AÉRIEN
-   ========================================================================== */
+/* --- ANIMATIONS --- */
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FOOTER --- */
 footer {
   text-align: center;
-  padding: 80px 0 40px 0;
-  border-top: 1px dashed rgba(161, 196, 253, 0.5);
-  color: var(--text-soft);
+  padding: 60px 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
 }
 
-footer p {
-  font-size: 1rem;
-  font-family: 'Space Grotesk', sans-serif;
-}
-
-/* ==========================================================================
-   RESPONSIVE DESIGN (Adaptable partout)
-   ========================================================================== */
-@media (max-width: 900px) {
-  header {
-    width: calc(100% - 40px);
-    border-radius: 20px;
-  }
-  header .container {
-    flex-direction: column;
-    gap: 15px;
-    padding: 10px 0;
-  }
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .project-card {
-    padding: 30px; /* S'adapte sur mobile */
-  }
-}
+/* --- RESPONSIVE --- */
+@media (max-width: 900px)
