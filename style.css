@@ -1,156 +1,192 @@
 /* ==========================================================================
-   PORTFOLIO "SPATIAL BENTO UI" - ÉLITE 2026
+   PORTFOLIO - THÈME "GOOGLE MATERIAL DESIGN" 2026
+   Inspiration : Google Workspace, Google Search, Android Material You
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap');
+/* Importation de la police officielle Google (Roboto) et d'une police proche de Google Sans (Outfit) pour les titres */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
 
 :root {
-  /* Thème Clair (Ultra Premium & Lumineux) */
-  --bg-page: #f8fafc;
-  --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --border-color: rgba(0, 0, 0, 0.06);
-  --primary-color: #0066ff;
-  --primary-glow: rgba(0, 102, 255, 0.15);
+  /* --- COULEURS GOOGLE (Thème Clair) --- */
+  --bg-page: #f8f9fa;           /* Gris très clair classique de Google */
+  --bg-card: #ffffff;           /* Blanc pur pour les cartes */
   
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 20px 40px -10px rgba(0, 102, 255, 0.1);
+  --text-main: #202124;         /* Noir/Gris foncé typique de Google */
+  --text-muted: #5f6368;        /* Gris secondaire */
   
-  --radius-lg: 32px;
-  --radius-md: 16px;
+  --border-color: #dadce0;      /* Bordure subtile Google Drive */
+  
+  /* Les 4 couleurs officielles Google */
+  --google-blue: #1a73e8;
+  --google-red: #ea4335;
+  --google-yellow: #fbbc04;
+  --google-green: #34a853;
+  
+  --primary-color: var(--google-blue);
+  
+  /* Couleurs interactives (Hover/Active) */
+  --hover-bg: #f1f3f4;          /* Gris au survol */
+  --active-bg: #e8f0fe;         /* Fond bleu clair au clic/actif */
+  --active-text: #1967d2;       /* Texte bleu foncé au clic/actif */
+
+  /* Ombres Material Design (Élévation) */
+  --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  --shadow-2: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
+  
+  /* Arrondis Material 3 */
+  --radius-lg: 24px;
+  --radius-md: 12px;
   --radius-sm: 8px;
+  --radius-pill: 100px;
   
-  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* --- THÈME SOMBRE (Google Dark Mode) --- */
 [data-theme="dark"] {
-  /* Thème Sombre (Profondeur & Contraste) */
-  --bg-page: #050505;
-  --bg-card: #111111;
-  --text-main: #ffffff;
-  --text-muted: #a1a1aa;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --primary-color: #3b82f6;
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-hover: 0 0 40px rgba(59, 130, 246, 0.15);
+  --bg-page: #202124;
+  --bg-card: #303134;
+  --text-main: #e8eaed;
+  --text-muted: #9aa0a6;
+  --border-color: #5f6368;
+  --primary-color: #8ab4f8;     /* Bleu clair adapté au mode sombre */
+  --hover-bg: #3c4043;
+  --active-bg: rgba(138, 180, 248, 0.12);
+  --active-text: #8ab4f8;
+  --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
+  --shadow-2: 0 1px 3px 0 rgba(0,0,0,0.3), 0 4px 8px 3px rgba(0,0,0,0.15);
 }
 
-/* --- RESET --- */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+/* ==========================================================================
+   RESET & BASE
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Roboto', -apple-system, sans-serif;
   background-color: var(--bg-page);
   color: var(--text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.4s ease;
-  overflow-x: hidden;
-}
-
-/* Motif de fond très subtil (Grille) */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: linear-gradient(var(--border-color) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
-  background-size: 40px 40px;
-  opacity: 0.3;
-  z-index: -1;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1000px; /* Plus centré, façon résultats de recherche Google */
   margin: 0 auto;
-  padding: 0 5vw;
+  padding: 0 24px;
 }
 
-/* --- TYPOGRAPHIE --- */
-h1, h2, h3 {
-  font-family: 'Outfit', sans-serif;
+/* ==========================================================================
+   TYPOGRAPHIE
+   ========================================================================== */
+h1, h2, h3, .page-title {
+  font-family: 'Outfit', 'Product Sans', sans-serif; /* Style titre Google */
   color: var(--text-main);
-  letter-spacing: -0.03em;
+  font-weight: 500;
+  letter-spacing: -0.01em;
 }
 
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Optionnel : Mettre en couleur les mots clés pour rappeler le logo Google */
 .gradient-text {
-  background: linear-gradient(135deg, var(--primary-color), #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--primary-color);
 }
 
-/* --- NAVIGATION EN VERRE (Flottante) --- */
+/* ==========================================================================
+   HEADER & NAVIGATION (Style Google Drive / Barre de recherche)
+   ========================================================================== */
 header {
-  position: fixed;
-  top: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  position: sticky;
+  top: 0;
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
   z-index: 1000;
-  background: rgba(var(--bg-card), 0.7);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
-  padding: 8px 16px;
-  box-shadow: var(--shadow-card);
-  width: max-content;
-  max-width: 90vw;
+  transition: box-shadow 0.3s ease;
+}
+
+/* Ajoute une ombre quand on scrolle (optionnel mais très Google) */
+header.scrolled {
+  box-shadow: var(--shadow-1);
 }
 
 header .container {
   display: flex;
   align-items: center;
-  gap: 30px;
-  padding: 0;
+  justify-content: center; /* Centré comme les onglets Google */
+  position: relative;
 }
 
-header h1 { font-size: 1.1rem; font-weight: 800; display: none; } /* Caché sur desktop pour épuré */
-
-nav ul { display: flex; gap: 8px; list-style: none; }
+nav ul {
+  display: flex;
+  gap: 4px;
+  list-style: none;
+}
 
 nav a {
   text-decoration: none;
   color: var(--text-muted);
-  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 500;
   font-size: 0.95rem;
-  padding: 10px 18px;
-  border-radius: 100px;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
   transition: var(--transition);
 }
 
-nav a:hover, nav a.active {
-  color: var(--bg-page);
-  background: var(--text-main);
+nav a:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-main);
 }
 
+/* Onglet actif (Style sélection Google) */
+nav a.active {
+  background-color: var(--active-bg);
+  color: var(--active-text);
+}
+
+/* Bouton Thème */
 .theme-toggle {
+  position: absolute;
+  right: 24px;
   background: transparent;
   border: none;
-  color: var(--text-main);
+  color: var(--text-muted);
   cursor: pointer;
-  padding: 10px;
+  padding: 8px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
-  border-radius: 50%;
+  justify-content: center;
   transition: var(--transition);
 }
-.theme-toggle:hover { background: var(--border-color); }
 
-/* --- ARCHITECTURE BENTO GRID --- */
-main { padding-top: 150px; padding-bottom: 100px; }
+.theme-toggle:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-main);
+}
 
-.page-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  font-weight: 800;
-  margin-bottom: 50px;
-  text-align: center;
+/* ==========================================================================
+   CARTES DE PROJET / STAGE (Style Material Design 3)
+   ========================================================================== */
+main {
+  padding-top: 60px;
+  padding-bottom: 80px;
 }
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
@@ -158,94 +194,156 @@ main { padding-top: 150px; padding-bottom: 100px; }
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-card);
+  padding: 32px;
   transition: var(--transition);
   display: flex;
   flex-direction: column;
-  position: relative;
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(30px);
-  animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
+/* Élévation Material Design au survol */
 .bento-card:hover {
-  transform: translateY(-5px) scale(0.99); /* Effet Push Apple */
-  border-color: var(--primary-color);
-  box-shadow: var(--shadow-hover);
+  box-shadow: var(--shadow-2);
+  transform: translateY(-2px);
+  border-color: transparent;
 }
 
-.bento-card h3 { font-size: 1.6rem; margin-bottom: 16px; }
-.bento-card p { font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px; flex-grow: 1; }
+.bento-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
 
+.bento-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+/* Petit tag de catégorie (Style "Chip" Google) */
 .meta-tag {
   display: inline-block;
-  background: var(--primary-glow);
-  color: var(--primary-color);
-  font-size: 0.8rem;
-  font-weight: 700;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 14px;
-  border-radius: 100px;
-  margin-bottom: 20px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
   width: max-content;
 }
 
-/* --- BOUTONS --- */
+/* ==========================================================================
+   TAGS COMPÉTENCES (Style Google Chips)
+   ========================================================================== */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.skills-tags li {
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  border: 1px solid var(--border-color);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.skills-tags li:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-main);
+}
+
+/* ==========================================================================
+   BOUTONS (Style Material Filled Button)
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  padding: 14px 28px;
-  background: var(--text-main);
-  color: var(--bg-page) !important;
+  justify-content: center;
+  padding: 10px 24px;
+  background-color: var(--primary-color);
+  color: #ffffff !important;
   text-decoration: none;
   font-family: 'Outfit', sans-serif;
-  font-weight: 700;
-  border-radius: 100px;
-  transition: var(--transition);
-  border: 1px solid transparent;
-  width: max-content;
-}
-
-.btn:hover {
-  transform: scale(1.05);
-  background: var(--primary-color);
-  color: #fff !important;
-  box-shadow: 0 10px 25px var(--primary-glow);
-}
-
-/* --- TAGS COMPÉTENCES --- */
-.skills-tags { display: flex; flex-wrap: wrap; gap: 10px; list-style: none; }
-.skills-tags li {
-  padding: 10px 20px;
-  border: 1px solid var(--border-color);
-  border-radius: 100px;
   font-weight: 500;
   font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  border: none;
   transition: var(--transition);
-  background: var(--bg-card);
-}
-.skills-tags li:hover {
-  background: var(--text-main);
-  color: var(--bg-page);
-  border-color: var(--text-main);
+  width: max-content;
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3); /* Ombre légère de base */
 }
 
-/* --- ANIMATIONS --- */
-@keyframes slideUp {
-  to { opacity: 1; transform: translateY(0); }
+/* Effet "Ripple" stylisé au survol */
+.btn:hover {
+  background-color: #1557b0; /* Bleu Google plus foncé */
+  box-shadow: var(--shadow-1);
 }
 
-/* --- FOOTER --- */
+[data-theme="dark"] .btn {
+  color: #202124 !important; /* Texte sombre sur bouton clair en dark mode */
+}
+[data-theme="dark"] .btn:hover {
+  background-color: #aecbfa; /* Bleu plus clair au survol */
+}
+
+/* Bouton contour (Outlined Button) - si besoin d'un bouton secondaire */
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary-color) !important;
+  border: 1px solid var(--border-color);
+  box-shadow: none;
+}
+
+.btn-outline:hover {
+  background-color: var(--active-bg);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
   text-align: center;
-  padding: 60px 0;
+  padding: 40px 0;
   border-top: 1px solid var(--border-color);
   color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 900px)
+/* ==========================================================================
+   RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 800px) {
+  header .container {
+    flex-direction: column;
+    padding: 16px;
+  }
+  
+  .theme-toggle {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  
+  .page-title {
+    font-size: 2rem;
+    text-align: center;
+  }
+}
