@@ -1,49 +1,32 @@
 /* ==========================================================================
-   PORTFOLIO ÉLITE - ARCHITECTURE SISR & DÉVELOPPEMENT
-   Inspiration : Vercel, Stripe, Linear, Apple
-   Thème : Deep Space & Neon Tech
+   PORTFOLIO INÉDIT - CONCEPT "HOLO-TECH BLUEPRINT" 2026
+   Création sur-mesure : Lumineux, Architectural, Holographique
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap');
+/* Polices uniques : Space Grotesk (Futuriste/Tech) + DM Sans (Douceur/Lisibilité) */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500;600&family=Space+Grotesk:wght@500;700&display=swap');
 
 :root {
-  /* --- PALETTE DE COULEURS PRO (Mode Sombre Natif) --- */
-  --bg-base: #030303;           /* Noir absolu pour le fond profond */
-  --bg-surface: #0a0a0a;        /* Noir légèrement éclairci pour les surfaces */
-  --bg-card: rgba(20, 20, 20, 0.6); /* Cartes avec effet verre */
+  /* Palette Lumineuse et Prismatique */
+  --bg-base: #f9fafd;         /* Blanc nacré très doux */
+  --text-main: #141628;       /* Bleu marine très sombre (presque noir) pour lire */
+  --text-soft: #646881;       /* Gris bleuté */
   
-  --text-primary: #ffffff;      /* Blanc pur pour les titres (Lisibilité max) */
-  --text-secondary: #a1a1aa;    /* Gris argenté pour les paragraphes */
-  --text-muted: #52525b;        /* Gris sombre pour les détails */
+  /* Couleurs Holographiques (Aurore boréale claire) */
+  --holo-cyan: #84fab0;
+  --holo-blue: #8fd3f4;
+  --holo-lavender: #a1c4fd;
+  --holo-peach: #ffecd2;
   
-  /* Couleurs d'accentuation (Technologiques et Vives) */
-  --accent-blue: #3b82f6;       /* Bleu Azure */
-  --accent-purple: #8b5cf6;     /* Violet Néon */
-  --accent-cyan: #06b6d4;       /* Cyan Cyber */
+  --glass-bg: rgba(255, 255, 255, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.9);
   
-  /* Dégradés complexes */
-  --gradient-brand: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
-  --gradient-glow: linear-gradient(to right, var(--accent-cyan), var(--accent-blue), var(--accent-purple));
-  --gradient-text: linear-gradient(to bottom right, #ffffff 30%, #a1a1aa 100%);
-  
-  /* --- VARIABLES DE STRUCTURE --- */
-  --radius-sm: 8px;
-  --radius-md: 16px;
-  --radius-lg: 24px;
-  --radius-pill: 9999px;
-  
-  --spacing-container: clamp(20px, 5vw, 60px);
-  
-  /* --- TRANSITIONS FLUIDES --- */
-  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  --ease-smooth: cubic-bezier(0.25, 0.1, 0.25, 1);
-  --transition-fast: 0.15s var(--ease-smooth);
-  --transition-normal: 0.3s var(--ease-smooth);
-  --transition-slow: 0.5s var(--ease-spring);
+  --radius-fluid: 24px;
+  --transition-magic: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 /* ==========================================================================
-   RESET & FOND DE PAGE AVANCÉ
+   FOND ANIMÉ & GRILLE ARCHITECTURALE
    ========================================================================== */
 * {
   margin: 0;
@@ -53,381 +36,309 @@
 
 html {
   scroll-behavior: smooth;
-  scrollbar-width: thin;
-  scrollbar-color: var(--text-muted) var(--bg-base);
 }
 
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text-main);
   background-color: var(--bg-base);
-  color: var(--text-secondary);
   line-height: 1.7;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  position: relative;
   
-  /* Création d'un fond "Glow" radial derrière le site */
+  /* Grille technique subtile (Style plan d'ingénieur) */
   background-image: 
-    radial-gradient(circle at 15% 50%, rgba(59, 130, 246, 0.08), transparent 25%),
-    radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
-  background-attachment: fixed;
+    linear-gradient(rgba(161, 196, 253, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(161, 196, 253, 0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* Sélection de texte stylisée */
-::selection {
-  background: rgba(139, 92, 246, 0.3);
-  color: #fff;
+/* Taches de lumière holographique qui flottent en arrière-plan */
+body::before, body::after {
+  content: '';
+  position: fixed;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.5;
+  animation: floatHolo 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body::before {
+  top: -10%; left: -10%;
+  background: radial-gradient(circle, var(--holo-blue), var(--holo-lavender), transparent 70%);
+}
+
+body::after {
+  bottom: -10%; right: -10%;
+  background: radial-gradient(circle, var(--holo-peach), var(--holo-cyan), transparent 70%);
+  animation-delay: -10s;
+}
+
+@keyframes floatHolo {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5vw, 10vh) scale(1.1); }
+  100% { transform: translate(-5vw, -5vh) scale(0.9); }
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 0 var(--spacing-container);
-  position: relative;
-  z-index: 10;
+  padding: 0 40px;
 }
 
 /* ==========================================================================
-   TYPOGRAPHIE (Fluide et Impactante)
+   TYPOGRAPHIE AVANT-GARDE
    ========================================================================== */
-h1, h2, h3, h4 {
-  color: var(--text-primary);
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
+  letter-spacing: -0.05em;
 }
 
 h2 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 3rem;
-  background: var(--gradient-text);
+  font-size: 3rem;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #141628, #5a608a);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: inline-block;
-}
-
-p {
-  font-size: 1.05rem;
-  margin-bottom: 1.5rem;
 }
 
 /* ==========================================================================
-   HEADER & NAVIGATION (Style "Floating Pill")
+   HEADER "BULLE DE VERRE"
    ========================================================================== */
 header {
   position: fixed;
-  top: 20px;
+  top: 30px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 900px;
+  width: max-content;
+  max-width: 90vw;
   z-index: 1000;
-  background: rgba(10, 10, 10, 0.6);
+  background: var(--glass-bg);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: var(--radius-pill);
-  padding: 12px 24px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  animation: slideDown 0.8s var(--ease-spring) forwards;
+  border: 2px solid var(--glass-border);
+  border-radius: 100px;
+  padding: 10px 30px;
+  box-shadow: 0 10px 40px rgba(161, 196, 253, 0.2);
 }
 
 header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 50px;
   padding: 0;
-  width: 100%;
 }
 
 header h1 {
-  font-size: 1.1rem;
-  font-weight: 800;
+  font-size: 1.2rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text-main);
 }
 
 nav ul {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   list-style: none;
 }
 
 nav a {
   text-decoration: none;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
+  color: var(--text-soft);
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.95rem;
   font-weight: 500;
-  padding: 8px 16px;
-  border-radius: var(--radius-pill);
-  transition: var(--transition-normal);
-  position: relative;
+  padding: 8px 20px;
+  border-radius: 50px;
+  transition: var(--transition-magic);
 }
 
-/* Lueur au survol des liens */
-nav a:hover {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-nav a.active {
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+nav a:hover, nav a.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--holo-lavender), var(--holo-blue));
+  box-shadow: 0 4px 15px rgba(161, 196, 253, 0.4);
 }
 
 /* ==========================================================================
-   SECTIONS & GRILLES (Bento Box Design)
+   STRUCTURE
    ========================================================================== */
 main {
-  padding-top: 150px; /* Espace pour le header flottant */
+  padding-top: 180px;
   padding-bottom: 100px;
 }
 
 .section {
-  margin-bottom: 100px;
-  opacity: 0;
-  animation: fadeIn 1s ease forwards 0.3s;
+  margin-bottom: 120px;
 }
 
+/* ==========================================================================
+   CARTES "PRISME" (Interaction Magique)
+   ========================================================================== */
 .project-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: 30px;
+  gap: 40px;
 }
 
-/* ==========================================================================
-   CARTES DE PROJETS/STAGES (Effet Holographique & Glow)
-   ========================================================================== */
 .project-card {
-  position: relative;
-  background: var(--bg-card);
-  border-radius: var(--radius-lg);
-  padding: 40px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255, 0.8);
+  border-radius: var(--radius-fluid);
+  padding: 45px; /* Espace immense, très luxueux */
   display: flex;
   flex-direction: column;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  transition: var(--transition-slow);
-  overflow: hidden;
-  z-index: 1;
+  transition: var(--transition-magic);
+  position: relative;
+  z-index: 10;
 }
 
-/* Le fond animé (Glow invisible par défaut) */
-.project-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: var(--radius-lg);
-  padding: 2px; /* Epaisseur de la bordure lumineuse */
-  background: var(--gradient-glow);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: var(--transition-slow);
-  z-index: -1;
-}
-
-/* Tâche de lumière radiale au survol (Effet lampe torche) */
-.project-card::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(800px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 255, 255, 0.06), transparent 40%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Interactions de la carte */
+/* L'ombre devient colorée au survol ! */
 .project-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.8), 0 0 20px rgba(59, 130, 246, 0.1);
-  background: rgba(25, 25, 25, 0.8);
-}
-
-.project-card:hover::before {
-  opacity: 1; /* Allume la bordure néon */
-}
-
-.project-card:hover::after {
-  opacity: 1; /* Allume la lumière interne */
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: #fff;
+  box-shadow: 
+    0 20px 40px -10px rgba(161, 196, 253, 0.5),
+    0 0 20px rgba(132, 250, 176, 0.2);
 }
 
 .project-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   margin-bottom: 15px;
-  color: var(--text-primary);
-}
-
-.project-card .meta {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--accent-cyan);
-  margin-bottom: 20px;
-  display: block;
+  color: var(--text-main);
 }
 
 .project-card p {
-  color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.05rem;
+  color: var(--text-soft);
+  margin-bottom: 30px;
   flex-grow: 1;
 }
 
+.project-card .meta {
+  display: inline-block;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--holo-blue);
+  background: rgba(161, 196, 253, 0.15);
+  padding: 6px 14px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
 /* ==========================================================================
-   BADGES & COMPÉTENCES (Style Tags Data)
+   TAGS COMPÉTENCES (Style Gélule)
    ========================================================================== */
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
   list-style: none;
-  margin-top: 20px;
 }
 
 .skills-list li {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.8rem;
-  color: var(--text-primary);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 6px 14px;
-  border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
-  cursor: default;
+  background: #ffffff;
+  color: var(--text-main);
+  border: 1px solid rgba(161, 196, 253, 0.3);
+  padding: 10px 22px;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+  transition: var(--transition-magic);
 }
 
 .skills-list li:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: var(--accent-blue);
-  color: var(--accent-cyan);
-  transform: translateY(-2px);
+  background: linear-gradient(135deg, var(--holo-peach), var(--holo-lavender));
+  color: #141628;
+  border-color: transparent;
+  transform: scale(1.05) rotate(-1deg);
+  box-shadow: 0 8px 20px rgba(161, 196, 253, 0.3);
 }
 
 /* ==========================================================================
-   BOUTONS (Magnétiques & Lumineux)
+   BOUTONS "AURA"
    ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 28px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--text-primary) !important;
+  padding: 16px 36px;
+  background: var(--text-main);
+  color: #fff !important;
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: var(--radius-md);
-  transition: var(--transition-normal);
-  cursor: pointer;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 100px;
+  transition: var(--transition-magic);
+  border: none;
+  margin-top: 20px;
+  width: max-content;
   position: relative;
   overflow: hidden;
-  margin-top: 25px;
 }
 
-.btn::before {
+/* Effet de brillance qui traverse le bouton au survol */
+.btn::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: var(--gradient-brand);
-  opacity: 0;
-  transition: var(--transition-normal);
-  z-index: -1;
+  top: 0; left: -100%; width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: 0.5s;
 }
 
 .btn:hover {
   transform: translateY(-3px);
-  border-color: transparent;
-  box-shadow: 0 10px 20px -5px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 15px 30px rgba(20, 22, 40, 0.2);
 }
 
-.btn:hover::before {
-  opacity: 1;
+.btn:hover::after {
+  left: 150%;
 }
 
 /* ==========================================================================
-   FOOTER (Minimaliste et Centré)
+   FOOTER AÉRIEN
    ========================================================================== */
 footer {
   text-align: center;
-  padding: 60px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 60px;
+  padding: 80px 0 40px 0;
+  border-top: 1px dashed rgba(161, 196, 253, 0.5);
+  color: var(--text-soft);
 }
 
 footer p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  font-family: 'JetBrains Mono', monospace;
-}
-
-/* Bouton pour basculer le thème (optionnel vu que c'est du dark pur, mais stylisé) */
-.theme-toggle {
-  display: none; /* Désactivé pour forcer l'expérience Dark Tech pure, retire cette ligne si tu le veux */
+  font-size: 1rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* ==========================================================================
-   ANIMATIONS CLÉS
-   ========================================================================== */
-@keyframes slideDown {
-  0% { transform: translate(-50%, -100%); opacity: 0; }
-  100% { transform: translate(-50%, 0); opacity: 1; }
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-/* ==========================================================================
-   MEDIA QUERIES (Responsive Design Absolu)
+   RESPONSIVE DESIGN (Adaptable partout)
    ========================================================================== */
 @media (max-width: 900px) {
   header {
-    width: 100%;
-    border-radius: 0;
-    top: 0;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    width: calc(100% - 40px);
+    border-radius: 20px;
   }
-  
-  main {
-    padding-top: 120px;
-  }
-}
-
-@media (max-width: 768px) {
   header .container {
     flex-direction: column;
     gap: 15px;
     padding: 10px 0;
   }
-  
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
   }
-  
   .project-card {
-    padding: 30px 20px;
-  }
-  
-  h2 {
-    font-size: 2rem;
+    padding: 30px; /* S'adapte sur mobile */
   }
 }
