@@ -3,71 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio BTS SIO SISR — Compétences</title>
+  <title>Compétences | Mohamed-ali Filali</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>Portfolio BTS&nbsp;SIO&nbsp;SISR</h1>
       <nav>
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="projets.html">Projets</a></li>
-          <li><a href="stage.html">Stage</a></li>
+          <li><a href="stage.html">Stages</a></li>
           <li><a href="competences.html" class="active">Compétences</a></li>
-          <li><a href="veilles.html">veilles</a></li>
+          <li><a href="veilles.html">Veille</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème">🌙</button>
+      <button class="theme-toggle" aria-label="Toggle theme"></button>
     </div>
   </header>
+
   <main>
-    <section class="section">
-      <h2>Compétences</h2>
-      <p>Durant ma formation et mes expériences professionnelles, j’ai développé des compétences variées&nbsp;:</p>
-      <h3>Administration systèmes</h3>
-      <ul class="skills-list">
-        <li>Active Directory (Windows Server 2019) : création d’utilisateurs, unités d’organisation, stratégies de groupe</li>
-        <li>Administration de postes clients Windows 10/11 et Linux (Debian/Ubuntu) : commandes de base, gestion des droits et des partages</li>
-        <li>Virtualisation&nbsp;: Hyper‑V, Proxmox (création de VM, snapshots, mise en réseau virtuelle)</li>
-        <li>Installation et configuration de serveurs locaux (Wampserver, LAMP)</li>
-      </ul>
-      <h3>Services réseau</h3>
-      <ul class="skills-list">
-        <li>Mise en place de services&nbsp;: DHCP, DNS, NAT/PAT</li>
-        <li>Routage IPv4/IPv6, création de VLAN, inter‑VLAN routing, filtrage ACL Cisco</li>
-        <li>Déploiement et administration d’annuaires Active Directory et de services FTP (FileZilla Server)</li>
-      </ul>
-      <h3>Sécurité</h3>
-      <ul class="skills-list">
-        <li>Configuration de pare‑feu (UFW, iptables, pare‑feu Windows) et mise en place de règles ACL</li>
-        <li>Utilisation de Fail2ban et surveillance des journaux pour protéger les services</li>
-        <li>Tolérance de pannes et répartition de charges (Linux Virtual Server)</li>
-      </ul>
-      <h3>Développement&nbsp;&amp;&nbsp;Scripting</h3>
-      <ul class="skills-list">
-        <li>Bash et PowerShell pour l’automatisation de tâches système</li>
-        <li>Python pour scripts et petits outils</li>
-        <li>HTML, CSS et bases en programmation pour la conception d’applications</li>
-      </ul>
-      <h3>Langues</h3>
-      <ul class="skills-list">
-        <li>Français : langue maternelle</li>
-        <li>Anglais : niveau A2</li>
-        <li>Espagnol : niveau A2</li>
-        <li>Arabe : courant</li>
-      </ul>
-    </section>
+    <div class="container">
+      <h1 class="page-title">Arsenal <span class="gradient-text">Technique</span></h1>
+      
+      <div class="bento-grid">
+        <div class="bento-card">
+          <span class="meta-tag">Infrastructures & OS</span>
+          <h3>Systèmes & Virtualisation</h3>
+          <p>Maîtrise des environnements serveurs et de la virtualisation pour assurer la continuité de service.</p>
+          <ul class="skills-tags">
+            <li>Windows Server 2022</li>
+            <li>Debian / Linux</li>
+            <li>Proxmox VE</li>
+            <li>VMware vSphere</li>
+            <li>Active Directory</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <span class="meta-tag">Connectivité</span>
+          <h3>Réseaux & Sécurité</h3>
+          <p>Conception, adressage et sécurisation des réseaux locaux professionnels.</p>
+          <ul class="skills-tags">
+            <li>Cisco IOS</li>
+            <li>Ubiquiti Unifi</li>
+            <li>VLAN & Routage</li>
+            <li>DHCP / DNS</li>
+            <li>Pare-feu</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <span class="meta-tag">Outils Pro</span>
+          <h3>Exploitation & Support</h3>
+          <p>Utilisation d'outils standards de l'industrie pour la gestion de parc et le support utilisateur.</p>
+          <ul class="skills-tags">
+            <li>GLPI (Ticketing)</li>
+            <li>OPSI (Déploiement)</li>
+            <li>Trello (Agile)</li>
+            <li>HPE iLO 6</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </main>
+
   <footer>
-    <!--
-      Pied de page : mon nom complet pour la signature du site.
-    -->
-    <p>&copy; 2025&nbsp;Mohamed‑Ali&nbsp;Filali — BTS&nbsp;SIO&nbsp;SISR.</p>
+    <p>&copy; 2026 Mohamed-ali Filali. Portfolio BTS SIO.</p>
   </footer>
 </body>
 </html>
