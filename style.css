@@ -1,197 +1,214 @@
-/* DESIGN CYBER-TECH PRO 2026
-   Thème : Console Administrateur / Datacenter 
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
-
+/* Modernized Portfolio - Light & Clean Tech Theme */
 :root {
-    /* Couleurs Informatiques (SISR) */
-    --bg-dark-pro: #020617;
-    --terminal-black: #0f172a;
-    --neon-blue: #3b82f6;
-    --neon-cyan: #22d3ee;
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
-    --border-color: #1e293b;
-    --glass-effect: rgba(15, 23, 42, 0.8);
-    
-    /* Espacements & Rayons */
-    --inner-padding: 40px; /* Évite que l'écriture colle aux bords */
-    --card-radius: 12px;
-    --transition-fast: 0.2s ease;
+    /* Palette de couleurs claires et professionnelles */
+    --bg: #f8fafc;           /* Fond très clair légèrement bleuté */
+    --surface: #ffffff;      /* Blanc pur pour les cartes */
+    --text: #1e293b;         /* Bleu nuit profond pour une lecture parfaite */
+    --muted: #64748b;        /* Gris ardoise pour les textes secondaires */
+    --primary: #3b82f6;      /* Bleu azur vif */
+    --accent: #0ea5e9;       /* Cyan pour les détails */
+    --card-border: #e2e8f0;  /* Bordures très fines */
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    --radius: 12px;
 }
 
-/* --- RESET & STRUCTURE --- */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+html, body {
+    height: 100%;
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--bg-dark-pro);
-    color: var(--text-primary);
-    line-height: 1.6;
+    font-family: 'Inter', -apple-system, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7; /* Espacement entre les lignes augmenté */
+    -webkit-font-smoothing: antialiased;
 }
 
+/* Container large avec marges de sécurité */
 .container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 30px; /* Marge de sécurité sur les côtés */
+    padding: 0 30px; /* Augmenté pour éviter que le texte touche les bords mobiles */
 }
 
-/* --- NAVIGATION STYLE "SERVER BLADE" --- */
+/* Header Premium */
 header {
-    background: var(--glass-effect);
-    backdrop-filter: blur(10px);
-    border-bottom: 2px solid var(--neon-blue);
-    padding: 15px 0;
+    background: #ffffff;
+    border-bottom: 1px solid var(--card-border);
+    padding: 20px 0;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 header h1 {
-    font-family: 'Fira Code', monospace;
-    font-size: 1.1rem;
-    color: var(--neon-cyan);
-    text-transform: uppercase;
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
 }
 
 nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
     gap: 15px;
-    list-style: none;
 }
 
-nav a {
+nav ul li a {
+    color: var(--muted);
     text-decoration: none;
-    color: var(--text-secondary);
+    padding: 8px 14px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 0.85rem;
-    padding: 8px 15px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-    transition: var(--transition-fast);
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
 }
 
-nav a:hover, nav a.active {
-    color: var(--neon-cyan);
-    border-color: var(--neon-blue);
-    background: rgba(59, 130, 246, 0.1);
+nav ul li a:hover {
+    color: var(--primary);
+    background-color: #eff6ff;
 }
 
-/* --- TITRES DE SECTION --- */
-h2 {
-    font-family: 'Fira Code', monospace;
+nav ul li a.active {
+    background-color: var(--primary);
+    color: #fff;
+}
+
+/* Sections */
+main {
+    padding: 60px 0;
+}
+
+.section {
+    margin-bottom: 60px;
+}
+
+.section h2 {
     font-size: 1.8rem;
-    color: var(--neon-blue);
-    margin: 50px 0 30px 0;
-    padding-left: 15px;
-    border-left: 5px solid var(--neon-cyan);
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: var(--text);
 }
 
-/* --- CARTES STYLE "UNITÉ RÉSEAU" --- */
+/* Grille de projets/stages */
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 30px;
 }
 
+/* Cartes avec beaucoup d'espace interne (Padding) */
 .project-card {
-    background: var(--terminal-black);
-    border: 1px solid var(--border-color);
-    border-radius: var(--card-radius);
-    padding: var(--inner-padding); /* Texte bien décollé des bords */
-    transition: var(--transition-fast);
-    position: relative;
-    overflow: hidden;
+    background-color: var(--surface);
+    padding: 35px; /* Augmenté pour que le texte ne soit pas serré */
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .project-card:hover {
-    border-color: var(--neon-blue);
-    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .project-card h3 {
-    font-size: 1.25rem;
-    margin-bottom: 15px;
-    color: var(--text-primary);
+    margin: 0 0 15px 0;
+    font-size: 1.2rem;
+    color: var(--primary);
 }
 
 .project-card p {
-    color: var(--text-secondary);
-    font-size: 0.95rem;
     margin-bottom: 20px;
-    text-align: justify; /* Pour une lecture plus pro */
+    font-size: 0.95rem;
+    color: var(--muted);
 }
 
-/* Style Terminal pour les petits détails */
-.project-card .meta {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
-    color: var(--neon-cyan);
-    background: rgba(34, 211, 238, 0.1);
-    padding: 4px 10px;
-    border-radius: 4px;
+/* Badges de compétences et métadonnées */
+.meta {
     display: inline-block;
-    margin-bottom: 15px;
-}
-
-/* --- BOUTONS ACTIONS --- */
-.btn {
-    display: inline-flex;
-    align-items: center;
-    padding: 12px 25px;
-    background: var(--neon-blue);
-    color: white !important;
-    text-decoration: none !important;
+    background: #f1f5f9;
+    color: var(--primary);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: 700;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.85rem;
-    border-radius: 4px;
-    transition: 0.3s;
-    border: none;
-    box-shadow: 0 4px 0px #1e40af; /* Effet bouton physique */
+    margin-bottom: 12px;
 }
 
-.btn:hover {
-    background: var(--neon-cyan);
-    box-shadow: 0 4px 0px #0891b2;
-    transform: translateY(-2px);
-}
-
-/* --- LISTES DE COMPÉTENCES --- */
 .skills-list {
+    list-style: none;
+    padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    list-style: none;
+    gap: 10px;
 }
 
 .skills-list li {
-    font-family: 'Fira Code', monospace;
-    background: #1e293b;
-    border: 1px solid var(--neon-blue);
-    padding: 8px 18px;
-    border-radius: 4px;
+    background: #ffffff;
+    border: 1px solid var(--card-border);
+    padding: 8px 16px;
+    border-radius: 50px;
     font-size: 0.85rem;
-    color: var(--neon-cyan);
+    font-weight: 500;
+    color: var(--text);
 }
 
-/* --- FOOTER --- */
+/* Boutons d'action */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: white !important;
+    text-decoration: none !important;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: opacity 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Footer doux */
 footer {
-    margin-top: 80px;
-    background: #000;
+    background: #ffffff;
+    border-top: 1px solid var(--card-border);
     padding: 40px 0;
     text-align: center;
-    border-top: 1px solid var(--neon-blue);
 }
 
 footer p {
-    font-family: 'Fira Code', monospace;
-    font-size: 0.8rem;
-    color: var(--text-secondary);
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin: 0;
+}
+
+/* Theme toggle minimaliste */
+.theme-toggle {
+    background: #f1f5f9;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+/* Corrections responsive pour petits écrans */
+@media (max-width: 600px) {
+    .container {
+        padding: 0 20px;
+    }
+    .project-card {
+        padding: 25px; /* Un peu moins sur mobile mais toujours aéré */
+    }
+    nav ul {
+        display: none; /* Cache le menu si trop serré, ou passe en colonne */
+    }
 }
