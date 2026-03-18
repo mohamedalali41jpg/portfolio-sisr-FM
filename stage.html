@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stages | Mohamed-ali Filali</title>
+  <title>Portfolio BTS SIO SISR — Mes Stages</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
 </head>
 <body>
@@ -14,73 +15,75 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="projets.html">Projets</a></li>
-          <li><a href="stage.html" class="active">Stages</a></li>
+          <li><a href="stage.html" class="active">Stage</a></li>
           <li><a href="competences.html">Compétences</a></li>
-          <li><a href="veilles.html">Veille</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <h1 class="page-title">Expérience <span class="gradient-text">Professionnelle</span></h1>
-      
-      <div class="bento-grid">
+      <h1 class="page-title">Parcours <span class="gradient-text">Professionnel</span></h1>
+      <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">
+        Retrouvez ici le détail de mes missions réalisées en entreprise, illustrant ma progression technique entre ma première et ma deuxième année.
+      </p>
+
+      <div class="bento-grid" style="grid-template-columns: 1fr;">
+        
         <div class="bento-card">
-          <span class="meta-tag">2ème Année | Janv - Fév 2026</span>
-          <h3>Ingénierie Système & Virtualisation</h3>
-          <p><strong>L'enjeu :</strong> Moderniser l'infrastructure en migrant vers des solutions Open Source et déployer du stockage haute performance.</p>
-          <p><strong>Explication globale :</strong> Un projet d'envergure consistant à remplacer VMware par Proxmox pour réduire les coûts, tout en mettant en service des serveurs HPE de grande capacité.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px;">
+            <h3 style="font-size: 1.6rem; color: var(--primary-color); margin: 0;">Stage de 1ère Année : Support et Maintenance du Parc</h3>
+            <span class="meta-tag" style="margin: 0;">Mai - Juin 2025</span>
+          </div>
+          <p style="color: var(--text-main);"><strong>L'enjeu :</strong> Maintenir le parc informatique opérationnel et optimiser la gestion des logiciels.</p>
+          <p style="color: var(--text-main);"><em>Explication globale :</em> Ce stage était axé sur l'assistance directe aux utilisateurs et l'automatisation des installations système pour gagner en efficacité lors des déploiements.</p>
           
-          <h4 style="margin: 16px 0 8px 0; font-weight: 500;">Missions détaillées :</h4>
-          <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
-            <li><strong>Migration Proxmox :</strong> Importation de machines virtuelles depuis VMware vSphere vers un cluster Proxmox VE (version communautaire).</li>
-            <li><strong>Installation HPE Alletra :</strong> Rackage physique, raccordement et configuration du management distant via iLO 6.</li>
-            <li><strong>Configuration RAID :</strong> Mise en place d'un volume RAID 6 de 64 To pour les données et d'un RAID 1 (SSD) pour le système.</li>
-            <li><strong>Réseau Ubiquiti :</strong> Optimisation de switchs pour passer d'un débit de 1 Gbit/s à 2,5 Gbit/s réels.</li>
-            <li><strong>Postes Windows 11 :</strong> Déploiement de nouveaux PC avec gestion des contraintes matérielles (TPM 2.0, Secure Boot).</li>
+          <h4 style="margin: 24px 0 12px 0; font-size: 1.1rem;">Missions détaillées :</h4>
+          <ul style="padding-left: 0; list-style-type: none; line-height: 1.8; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;">🛠️ <strong>Support GLPI :</strong> Traitement des tickets d'incidents et des demandes d'assistance matérielle et logicielle.</li>
+            <li style="margin-bottom: 10px;">⚙️ <strong>Déploiement OPSI :</strong> Administration du serveur OPSI pour automatiser l'installation et la mise à jour des logiciels sur les postes clients.</li>
+            <li style="margin-bottom: 10px;">🔑 <strong>Gestion Active Directory :</strong> Migration d'utilisateurs et configuration fine des habilitations d'accès au réseau.</li>
+            <li style="margin-bottom: 10px;">💾 <strong>Scripts de Sauvegarde :</strong> Mise en œuvre de tâches planifiées (cron) pour automatiser la sécurisation des données.</li>
           </ul>
-
-          <ul class="skills-tags" style="margin-bottom: 24px;">
-            <li>Proxmox VE</li>
-            <li>HPE iLO 6</li>
-            <li>RAID 6</li>
-            <li>Ubiquiti</li>
-          </ul>
-          <a href="docs/suivie-stage2.pdf" class="btn" target="_blank">Ouvrir le suivi de stage</a>
         </div>
 
         <div class="bento-card">
-          <span class="meta-tag">1ère Année | Mai - Juin 2025</span>
-          <h3>Support & Maintenance du Parc</h3>
-          <p><strong>L'enjeu :</strong> Maintenir le parc informatique opérationnel et optimiser la gestion des logiciels.</p>
-          <p><strong>Explication globale :</strong> Ce stage était axé sur l'assistance directe aux utilisateurs et l'automatisation des installations système pour gagner en efficacité lors des déploiements.</p>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px;">
+            <h3 style="font-size: 1.6rem; color: var(--primary-color); margin: 0;">Stage de 2ème Année : Infrastructure et Virtualisation</h3>
+            <span class="meta-tag" style="margin: 0;">Janvier - Février 2026</span>
+          </div>
+          <p style="color: var(--text-main);"><strong>L'enjeu :</strong> Moderniser l'infrastructure en migrant vers des solutions Open Source et déployer du stockage haute performance.</p>
+          <p style="color: var(--text-main);"><em>Explication globale :</em> Un projet d'envergure consistant à remplacer VMware par Proxmox pour réduire les coûts, tout en mettant en service des serveurs HPE de grande capacité.</p>
 
-          <h4 style="margin: 16px 0 8px 0; font-weight: 500;">Missions détaillées :</h4>
-          <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
-            <li><strong>Support GLPI :</strong> Traitement des tickets d'incidents et des demandes d'assistance matérielle et logicielle.</li>
-            <li><strong>Déploiement OPSI :</strong> Administration du serveur OPSI pour automatiser l'installation et la mise à jour des logiciels sur les postes clients.</li>
-            <li><strong>Gestion Active Directory :</strong> Migration d'utilisateurs et configuration fine des habilitations d'accès au réseau.</li>
-            <li><strong>Scripts de Sauvegarde :</strong> Mise en œuvre de tâches planifiées (cron) pour automatiser la sécurisation des données.</li>
+          <h4 style="margin: 24px 0 12px 0; font-size: 1.1rem;">Missions détaillées :</h4>
+          <ul style="padding-left: 0; list-style-type: none; line-height: 1.8; color: var(--text-muted);">
+            <li style="margin-bottom: 10px;">🔄 <strong>Migration Proxmox :</strong> Importation de machines virtuelles depuis VMware vSphere vers un cluster Proxmox VE (version communautaire).</li>
+            <li style="margin-bottom: 10px;">🏢 <strong>Installation HPE Alletra :</strong> Rackage physique, raccordement et configuration du management distant via iLO 6.</li>
+            <li style="margin-bottom: 10px;">📦 <strong>Configuration RAID :</strong> Mise en place d'un volume RAID 6 de 64 To pour les données et d'un RAID 1 (SSD) pour le système.</li>
+            <li style="margin-bottom: 10px;">🌐 <strong>Réseau Ubiquiti :</strong> Optimisation de switchs pour passer d'un débit de 1 Gbit/s à 2,5 Gbit/s réels.</li>
+            <li style="margin-bottom: 10px;">🖥️ <strong>Postes Windows 11 :</strong> Déploiement de nouveaux PC avec gestion des contraintes matérielles (TPM 2.0, Secure Boot).</li>
           </ul>
-
-          <ul class="skills-tags" style="margin-bottom: 24px;">
-            <li>GLPI</li>
-            <li>Active Directory</li>
-            <li>Serveur OPSI</li>
-            <li>Scripts Cron</li>
-          </ul>
-          <a href="docs/e5%20(1).pdf" class="btn btn-outline" target="_blank">Voir le tableau E5</a>
         </div>
+
+        <div class="bento-card" style="background-color: var(--hover-bg);">
+          <h3 style="font-size: 1.4rem;">Documents de synthèse</h3>
+          <p style="margin-bottom: 24px;">Cliquez sur les boutons ci-dessous pour ouvrir les documents justificatifs (PDF) :</p>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap;">
+            <a href="docs/e5 (1).pdf" class="btn" target="_blank">Ouvrir Tableau E5 (Stage 1)</a>
+            <a href="docs/suivie-stage2.pdf" class="btn btn-outline" target="_blank">Ouvrir Suivi de Stage (Stage 2)</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2026 Mohamed-ali Filali. Portfolio BTS SIO.</p>
+    <p>&copy; 2025 Mohamed‑Ali Filali — BTS SIO SISR.</p>
   </footer>
 </body>
 </html>
