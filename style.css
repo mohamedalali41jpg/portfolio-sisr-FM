@@ -1,349 +1,225 @@
 /* ==========================================================================
-   PORTFOLIO - THÈME "GOOGLE MATERIAL DESIGN" 2026
-   Inspiration : Google Workspace, Google Search, Android Material You
+   PORTFOLIO MULTICOLORE - DESIGN "DYNAMIC THEMES"
    ========================================================================== */
 
-/* Importation de la police officielle Google (Roboto) et d'une police proche de Google Sans (Outfit) pour les titres */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  /* --- COULEURS GOOGLE (Thème Clair) --- */
-  --bg-page: #f8f9fa;           /* Gris très clair classique de Google */
-  --bg-card: #ffffff;           /* Blanc pur pour les cartes */
+  /* Couleurs de base (Clair) */
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
   
-  --text-main: #202124;         /* Noir/Gris foncé typique de Google */
-  --text-muted: #5f6368;        /* Gris secondaire */
-  
-  --border-color: #dadce0;      /* Bordure subtile Google Drive */
-  
-  /* Les 4 couleurs officielles Google */
-  --google-blue: #1a73e8;
-  --google-red: #ea4335;
-  --google-yellow: #fbbc04;
-  --google-green: #34a853;
-  
-  --primary-color: var(--google-blue);
-  
-  /* Couleurs interactives (Hover/Active) */
-  --hover-bg: #f1f3f4;          /* Gris au survol */
-  --active-bg: #e8f0fe;         /* Fond bleu clair au clic/actif */
-  --active-text: #1967d2;       /* Texte bleu foncé au clic/actif */
-
-  /* Ombres Material Design (Élévation) */
-  --shadow-1: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
-  --shadow-2: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
-  
-  /* Arrondis Material 3 */
   --radius-lg: 24px;
-  --radius-md: 12px;
-  --radius-sm: 8px;
   --radius-pill: 100px;
-  
-  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-/* --- THÈME SOMBRE (Google Dark Mode) --- */
 [data-theme="dark"] {
-  --bg-page: #202124;
-  --bg-card: #303134;
-  --text-main: #e8eaed;
-  --text-muted: #9aa0a6;
-  --border-color: #5f6368;
-  --primary-color: #8ab4f8;     /* Bleu clair adapté au mode sombre */
-  --hover-bg: #3c4043;
-  --active-bg: rgba(138, 180, 248, 0.12);
-  --active-text: #8ab4f8;
-  --shadow-1: 0 1px 2px 0 rgba(0,0,0,0.3), 0 1px 3px 1px rgba(0,0,0,0.15);
-  --shadow-2: 0 1px 3px 0 rgba(0,0,0,0.3), 0 4px 8px 3px rgba(0,0,0,0.15);
+  /* Couleurs de base (Sombre) */
+  --bg-card: #111827;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
 }
 
-/* ==========================================================================
-   RESET & BASE
-   ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* --- THÈMES DE COULEURS SPÉCIFIQUES PAR PAGE --- */
+/* Page Accueil : Bleu Azur */
+.page-accueil { --theme-color: #2563eb; --theme-bg: #eff6ff; }
+[data-theme="dark"] .page-accueil { --theme-color: #60a5fa; --theme-bg: #020617; }
+
+/* Page Projets : Vert Émeraude */
+.page-projets { --theme-color: #059669; --theme-bg: #ecfdf5; }
+[data-theme="dark"] .page-projets { --theme-color: #34d399; --theme-bg: #022c22; }
+
+/* Page Stage : Orange Ambré */
+.page-stage { --theme-color: #ea580c; --theme-bg: #fff7ed; }
+[data-theme="dark"] .page-stage { --theme-color: #fb923c; --theme-bg: #431407; }
+
+/* Page Compétences : Violet Royal */
+.page-competences { --theme-color: #7c3aed; --theme-bg: #f5f3ff; }
+[data-theme="dark"] .page-competences { --theme-color: #a78bfa; --theme-bg: #2e1065; }
+
+/* Page Veilles : Rouge Rubis */
+.page-veilles { --theme-color: #e11d48; --theme-bg: #fff1f2; }
+[data-theme="dark"] .page-veilles { --theme-color: #fb7185; --theme-bg: #4c0519; }
+
+/* Page Contact : Cyan Foncé */
+.page-contact { --theme-color: #0891b2; --theme-bg: #ecfeff; }
+[data-theme="dark"] .page-contact { --theme-color: #22d3ee; --theme-bg: #083344; }
+
+/* --- RESET & STRUCTURE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Roboto', -apple-system, sans-serif;
-  background-color: var(--bg-page);
+  font-family: 'Inter', sans-serif;
+  background-color: var(--theme-bg); /* Le fond change selon la page ! */
   color: var(--text-main);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.7;
+  transition: background-color 0.4s ease;
 }
 
-.container {
-  max-width: 1000px; /* Plus centré, façon résultats de recherche Google */
-  margin: 0 auto;
-  padding: 0 24px;
-}
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
 
-/* ==========================================================================
-   TYPOGRAPHIE
-   ========================================================================== */
-h1, h2, h3, .page-title {
-  font-family: 'Outfit', 'Product Sans', sans-serif; /* Style titre Google */
-  color: var(--text-main);
-  font-weight: 500;
-  letter-spacing: -0.01em;
+/* --- TYPOGRAPHIE (Gras et coloré) --- */
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900; /* Extra Gras */
+  letter-spacing: -0.02em;
 }
 
 .page-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  text-align: center;
   margin-bottom: 40px;
-  text-align: left;
+  color: var(--theme-color); /* Prend la couleur de la page */
 }
 
-/* Optionnel : Mettre en couleur les mots clés pour rappeler le logo Google */
 .gradient-text {
-  color: var(--primary-color);
+  color: var(--text-main); /* Le reste du titre en noir/blanc */
 }
 
-/* ==========================================================================
-   HEADER & NAVIGATION (Style Google Drive / Barre de recherche)
-   ========================================================================== */
+/* --- HEADER EN VERRE --- */
 header {
   position: sticky;
-  top: 0;
-  background-color: var(--bg-card);
-  border-bottom: 1px solid var(--border-color);
-  padding: 12px 0;
+  top: 15px;
   z-index: 1000;
-  transition: box-shadow 0.3s ease;
+  background: rgba(var(--bg-card), 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  width: max-content;
+  max-width: 90vw;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-/* Ajoute une ombre quand on scrolle (optionnel mais très Google) */
-header.scrolled {
-  box-shadow: var(--shadow-1);
-}
+header .container { display: flex; align-items: center; gap: 20px; padding: 0; }
 
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: center; /* Centré comme les onglets Google */
-  position: relative;
-}
-
-nav ul {
-  display: flex;
-  gap: 4px;
-  list-style: none;
-}
+nav ul { display: flex; gap: 8px; list-style: none; }
 
 nav a {
   text-decoration: none;
   color: var(--text-muted);
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
-  padding: 10px 24px;
+  font-weight: 700;
+  padding: 8px 16px;
   border-radius: var(--radius-pill);
   transition: var(--transition);
 }
 
-nav a:hover {
-  background-color: var(--hover-bg);
-  color: var(--text-main);
+nav a:hover, nav a.active {
+  background-color: var(--theme-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Onglet actif (Style sélection Google) */
-nav a.active {
-  background-color: var(--active-bg);
-  color: var(--active-text);
-}
-
-/* Bouton Thème */
 .theme-toggle {
-  position: absolute;
-  right: 24px;
-  background: transparent;
-  border: none;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition);
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px; color: var(--text-main); transition: var(--transition);
 }
 
-.theme-toggle:hover {
-  background-color: var(--hover-bg);
-  color: var(--text-main);
-}
-
-/* ==========================================================================
-   CARTES DE PROJET / STAGE (Style Material Design 3)
-   ========================================================================== */
-main {
-  padding-top: 60px;
-  padding-bottom: 80px;
-}
+/* --- GRILLES ET CARTES (Bento) --- */
+main { padding-top: 60px; padding-bottom: 80px; }
 
 .bento-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
 
 .bento-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 32px;
+  padding: 35px;
+  box-shadow: var(--shadow-card);
   transition: var(--transition);
   display: flex;
   flex-direction: column;
 }
 
-/* Élévation Material Design au survol */
 .bento-card:hover {
-  box-shadow: var(--shadow-2);
-  transform: translateY(-2px);
-  border-color: transparent;
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--theme-color);
 }
 
 .bento-card h3 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--theme-color); /* Titres des cartes colorés ! */
 }
 
-.bento-card p {
-  color: var(--text-muted);
-  font-size: 1rem;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-
-/* Petit tag de catégorie (Style "Chip" Google) */
+/* --- TAGS ET BADGES --- */
 .meta-tag {
   display: inline-block;
-  border: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-family: 'Roboto', sans-serif;
-  font-size: 0.75rem;
-  font-weight: 500;
+  background: var(--border-color);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 700;
   text-transform: uppercase;
-  padding: 4px 12px;
+  padding: 5px 14px;
   border-radius: var(--radius-pill);
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   width: max-content;
 }
 
-/* ==========================================================================
-   TAGS COMPÉTENCES (Style Google Chips)
-   ========================================================================== */
-.skills-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  list-style: none;
-}
-
+.skills-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin-bottom: 25px; }
 .skills-tags li {
-  background-color: var(--bg-card);
-  color: var(--text-muted);
+  padding: 8px 16px;
   border: 1px solid var(--border-color);
-  padding: 6px 16px;
   border-radius: var(--radius-pill);
+  font-weight: 600;
   font-size: 0.85rem;
-  font-weight: 500;
-  transition: var(--transition);
-  cursor: default;
+  color: var(--text-muted);
 }
 
-.skills-tags li:hover {
-  background-color: var(--hover-bg);
-  color: var(--text-main);
-}
-
-/* ==========================================================================
-   BOUTONS (Style Material Filled Button)
-   ========================================================================== */
+/* --- BOUTONS --- */
 .btn {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 10px 24px;
-  background-color: var(--primary-color);
+  padding: 12px 28px;
+  background-color: var(--theme-color);
   color: #ffffff !important;
   text-decoration: none;
-  font-family: 'Outfit', sans-serif;
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 700;
   border-radius: var(--radius-pill);
-  border: none;
   transition: var(--transition);
   width: max-content;
-  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3); /* Ombre légère de base */
+  border: 2px solid var(--theme-color);
 }
 
-/* Effet "Ripple" stylisé au survol */
 .btn:hover {
-  background-color: #1557b0; /* Bleu Google plus foncé */
-  box-shadow: var(--shadow-1);
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-[data-theme="dark"] .btn {
-  color: #202124 !important; /* Texte sombre sur bouton clair en dark mode */
-}
-[data-theme="dark"] .btn:hover {
-  background-color: #aecbfa; /* Bleu plus clair au survol */
-}
-
-/* Bouton contour (Outlined Button) - si besoin d'un bouton secondaire */
 .btn-outline {
   background-color: transparent;
-  color: var(--primary-color) !important;
-  border: 1px solid var(--border-color);
-  box-shadow: none;
+  color: var(--theme-color) !important;
 }
 
 .btn-outline:hover {
-  background-color: var(--active-bg);
-  border-color: transparent;
-  box-shadow: none;
+  background-color: var(--theme-color);
+  color: #fff !important;
 }
 
-/* ==========================================================================
-   FOOTER
-   ========================================================================== */
-footer {
-  text-align: center;
-  padding: 40px 0;
-  border-top: 1px solid var(--border-color);
-  color: var(--text-muted);
-  font-size: 0.9rem;
-}
+/* --- FOOTER --- */
+footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-weight: 600; }
 
-/* ==========================================================================
-   RESPONSIVE DESIGN
-   ========================================================================== */
+/* --- RESPONSIVE --- */
 @media (max-width: 800px) {
-  header .container {
-    flex-direction: column;
-    padding: 16px;
-  }
-  
-  .theme-toggle {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-  }
-  
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 12px;
-  }
-  
-  .page-title {
-    font-size: 2rem;
-    text-align: center;
-  }
+  header { width: calc(100% - 20px); border-radius: 20px; }
+  header .container { flex-direction: column; gap: 10px; padding: 5px; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 5px; }
+  .bento-card { padding: 25px; }
 }
