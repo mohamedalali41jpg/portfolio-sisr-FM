@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compétences | Mohamed-ali Filali</title>
+  <title>Portfolio BTS SIO SISR — Compétences</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
 </head>
 <body>
@@ -14,57 +15,68 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="projets.html">Projets</a></li>
-          <li><a href="stage.html">Stages</a></li>
+          <li><a href="stage.html">Stage</a></li>
           <li><a href="competences.html" class="active">Compétences</a></li>
-          <li><a href="veilles.html">Veille</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <h1 class="page-title">Arsenal <span class="gradient-text">Technique</span></h1>
-      
+      <h1 class="page-title"><span class="gradient-text">Compétences</span></h1>
+      <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">
+        Durant ma formation et mes expériences professionnelles, j’ai développé des compétences variées :
+      </p>
+
       <div class="bento-grid">
         <div class="bento-card">
-          <span class="meta-tag">Infrastructures & OS</span>
-          <h3>Systèmes & Virtualisation</h3>
-          <p>Déploiement, administration et maintien en condition opérationnelle d'architectures serveurs virtualisées. Configuration RAID, gestion des habilitations (AD) et supervision matérielle (iLO).</p>
-          <ul class="skills-tags" style="margin-top: auto;">
-            <li>Windows Server 2022</li>
-            <li>Debian / Linux</li>
-            <li>Proxmox VE</li>
-            <li>VMware vSphere</li>
-            <li>Active Directory</li>
+          <h3 style="color: var(--primary-color); font-size: 1.4rem;">Administration systèmes</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+            <li>Active Directory (Windows Server 2019) : création d’utilisateurs, unités d’organisation, stratégies de groupe</li>
+            <li>Administration de postes clients Windows 10/11 et Linux (Debian/Ubuntu) : commandes de base, gestion des droits et des partages</li>
+            <li>Virtualisation : Hyper‑V, Proxmox (création de VM, snapshots, mise en réseau virtuelle)</li>
+            <li>Installation et configuration de serveurs locaux (Wampserver, LAMP)</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <span class="meta-tag">Connectivité</span>
-          <h3>Réseaux & Sécurité</h3>
-          <p>Conception, adressage, segmentation (VLAN) et sécurisation des réseaux locaux professionnels. Implémentation de règles de filtrage (ACL, Pare-feu) et optimisation du matériel réseau.</p>
-          <ul class="skills-tags" style="margin-top: auto;">
-            <li>Cisco IOS</li>
-            <li>Ubiquiti Unifi</li>
-            <li>VLAN & Routage</li>
-            <li>DHCP / DNS</li>
-            <li>Pare-feu</li>
+          <h3 style="color: var(--primary-color); font-size: 1.4rem;">Services réseau</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+            <li>Mise en place de services : DHCP, DNS, NAT/PAT</li>
+            <li>Routage IPv4/IPv6, création de VLAN, inter‑VLAN routing, filtrage ACL Cisco</li>
+            <li>Déploiement et administration d’annuaires Active Directory et de services FTP (FileZilla Server)</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <span class="meta-tag">Outils Pro</span>
-          <h3>Exploitation & Support</h3>
-          <p>Assistance aux utilisateurs finaux, automatisation des déploiements logiciels, gestion des sauvegardes et conduite de projets techniques.</p>
-          <ul class="skills-tags" style="margin-top: auto;">
-            <li>GLPI (Ticketing)</li>
-            <li>OPSI (Déploiement)</li>
-            <li>Trello (Agile)</li>
-            <li>Scripts (Cron)</li>
-            <li>HPE iLO 6</li>
+          <h3 style="color: var(--primary-color); font-size: 1.4rem;">Sécurité</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+            <li>Configuration de pare‑feu (UFW, iptables, pare‑feu Windows) et mise en place de règles ACL</li>
+            <li>Utilisation de Fail2ban et surveillance des journaux pour protéger les services</li>
+            <li>Tolérance de pannes et répartition de charges (Linux Virtual Server)</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <h3 style="color: var(--primary-color); font-size: 1.4rem;">Développement & Scripting</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+            <li>Bash et PowerShell pour l’automatisation de tâches système</li>
+            <li>Python pour scripts et petits outils</li>
+            <li>HTML, CSS et bases en programmation pour la conception d’applications</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <h3 style="color: var(--primary-color); font-size: 1.4rem;">Langues</h3>
+          <ul style="padding-left: 20px; color: var(--text-muted); line-height: 1.8;">
+            <li>Français : langue maternelle</li>
+            <li>Anglais : niveau A2</li>
+            <li>Espagnol : niveau A2</li>
+            <li>Arabe : courant</li>
           </ul>
         </div>
       </div>
@@ -72,7 +84,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Mohamed-ali Filali. Portfolio BTS SIO.</p>
+    <p>&copy; 2025 Mohamed‑Ali Filali — BTS SIO SISR.</p>
   </footer>
 </body>
 </html>
