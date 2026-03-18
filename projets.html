@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projets | Mohamed-ali Filali</title>
+  <title>Portfolio BTS SIO SISR — Projets</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
 </head>
 <body>
@@ -14,54 +15,89 @@
         <ul>
           <li><a href="index.html">Accueil</a></li>
           <li><a href="projets.html" class="active">Projets</a></li>
-          <li><a href="stage.html">Stages</a></li>
+          <li><a href="stage.html">Stage</a></li>
           <li><a href="competences.html">Compétences</a></li>
-          <li><a href="veilles.html">Veille</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="theme-toggle" aria-label="Toggle theme"></button>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
     </div>
   </header>
 
   <main>
     <div class="container">
-      <h1 class="page-title">Projets <span class="gradient-text">SISR</span></h1>
-      
-      <div class="bento-grid">
-        <div class="bento-card">
-          <span class="meta-tag">Infrastructure</span>
-          <h3>Services Réseaux & Active Directory</h3>
-          <p>Déploiement d'une architecture système complète en environnement Windows Server 2022.</p>
-          <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
-            <li>Configuration réseau stricte : mise en place d'une adresse IP fixe, passerelle, et serveurs DNS primaire/secondaire adéquats.</li>
-            <li>Installation et paramétrage des rôles DHCP et DNS.</li>
-            <li>Création et gestion centralisée d'un domaine Active Directory avec définition des stratégies de groupe (GPO).</li>
-          </ul>
-        </div>
+      <h1 class="page-title">Mes <span class="gradient-text">Projets</span></h1>
+      <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">
+        Voici un aperçu de quelques projets réalisés durant ma formation en BTS SIO option SISR. Ces travaux m’ont permis de mettre en pratique des compétences en réseaux, systèmes, virtualisation et sécurité.
+      </p>
 
+      <div class="bento-grid" style="grid-template-columns: 1fr;">
         <div class="bento-card">
-          <span class="meta-tag">Sécurité & Transfert</span>
-          <h3>Hébergement & Serveur FTP</h3>
-          <p>Mise en place d'un système de partage de fichiers sécurisé et de suivi de projet.</p>
-          <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
-            <li>Installation de WampServer et configuration de FileZilla Server.</li>
-            <li>Création de comptes FTP avec définition fine des droits d'accès selon les utilisateurs.</li>
-            <li>Suivi rigoureux du projet via l'outil Agile Trello et création d'une documentation technique détaillée.</li>
-          </ul>
-          <div style="margin-top: auto;">
-            <a href="docs/compte rendu filezilla.pdf" class="btn" target="_blank">Voir le compte rendu FileZilla</a>
+          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Installation de Wampserver et configuration de FileZilla</h3>
+          <p style="color: var(--text-main);">
+            Dans le cadre d’un travail pratique, j’ai installé Wampserver sur un serveur Windows afin d’héberger des applications web (Apache, PHP et MySQL). Après avoir vérifié les modules requis (Visual C++ Packages) et assuré le bon fonctionnement via l’outil <em>Check_vredist</em>, j’ai configuré la plateforme pour accéder à <em>phpMyAdmin</em> depuis un poste client.
+          </p>
+          <p style="color: var(--text-main);">
+            La seconde partie consistait à mettre en place un serveur FTP avec <strong>FileZilla Server</strong> : création d’un utilisateur (<code>dev_gsb</code>), définition des droits (lecture, écriture, suppression) et choix d’un répertoire partagé. Un port range personnalisé (42000‑42300) a été défini et ouvert dans le pare‑feu Windows. Une règle entrante et sortante a été ajoutée pour les ports 21, 80, 443 et 990 afin de permettre les connexions FTP/FTPS.
+          </p>
+          <p style="color: var(--text-main); margin-bottom: 24px;">
+            Une fois la configuration terminée, la connexion avec <em>FileZilla Client</em> a permis de transférer des fichiers entre le poste client et le serveur via l’adresse IP locale. Ce projet a également inclus le déploiement d’un site web et la modification d’un fichier de configuration PHP afin de corriger un problème d’authentification.
+          </p>
+          <div style="margin-bottom: 24px;">
+            <img src="assets/filezilla1.png" alt="Installation de Wampserver" style="max-width:100%; border-radius: 8px; margin-bottom:10px; border: 1px solid var(--border-color);">
+            <img src="assets/filezilla2.png" alt="Configuration de FileZilla" style="max-width:100%; border-radius: 8px; border: 1px solid var(--border-color);">
           </div>
+          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
+          <ul class="skills-tags" style="margin-bottom: 24px;">
+            <li>Wampserver</li>
+            <li>Windows Server</li>
+            <li>FileZilla Server</li>
+            <li>phpMyAdmin</li>
+            <li>Pare‑feu Windows</li>
+          </ul>
+          <a href="docs/filezilla.pdf" class="btn" target="_blank">Voir le compte‑rendu (PDF)</a>
         </div>
 
         <div class="bento-card">
-          <span class="meta-tag">Routage</span>
-          <h3>Topologie Cisco & Segmentation</h3>
-          <p>Conception et simulation d'architectures réseaux d'entreprise sur Cisco Packet Tracer.</p>
-          <ul style="margin-bottom: 24px; padding-left: 20px; color: var(--text-muted); line-height: 1.6;">
-            <li>Mise en place de réseaux segmentés fonctionnels via la création de VLANs.</li>
-            <li>Configuration du routage inter-VLAN sur les équipements Cisco.</li>
-            <li>Application de règles de sécurité avec des Listes de Contrôle d'Accès (ACL) et validation des performances globales.</li>
+          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Mise en place de services réseau (DHCP, DNS, Active Directory)</h3>
+          <p style="color: var(--text-main); margin-bottom: 24px;">
+            Déploiement et configuration de services réseau essentiels pour une infrastructure d’entreprise : serveur DHCP pour l’attribution d’adresses IP, serveur DNS pour la résolution de noms, et annuaire Active Directory (Windows Server 2019) pour la gestion des utilisateurs et des postes. Mise en place du routage et du NAT/PAT pour l’accès Internet, ainsi que des filtrages ACL sur les commutateurs Cisco.
+          </p>
+          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
+          <ul class="skills-tags">
+            <li>DHCP / DNS</li>
+            <li>Active Directory</li>
+            <li>Routage / NAT/PAT</li>
+            <li>ACL Cisco</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Administration de postes Windows & Linux</h3>
+          <p style="color: var(--text-main); margin-bottom: 24px;">
+            Gestion et maintenance de parcs informatiques sous Windows 10/11 et distributions Linux. Création de comptes utilisateurs, définition des droits d’accès (NTFS, FAT), configuration des stratégies de groupe (GPO) et déploiement d’outils de supervision. Mise en place de scripts d’automatisation pour la sauvegarde et la mise à jour des postes.
+          </p>
+          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
+          <ul class="skills-tags">
+            <li>Windows Server</li>
+            <li>Linux (Ubuntu/Debian)</li>
+            <li>GPO & Droits</li>
+            <li>Bash / PowerShell</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Virtualisation et conteneurisation</h3>
+          <p style="color: var(--text-main); margin-bottom: 24px;">
+            Utilisation d’outils de virtualisation (Hyper‑V, Proxmox) et de conteneurisation (Docker) pour créer des environnements isolés. Mise en place d’un cluster de machines virtuelles pour simuler une infrastructure complète et déploiement d’une application multi‑services avec Docker Compose.
+          </p>
+          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
+          <ul class="skills-tags">
+            <li>Hyper‑V</li>
+            <li>Proxmox</li>
+            <li>Docker</li>
+            <li>Réseaux virtuels</li>
           </ul>
         </div>
       </div>
@@ -69,7 +105,7 @@
   </main>
 
   <footer>
-    <p>&copy; 2026 Mohamed-ali Filali. Portfolio BTS SIO.</p>
+    <p>&copy; 2025 Mohamed‑Ali Filali — BTS SIO SISR.</p>
   </footer>
 </body>
 </html>
