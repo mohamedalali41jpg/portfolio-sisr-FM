@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio BTS SIO SISR — Projets</title>
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <script src="theme-toggle.js" defer></script>
 </head>
-<body>
+<body class="page-projets">
   <header>
     <div class="container">
       <nav>
@@ -28,76 +27,59 @@
   <main>
     <div class="container">
       <h1 class="page-title">Mes <span class="gradient-text">Projets</span></h1>
-      <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted);">
-        Voici un aperçu de quelques projets réalisés durant ma formation en BTS SIO option SISR. Ces travaux m’ont permis de mettre en pratique des compétences en réseaux, systèmes, virtualisation et sécurité.
+      <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted); text-align: center; font-weight: 500;">
+        Voici un aperçu de quelques projets réalisés durant ma formation en BTS SIO option SISR.
       </p>
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         <div class="bento-card">
-          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Installation de Wampserver et configuration de FileZilla</h3>
-          <p style="color: var(--text-main);">
+          <h3>Installation de Wampserver et configuration de FileZilla</h3>
+          <p style="margin-bottom: 16px;">
             Dans le cadre d’un travail pratique, j’ai installé Wampserver sur un serveur Windows afin d’héberger des applications web (Apache, PHP et MySQL). Après avoir vérifié les modules requis (Visual C++ Packages) et assuré le bon fonctionnement via l’outil <em>Check_vredist</em>, j’ai configuré la plateforme pour accéder à <em>phpMyAdmin</em> depuis un poste client.
           </p>
-          <p style="color: var(--text-main);">
+          <p style="margin-bottom: 16px;">
             La seconde partie consistait à mettre en place un serveur FTP avec <strong>FileZilla Server</strong> : création d’un utilisateur (<code>dev_gsb</code>), définition des droits (lecture, écriture, suppression) et choix d’un répertoire partagé. Un port range personnalisé (42000‑42300) a été défini et ouvert dans le pare‑feu Windows. Une règle entrante et sortante a été ajoutée pour les ports 21, 80, 443 et 990 afin de permettre les connexions FTP/FTPS.
           </p>
-          <p style="color: var(--text-main); margin-bottom: 24px;">
+          <p style="margin-bottom: 24px;">
             Une fois la configuration terminée, la connexion avec <em>FileZilla Client</em> a permis de transférer des fichiers entre le poste client et le serveur via l’adresse IP locale. Ce projet a également inclus le déploiement d’un site web et la modification d’un fichier de configuration PHP afin de corriger un problème d’authentification.
           </p>
-          <div style="margin-bottom: 24px;">
-            <img src="assets/filezilla1.png" alt="Installation de Wampserver" style="max-width:100%; border-radius: 8px; margin-bottom:10px; border: 1px solid var(--border-color);">
-            <img src="assets/filezilla2.png" alt="Configuration de FileZilla" style="max-width:100%; border-radius: 8px; border: 1px solid var(--border-color);">
+          <div style="margin-bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
+            <img src="assets/filezilla1.png" alt="Installation de Wampserver" style="max-width:100%; border-radius: 12px; border: 1px solid var(--border-color);">
+            <img src="assets/filezilla2.png" alt="Configuration de FileZilla" style="max-width:100%; border-radius: 12px; border: 1px solid var(--border-color);">
           </div>
-          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
-          <ul class="skills-tags" style="margin-bottom: 24px;">
-            <li>Wampserver</li>
-            <li>Windows Server</li>
-            <li>FileZilla Server</li>
-            <li>phpMyAdmin</li>
-            <li>Pare‑feu Windows</li>
+          <ul class="skills-tags">
+            <li>Wampserver</li><li>Windows Server</li><li>FileZilla Server</li><li>phpMyAdmin</li><li>Pare‑feu Windows</li>
           </ul>
           <a href="docs/filezilla.pdf" class="btn" target="_blank">Voir le compte‑rendu (PDF)</a>
         </div>
 
         <div class="bento-card">
-          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Mise en place de services réseau (DHCP, DNS, Active Directory)</h3>
-          <p style="color: var(--text-main); margin-bottom: 24px;">
+          <h3>Mise en place de services réseau (DHCP, DNS, Active Directory)</h3>
+          <p style="margin-bottom: 24px;">
             Déploiement et configuration de services réseau essentiels pour une infrastructure d’entreprise : serveur DHCP pour l’attribution d’adresses IP, serveur DNS pour la résolution de noms, et annuaire Active Directory (Windows Server 2019) pour la gestion des utilisateurs et des postes. Mise en place du routage et du NAT/PAT pour l’accès Internet, ainsi que des filtrages ACL sur les commutateurs Cisco.
           </p>
-          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
           <ul class="skills-tags">
-            <li>DHCP / DNS</li>
-            <li>Active Directory</li>
-            <li>Routage / NAT/PAT</li>
-            <li>ACL Cisco</li>
+            <li>DHCP / DNS</li><li>Active Directory</li><li>Routage / NAT/PAT</li><li>ACL Cisco</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Administration de postes Windows & Linux</h3>
-          <p style="color: var(--text-main); margin-bottom: 24px;">
+          <h3>Administration de postes Windows & Linux</h3>
+          <p style="margin-bottom: 24px;">
             Gestion et maintenance de parcs informatiques sous Windows 10/11 et distributions Linux. Création de comptes utilisateurs, définition des droits d’accès (NTFS, FAT), configuration des stratégies de groupe (GPO) et déploiement d’outils de supervision. Mise en place de scripts d’automatisation pour la sauvegarde et la mise à jour des postes.
           </p>
-          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
           <ul class="skills-tags">
-            <li>Windows Server</li>
-            <li>Linux (Ubuntu/Debian)</li>
-            <li>GPO & Droits</li>
-            <li>Bash / PowerShell</li>
+            <li>Windows Server</li><li>Linux (Ubuntu/Debian)</li><li>GPO & Droits</li><li>Bash / PowerShell</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <h3 style="font-size: 1.6rem; color: var(--primary-color);">Virtualisation et conteneurisation</h3>
-          <p style="color: var(--text-main); margin-bottom: 24px;">
+          <h3>Virtualisation et conteneurisation</h3>
+          <p style="margin-bottom: 24px;">
             Utilisation d’outils de virtualisation (Hyper‑V, Proxmox) et de conteneurisation (Docker) pour créer des environnements isolés. Mise en place d’un cluster de machines virtuelles pour simuler une infrastructure complète et déploiement d’une application multi‑services avec Docker Compose.
           </p>
-          <p style="margin-bottom: 16px;"><strong>Compétences :</strong></p>
           <ul class="skills-tags">
-            <li>Hyper‑V</li>
-            <li>Proxmox</li>
-            <li>Docker</li>
-            <li>Réseaux virtuels</li>
+            <li>Hyper‑V</li><li>Proxmox</li><li>Docker</li><li>Réseaux virtuels</li>
           </ul>
         </div>
       </div>
