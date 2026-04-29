@@ -18,6 +18,7 @@
           <li><a href="competences.html">Compétences</a></li>
           <li><a href="veilles.html">Veilles</a></li>
           <li><a href="contact.html">Contact</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
         </ul>
       </nav>
       <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
@@ -33,53 +34,60 @@
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         <div class="bento-card">
-          <h3>Installation de Wampserver et configuration de FileZilla</h3>
+          <h3>Installation Wampserver et configuration FileZilla Server 01/2025</h3>
           <p style="margin-bottom: 16px;">
             Dans le cadre d’un travail pratique, j’ai installé Wampserver sur un serveur Windows afin d’héberger des applications web (Apache, PHP et MySQL). Après avoir vérifié les modules requis (Visual C++ Packages) et assuré le bon fonctionnement via l’outil <em>Check_vredist</em>, j’ai configuré la plateforme pour accéder à <em>phpMyAdmin</em> depuis un poste client.
           </p>
           <p style="margin-bottom: 16px;">
-            La seconde partie consistait à mettre en place un serveur FTP avec <strong>FileZilla Server</strong> : création d’un utilisateur (<code>dev_gsb</code>), définition des droits (lecture, écriture, suppression) et choix d’un répertoire partagé. Un port range personnalisé (42000‑42300) a été défini et ouvert dans le pare‑feu Windows. Une règle entrante et sortante a été ajoutée pour les ports 21, 80, 443 et 990 afin de permettre les connexions FTP/FTPS.
-          </p>
-          <p style="margin-bottom: 24px;">
-            Une fois la configuration terminée, la connexion avec <em>FileZilla Client</em> a permis de transférer des fichiers entre le poste client et le serveur via l’adresse IP locale. Ce projet a également inclus le déploiement d’un site web et la modification d’un fichier de configuration PHP afin de corriger un problème d’authentification.
+            La seconde partie consistait à mettre en place un serveur FTP avec <strong>FileZilla Server</strong> : création d’un utilisateur (<code>dev_gsb</code>), définition des droits et choix d’un répertoire partagé. Un port range personnalisé (42000‑42300) a été défini et ouvert dans le pare‑feu Windows.
           </p>
           <div style="margin-bottom: 24px; display: flex; gap: 10px; flex-wrap: wrap;">
             <img src="assets/filezilla1.png" alt="Installation de Wampserver" style="max-width:100%; border-radius: 12px; border: 1px solid var(--border-color);">
             <img src="assets/filezilla2.png" alt="Configuration de FileZilla" style="max-width:100%; border-radius: 12px; border: 1px solid var(--border-color);">
           </div>
           <ul class="skills-tags">
-            <li>Wampserver</li><li>Windows Server</li><li>FileZilla Server</li><li>phpMyAdmin</li><li>Pare‑feu Windows</li>
+            <li>Wampserver</li><li>Windows Server</li><li>FileZilla Server</li>
           </ul>
           <a href="docs/filezilla.pdf" class="btn" target="_blank">Voir le compte‑rendu (PDF)</a>
         </div>
 
         <div class="bento-card">
-          <h3>Mise en place de services réseau (DHCP, DNS, Active Directory)</h3>
+          <h3>Installation et configuration d'un serveur DHCP (Windows Server 2022)</h3>
           <p style="margin-bottom: 24px;">
-            Déploiement et configuration de services réseau essentiels pour une infrastructure d’entreprise : serveur DHCP pour l’attribution d’adresses IP, serveur DNS pour la résolution de noms, et annuaire Active Directory (Windows Server 2019) pour la gestion des utilisateurs et des postes. Mise en place du routage et du NAT/PAT pour l’accès Internet, ainsi que des filtrages ACL sur les commutateurs Cisco.
+            Mise en place d'un service DHCP sur Windows Server 2022 pour automatiser la distribution d'adresses IP au sein d'un réseau local. J'ai configuré les étendues (scopes), défini les baux, les exclusions et les réservations d'adresses pour certains postes spécifiques.
           </p>
           <ul class="skills-tags">
-            <li>DHCP / DNS</li><li>Active Directory</li><li>Routage / NAT/PAT</li><li>ACL Cisco</li>
+            <li>Windows Server 2022</li><li>DHCP</li><li>Réseau Local</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <h3>Administration de postes Windows & Linux</h3>
+          <h3>Haute Disponibilité : Keepalived + LVS</h3>
           <p style="margin-bottom: 24px;">
-            Gestion et maintenance de parcs informatiques sous Windows 10/11 et distributions Linux. Création de comptes utilisateurs, définition des droits d’accès (NTFS, FAT), configuration des stratégies de groupe (GPO) et déploiement d’outils de supervision. Mise en place de scripts d’automatisation pour la sauvegarde et la mise à jour des postes.
+            Déploiement d'une architecture haute disponibilité en utilisant Keepalived et LVS (Linux Virtual Server). Ce projet m'a permis d'assurer la redondance des services critiques, avec un basculement automatique (failover) en cas de panne d'un noeud, et de mettre en place de la répartition de charge (load balancing).
           </p>
           <ul class="skills-tags">
-            <li>Windows Server</li><li>Linux (Ubuntu/Debian)</li><li>GPO & Droits</li><li>Bash / PowerShell</li>
+            <li>Keepalived</li><li>LVS</li><li>Haute Disponibilité</li><li>Linux</li>
           </ul>
         </div>
 
         <div class="bento-card">
-          <h3>Virtualisation et conteneurisation</h3>
+          <h3>Analyse de trames réseau et audit de sécurité avec Wireshark</h3>
           <p style="margin-bottom: 24px;">
-            Utilisation d’outils de virtualisation (Hyper‑V, Proxmox) et de conteneurisation (Docker) pour créer des environnements isolés. Mise en place d’un cluster de machines virtuelles pour simuler une infrastructure complète et déploiement d’une application multi‑services avec Docker Compose.
+            Utilisation avancée de Wireshark pour capturer, filtrer et analyser le trafic réseau. J'ai pu observer en détail les échanges de protocoles (TCP, UDP, HTTP, DNS, ARP), diagnostiquer des problèmes de connectivité et identifier des vulnérabilités potentielles lors d'un audit de sécurité.
           </p>
           <ul class="skills-tags">
-            <li>Hyper‑V</li><li>Proxmox</li><li>Docker</li><li>Réseaux virtuels</li>
+            <li>Wireshark</li><li>Analyse de trafic</li><li>Sécurité Réseau</li>
+          </ul>
+        </div>
+
+        <div class="bento-card">
+          <h3>Configuration réseau d'un switch en CLI et sécurisation de l'administration à distance via SSH</h3>
+          <p style="margin-bottom: 24px;">
+            Configuration initiale d'un commutateur réseau (switch) via son interface en ligne de commande (CLI). J'ai mis en place la configuration de base (hostname, mots de passe) et surtout sécurisé l'administration à distance en activant et configurant le protocole SSH, tout en désactivant Telnet.
+          </p>
+          <ul class="skills-tags">
+            <li>Switch CLI</li><li>SSH</li><li>Sécurité</li><li>Cisco IOS</li>
           </ul>
         </div>
       </div>
