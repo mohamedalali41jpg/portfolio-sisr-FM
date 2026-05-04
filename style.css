@@ -45,6 +45,10 @@
 .page-competences { --theme-color: #7c3aed; --theme-bg: #f5f3ff; }
 [data-theme="dark"] .page-competences { --theme-color: #a78bfa; --theme-bg: #2e1065; }
 
+/* Page Certifications : Magenta Fuchsia */
+.page-certifications { --theme-color: #c026d3; --theme-bg: #fdf4ff; }
+[data-theme="dark"] .page-certifications { --theme-color: #e879f9; --theme-bg: #4a044e; }
+
 /* Page Veilles : Rouge Rubis */
 .page-veilles { --theme-color: #e11d48; --theme-bg: #fff1f2; }
 [data-theme="dark"] .page-veilles { --theme-color: #fb7185; --theme-bg: #4c0519; }
