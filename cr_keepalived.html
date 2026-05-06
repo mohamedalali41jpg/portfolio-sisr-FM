@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Keepalived & LVS</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { mermaid.initialize({ startOnLoad: true, theme: 'dark' }); });</script>
+  <style>
+    .mermaid-card { background: rgba(15, 23, 42, 0.8); border-radius: var(--radius-lg); padding: 30px; margin: 40px 0; border: 1px solid var(--border-color); box-shadow: inset 0 0 0 1px var(--border-glow); text-align: center; overflow-x: auto; }
+    .report-section { margin-bottom: 50px; }
+    .report-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--theme-color); border-bottom: 2px solid rgba(var(--theme-rgb), 0.3); padding-bottom: 10px; display: inline-block; }
+  </style>
+</head>
+<body class="page-projets">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html" class="active">Projets</a></li>
+          <li><a href="stage.html">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Haute <span class="gradient-text">Disponibilité</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          Ce projet consistait à éliminer tout <em>Single Point of Failure</em> (SPOF) d'une infrastructure web en utilisant <strong>Keepalived</strong> (pour le failover via VRRP) couplé à <strong>LVS</strong> (Linux Virtual Server, pour la répartition de charge). L'objectif est d'assurer une disponibilité de 99.9% d'un service critique.
+        </p>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Architecture Haute Disponibilité</h2>
+        <div class="mermaid-card">
+          <div class="mermaid">
+            graph TD
+              Client[Requêtes Clients] --> VIP((IP Virtuelle Partagée <br> VIP : 10.0.0.100))
+              
+              subgraph "Cluster Load Balancers (Keepalived)"
+                  VIP --> LB1[Serveur LB 1 <br> MASTER]
+                  VIP -.-> LB2[Serveur LB 2 <br> BACKUP]
+                  LB1 <-->|Protocole VRRP| LB2
+              end
+              
+              subgraph "Serveurs Web (LVS)"
+                  LB1 --> Web1[Serveur Web Apache 1]
+                  LB1 --> Web2[Serveur Web Apache 2]
+                  LB2 -.-> Web1
+                  LB2 -.-> Web2
+              end
+
+              classDef vrrp fill:#0f172a,stroke:#f97316,stroke-width:2px,color:#fff;
+              classDef active fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff;
+              class VIP vrrp;
+              class LB1 active;
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Principe du VRRP avec Keepalived</h2>
+        <p>Le protocole VRRP (Virtual Router Redundancy Protocol) permet à plusieurs routeurs (ou serveurs) de partager une adresse IP virtuelle (VIP).</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Le serveur MASTER (LB1) possède une "priorité" plus haute (ex: 150) et détient la VIP.</li>
+          <li>Le serveur BACKUP (LB2) possède une priorité plus basse (ex: 100) et écoute les annonces multicast du Master.</li>
+          <li><strong>Test de panne :</strong> Si LB1 crashe, LB2 ne reçoit plus les paquets d'annonce VRRP et s'attribue instantanément l'adresse VIP, permettant aux utilisateurs de ne subir aucune interruption de service.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Load Balancing avec LVS</h2>
+        <p>La répartition de charge (Load Balancing) permet d'optimiser l'utilisation des ressources backend :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Algorithme Round-Robin (rr) :</strong> Les requêtes entrantes sur la VIP sont redirigées séquentiellement (1 requête pour Web1, 1 requête pour Web2).</li>
+          <li><strong>Vérification de santé (Health Check) :</strong> Keepalived vérifie continuellement le port 80 des serveurs Web. Si Web2 tombe en panne, Keepalived le retire de la grappe LVS automatiquement jusqu'à sa réparation.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="projets.html" class="btn btn-outline">← Retour aux projets</a>
+      </div>
+
+    </div>
+  </main>
+  <footer><p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p></footer>
+</body>
+</html>

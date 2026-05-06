@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Wireshark</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { mermaid.initialize({ startOnLoad: true, theme: 'dark' }); });</script>
+  <style>
+    .mermaid-card { background: rgba(15, 23, 42, 0.8); border-radius: var(--radius-lg); padding: 30px; margin: 40px 0; border: 1px solid var(--border-color); box-shadow: inset 0 0 0 1px var(--border-glow); text-align: center; overflow-x: auto; }
+    .report-section { margin-bottom: 50px; }
+    .report-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--theme-color); border-bottom: 2px solid rgba(var(--theme-rgb), 0.3); padding-bottom: 10px; display: inline-block; }
+  </style>
+</head>
+<body class="page-projets">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html" class="active">Projets</a></li>
+          <li><a href="stage.html">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Audit avec <span class="gradient-text">Wireshark</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          L'objectif de ce projet était de comprendre la structure intime des trames réseaux (Modèle OSI) et d'utiliser l'analyseur de paquets Wireshark pour effectuer un audit de sécurité réseau : identifier des échanges en clair, analyser des pings et détecter des comportements anormaux.
+        </p>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Analyse d'une Connexion TCP (Handshake)</h2>
+        <div class="mermaid-card">
+          <div class="mermaid">
+            sequenceDiagram
+                participant Client
+                participant Serveur Web
+                
+                Note over Client,Serveur Web: Le fameux "Three-Way Handshake" TCP
+                Client->>Serveur Web: SYN (Synchronize - Seq=0)
+                Serveur Web-->>Client: SYN-ACK (Synchronize Acknowledge - Seq=0, Ack=1)
+                Client->>Serveur Web: ACK (Acknowledge - Seq=1, Ack=1)
+                
+                Note over Client,Serveur Web: La connexion est établie. Le trafic commence.
+                Client->>Serveur Web: HTTP GET /index.html
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Méthodologie et Filtrage</h2>
+        <p>Wireshark capture des milliers de paquets par seconde. Il est crucial d'utiliser les filtres d'affichage :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Filtres par adresse :</strong> <code>ip.addr == 192.168.1.10</code> pour isoler une machine spécifique.</li>
+          <li><strong>Filtres protocolaires :</strong> <code>http</code>, <code>dns</code> ou <code>icmp</code> pour ne voir que le type de trafic désiré.</li>
+          <li><strong>Recherche de mots de passe :</strong> <code>http.request.method == "POST"</code> permet de trouver les soumissions de formulaires et de vérifier si les mots de passe sont chiffrés.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Audit de Sécurité (Détection de vulnérabilités)</h2>
+        <p>Lors de cet audit, j'ai mis en évidence le danger des protocoles non chiffrés :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Telnet vs SSH :</strong> J'ai capturé une session Telnet et pu lire le nom d'utilisateur et le mot de passe de l'administrateur en clair (Plain Text). J'ai ensuite démontré que le protocole SSH chiffre intégralement le Payload.</li>
+          <li><strong>HTTP vs HTTPS :</strong> De la même manière, l'analyse d'une requête HTTP GET permet de voir l'ensemble du trafic, tandis que HTTPS (TLS/SSL) masque toutes les données utiles.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="projets.html" class="btn btn-outline">← Retour aux projets</a>
+      </div>
+
+    </div>
+  </main>
+  <footer><p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p></footer>
+</body>
+</html>

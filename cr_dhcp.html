@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Serveur DHCP</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { mermaid.initialize({ startOnLoad: true, theme: 'dark' }); });</script>
+  <style>
+    .mermaid-card { background: rgba(15, 23, 42, 0.8); border-radius: var(--radius-lg); padding: 30px; margin: 40px 0; border: 1px solid var(--border-color); box-shadow: inset 0 0 0 1px var(--border-glow); text-align: center; overflow-x: auto; }
+    .report-section { margin-bottom: 50px; }
+    .report-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--theme-color); border-bottom: 2px solid rgba(var(--theme-rgb), 0.3); padding-bottom: 10px; display: inline-block; }
+  </style>
+</head>
+<body class="page-projets">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html" class="active">Projets</a></li>
+          <li><a href="stage.html">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Configuration <span class="gradient-text">DHCP</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          L'objectif de ce projet réseau était de déployer le rôle DHCP (Dynamic Host Configuration Protocol) sur une instance Windows Server 2022. Cela permet d'automatiser et de centraliser l'attribution des adresses IP dans un réseau d'entreprise, tout en évitant les conflits d'adresses.
+        </p>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Processus DORA et Topologie</h2>
+        <div class="mermaid-card">
+          <div class="mermaid">
+            sequenceDiagram
+                participant Client as Poste Client (Sans IP)
+                participant DHCP as Windows Server 2022 (DHCP)
+                
+                Client->>DHCP: 1. DISCOVER (Broadcast)
+                DHCP-->>Client: 2. OFFER (Proposition IP)
+                Client->>DHCP: 3. REQUEST (Demande officielle)
+                DHCP-->>Client: 4. ACKNOWLEDGE (Validation et Bail)
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Mise en place de l'Étendue (Scope)</h2>
+        <p>L'étendue définit la plage d'adresses IP que le serveur a le droit de distribuer :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Création d'une nouvelle étendue IPv4 (ex: 192.168.10.10 à 192.168.10.100).</li>
+          <li>Définition du masque de sous-réseau (ex: /24 soit 255.255.255.0).</li>
+          <li>Configuration des options d'étendue vitales : <strong>Routeur par défaut (Passerelle)</strong> et <strong>Serveurs DNS</strong>.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Exclusions et Réservations</h2>
+        <p>Pour des raisons d'administration, certains équipements (imprimantes, serveurs annexes) ne doivent pas changer d'IP :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Exclusions :</strong> Retrait manuel des IP de 192.168.10.10 à 192.168.10.20 pour qu'elles ne soient jamais distribuées (réservées aux administrateurs réseau).</li>
+          <li><strong>Réservations :</strong> Liaison statique de l'adresse MAC d'une imprimante réseau avec une adresse IP spécifique dans le pool DHCP, garantissant que cette imprimante aura toujours la même IP tout en gardant une gestion centralisée.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="projets.html" class="btn btn-outline">← Retour aux projets</a>
+      </div>
+
+    </div>
+  </main>
+  <footer><p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p></footer>
+</body>
+</html>

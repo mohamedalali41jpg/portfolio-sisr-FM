@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Configuration Switch & SSH</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function() { mermaid.initialize({ startOnLoad: true, theme: 'dark' }); });</script>
+  <style>
+    .mermaid-card { background: rgba(15, 23, 42, 0.8); border-radius: var(--radius-lg); padding: 30px; margin: 40px 0; border: 1px solid var(--border-color); box-shadow: inset 0 0 0 1px var(--border-glow); text-align: center; overflow-x: auto; }
+    .report-section { margin-bottom: 50px; }
+    .report-section h2 { font-size: 2rem; margin-bottom: 20px; color: var(--theme-color); border-bottom: 2px solid rgba(var(--theme-rgb), 0.3); padding-bottom: 10px; display: inline-block; }
+  </style>
+</head>
+<body class="page-projets">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html" class="active">Projets</a></li>
+          <li><a href="stage.html">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Switch Cisco <span class="gradient-text">& SSH</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          Ce projet portait sur la configuration initiale d'un commutateur réseau (Switch Cisco) via l'interface en ligne de commande (CLI). L'accent a été mis sur les bonnes pratiques de sécurité : création de VLANs, protection par mots de passe chiffrés, et sécurisation des accès distants (VTY) via le protocole SSH.
+        </p>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Topologie de Management</h2>
+        <div class="mermaid-card">
+          <div class="mermaid">
+            graph LR
+              Admin[Poste Administrateur <br> PuTTY] -->|Canal Sécurisé SSH <br> Port 22| VTY[Lignes VTY <br> vty 0 4]
+              VTY --> Switch[Switch Cisco Catalyst]
+              
+              Hacker[Intercepteur] -.-x|Impossible de déchiffrer| Admin
+              
+              classDef secure fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff;
+              classDef bad fill:#0f172a,stroke:#f43f5e,stroke-width:2px,color:#fff;
+              class Admin,VTY,Switch secure;
+              class Hacker bad;
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Configuration Initiale et Sécurisation Base</h2>
+        <p>Les premières étapes permettent d'identifier l'équipement et de le protéger physiquement et logiquement :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Attribution d'un nom (<code>hostname SW-CORE-01</code>) pour l'identifier sur le réseau.</li>
+          <li>Protection du mode privilégié avec la commande <code>enable secret [mot_de_passe]</code>, qui utilise un hachage fort (MD5) contrairement à <code>enable password</code>.</li>
+          <li>Chiffrement de tous les mots de passe stockés en clair dans le fichier de configuration avec <code>service password-encryption</code>.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Déploiement de SSH (Désactivation de Telnet)</h2>
+        <p>Pour contrer les failles liées à Telnet (analyse de paquets démontrée dans le projet Wireshark), le SSH a été implémenté :</p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Configuration du domaine IP : <code>ip domain-name entreprise.local</code>.</li>
+          <li>Génération des clés cryptographiques RSA de 1024 bits : <code>crypto key generate rsa</code>.</li>
+          <li>Création d'un compte local pour l'authentification : <code>username admin privilege 15 secret [mdp]</code>.</li>
+          <li>Configuration des lignes VTY pour n'accepter que le protocole SSH (<code>transport input ssh</code>) et obliger l'authentification locale (<code>login local</code>).</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="projets.html" class="btn btn-outline">← Retour aux projets</a>
+      </div>
+
+    </div>
+  </main>
+  <footer><p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p></footer>
+</body>
+</html>
