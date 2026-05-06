@@ -52,6 +52,8 @@ html { scroll-behavior: smooth; overflow-x: hidden; }
 /* --- ANIMATED BACKGROUND --- */
 body {
   font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   background-color: var(--bg-base);
   color: var(--text-main);
   line-height: 1.7;
@@ -234,7 +236,7 @@ main { padding-top: 60px; padding-bottom: 120px; perspective: 1500px; }
 .bento-card > * { position: relative; z-index: 1; }
 
 .bento-card:hover {
-  transform: translateY(-15px) rotateX(2deg) rotateY(-2deg) scale(1.02);
+  transform: translateY(-10px) scale(1.02);
   box-shadow: var(--shadow-hover);
   border-color: rgba(var(--theme-rgb), 0.6);
 }
