@@ -27,13 +27,13 @@
 
   <main>
     <div class="container">
-      <h1 class="page-title">Veille <span class="gradient-text">Technologique</span></h1>
+      <h1 class="page-title reveal">Veille <span class="gradient-text">Technologique</span></h1>
       <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted); text-align: center; font-weight: 500;">
         Sujet : <strong>Sécurisation des infrastructures système et réseau (2025-2026)</strong>.
       </p>
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Mai 2026 : Vulnérabilités multiples dans Microsoft</h3>
           <p><strong>La Faille :</strong> De multiples vulnérabilités critiques ont été découvertes au sein des produits Microsoft (incluant Windows Server et Active Directory), permettant potentiellement des exécutions de code arbitraire.</p>
           <p><strong>Impact SISR :</strong> Un attaquant peut exploiter ces failles pour prendre le contrôle total des serveurs de l'entreprise, exfiltrer des données ou déployer des ransomwares sur le domaine.</p>
@@ -41,7 +41,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0526/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Avril 2026 : Élévation de privilèges sur VMware Tanzu</h3>
           <p><strong>La Faille :</strong> Découverte de plusieurs vulnérabilités dans VMware Tanzu Kubernetes Runtime permettant à un attaquant de provoquer une élévation de privilèges.</p>
           <p><strong>Impact SISR :</strong> Dans un environnement virtualisé et conteneurisé, ces failles permettent à un utilisateur malveillant de sortir du périmètre restreint d'un conteneur pour obtenir des droits d'administration sur le cluster Kubernetes.</p>
@@ -49,7 +49,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0527/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Mars 2026 : RCE et déni de service sur Apache HTTP Server</h3>
           <p><strong>La Faille :</strong> De multiples vulnérabilités ont été identifiées dans les serveurs web Apache, permettant des exécutions de code arbitraire à distance (RCE) et des attaques par déni de service (DoS).</p>
           <p><strong>Impact SISR :</strong> Risque d'indisponibilité totale des services web internes ou publics de l'entreprise, et compromission du serveur hébergeant l'application.</p>
@@ -57,7 +57,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0530/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Février 2026 : Failles de sécurité Microsoft (Patch Tuesday)</h3>
           <p><strong>La Faille :</strong> Publication de correctifs pour de multiples failles critiques impactant notamment Microsoft Exchange Server et Microsoft SharePoint (contournements de sécurité, divulgation d'informations).</p>
           <p><strong>Impact SISR :</strong> Compromission potentielle des communications internes (mails) et des données collaboratives. Les attaquants visent en priorité les serveurs Exchange exposés sur Internet.</p>
@@ -65,7 +65,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0153/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Janvier 2026 : Exécution de code à distance sur Google Android</h3>
           <p><strong>La Faille :</strong> Découverte d'une vulnérabilité majeure dans le système d'exploitation Google Android permettant à un attaquant de provoquer une exécution de code arbitraire à distance.</p>
           <p><strong>Impact SISR :</strong> Dans le cadre d'une politique BYOD (Bring Your Own Device) ou d'une flotte mobile d'entreprise, les smartphones compromis peuvent servir de point de pivot pour attaquer le réseau Wi-Fi d'entreprise ou le VPN.</p>
@@ -73,7 +73,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0534/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Décembre 2025 : Atteinte à la confidentialité via Traefik</h3>
           <p><strong>La Faille :</strong> Vulnérabilité découverte dans Traefik (routeur Edge / reverse proxy moderne) permettant une atteinte directe à la confidentialité des données qui transitent.</p>
           <p><strong>Impact SISR :</strong> Interception possible des flux de données sensibles par contournement des règles de routage, mettant en péril les architectures microservices et les flux HTTPS de l'entreprise.</p>
@@ -81,7 +81,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0531/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Novembre 2025 : Failles critiques dans Papercut</h3>
           <p><strong>La Faille :</strong> De multiples vulnérabilités ont été découvertes dans la solution de gestion des impressions Papercut, menant à une atteinte à la confidentialité et au contournement de la politique de sécurité.</p>
           <p><strong>Impact SISR :</strong> Les serveurs d'impression étant souvent centraux dans le LAN et bénéficiant de privilèges importants, une compromission de Papercut offre un accès direct aux documents imprimés et aux annuaires Active Directory liés.</p>
@@ -89,7 +89,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0533/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>📅 Octobre 2025 : Élévation de privilèges dans Progress MOVEit</h3>
           <p><strong>La Faille :</strong> Des vulnérabilités dans l'outil de transfert de fichiers géré (MFT) Progress MOVEit Automation permettent un contournement de sécurité et une élévation de privilèges.</p>
           <p><strong>Impact SISR :</strong> Fuite massive de données critiques de l'entreprise, les attaquants ciblant ces solutions pour exfiltrer des bases de données de clients ou des documents confidentiels échangés avec des partenaires.</p>
@@ -97,7 +97,7 @@
           <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0532/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
         </div>
 
-        <div class="bento-card">
+        <div class="bento-card reveal">
           <h3>Méthodologie de veille informationnelle</h3>
           <p style="margin-bottom: 16px;">Pour assurer la pérennité et la pertinence de mon environnement d'apprentissage, j'ai structuré ma veille autour de deux axes :</p>
           <ul style="padding-left: 20px; font-weight: 500;">
