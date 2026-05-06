@@ -1,0 +1,229 @@
+/* ==========================================================================
+   PORTFOLIO MULTICOLORE - DESIGN "DYNAMIC THEMES"
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;900&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  /* Couleurs de base (Clair) */
+  --bg-card: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.12);
+  
+  --radius-lg: 24px;
+  --radius-pill: 100px;
+  --transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  /* Couleurs de base (Sombre) */
+  --bg-card: #111827;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.7);
+}
+
+/* --- THÈMES DE COULEURS SPÉCIFIQUES PAR PAGE --- */
+/* Page Accueil : Bleu Azur */
+.page-accueil { --theme-color: #2563eb; --theme-bg: #eff6ff; }
+[data-theme="dark"] .page-accueil { --theme-color: #60a5fa; --theme-bg: #020617; }
+
+/* Page Projets : Vert Émeraude */
+.page-projets { --theme-color: #059669; --theme-bg: #ecfdf5; }
+[data-theme="dark"] .page-projets { --theme-color: #34d399; --theme-bg: #022c22; }
+
+/* Page Stage : Orange Ambré */
+.page-stage { --theme-color: #ea580c; --theme-bg: #fff7ed; }
+[data-theme="dark"] .page-stage { --theme-color: #fb923c; --theme-bg: #431407; }
+
+/* Page Compétences : Violet Royal */
+.page-competences { --theme-color: #7c3aed; --theme-bg: #f5f3ff; }
+[data-theme="dark"] .page-competences { --theme-color: #a78bfa; --theme-bg: #2e1065; }
+
+/* Page Certifications : Magenta Fuchsia */
+.page-certifications { --theme-color: #c026d3; --theme-bg: #fdf4ff; }
+[data-theme="dark"] .page-certifications { --theme-color: #e879f9; --theme-bg: #4a044e; }
+
+/* Page Veilles : Rouge Rubis */
+.page-veilles { --theme-color: #e11d48; --theme-bg: #fff1f2; }
+[data-theme="dark"] .page-veilles { --theme-color: #fb7185; --theme-bg: #4c0519; }
+
+/* Page Contact : Cyan Foncé */
+.page-contact { --theme-color: #0891b2; --theme-bg: #ecfeff; }
+[data-theme="dark"] .page-contact { --theme-color: #22d3ee; --theme-bg: #083344; }
+
+/* --- RESET & STRUCTURE --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--theme-bg); /* Le fond change selon la page ! */
+  color: var(--text-main);
+  line-height: 1.7;
+  transition: background-color 0.4s ease;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 5vw; }
+
+/* --- TYPOGRAPHIE (Gras et coloré) --- */
+h1, h2, h3 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900; /* Extra Gras */
+  letter-spacing: -0.02em;
+}
+
+.page-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--theme-color); /* Prend la couleur de la page */
+}
+
+.gradient-text {
+  color: var(--text-main); /* Le reste du titre en noir/blanc */
+}
+
+/* --- HEADER EN VERRE --- */
+header {
+  position: sticky;
+  top: 15px;
+  z-index: 1000;
+  background: rgba(var(--bg-card), 0.6);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  padding: 10px 20px;
+  width: max-content;
+  max-width: 90vw;
+  margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+header .container { display: flex; align-items: center; gap: 20px; padding: 0; }
+
+nav ul { display: flex; gap: 8px; list-style: none; }
+
+nav a {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+nav a:hover, nav a.active {
+  background-color: var(--theme-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.theme-toggle {
+  background: transparent; border: none; cursor: pointer;
+  padding: 8px; color: var(--text-main); transition: var(--transition);
+}
+
+/* --- GRILLES ET CARTES (Bento) --- */
+main { padding-top: 60px; padding-bottom: 80px; }
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.bento-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 35px;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.bento-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--theme-color);
+}
+
+.bento-card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: var(--theme-color); /* Titres des cartes colorés ! */
+}
+
+/* --- TAGS ET BADGES --- */
+.meta-tag {
+  display: inline-block;
+  background: var(--border-color);
+  color: var(--text-main);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 20px;
+  width: max-content;
+}
+
+.skills-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin-bottom: 25px; }
+.skills-tags li {
+  padding: 8px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- BOUTONS --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 28px;
+  background-color: var(--theme-color);
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+  width: max-content;
+  border: 2px solid var(--theme-color);
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--theme-color) !important;
+}
+
+.btn-outline:hover {
+  background-color: var(--theme-color);
+  color: #fff !important;
+}
+
+/* --- FOOTER --- */
+footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-weight: 600; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 800px) {
+  header { width: calc(100% - 20px); border-radius: 20px; }
+  header .container { flex-direction: column; gap: 10px; padding: 5px; }
+  nav ul { flex-wrap: wrap; justify-content: center; gap: 5px; }
+  .bento-card { padding: 25px; }
+}
