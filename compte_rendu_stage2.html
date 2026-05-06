@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Stage de 2ème Année</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <!-- Inclusion de Mermaid pour les schémas réseau -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    });
+  </script>
+  <style>
+    .mermaid-card {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin: 40px 0;
+      border: 1px solid var(--border-color);
+      box-shadow: inset 0 0 0 1px var(--border-glow);
+      text-align: center;
+      overflow-x: auto;
+    }
+    .report-section {
+      margin-bottom: 50px;
+    }
+    .report-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--theme-color);
+      border-bottom: 2px solid rgba(var(--theme-rgb), 0.3);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="page-stage">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="stage.html" class="active">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Compte Rendu <span class="gradient-text">Stage 2</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          Ce compte-rendu détaille mes interventions techniques lors de mon stage de 2ème année en <strong>BTS SIO SISR</strong> (Janvier - Février 2026). 
+          La mission principale a consisté à moderniser une infrastructure vieillissante en migrant vers des solutions Open Source performantes et en déployant un réseau haut-débit.
+        </p>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Topologie Réseau et Infrastructure Cible</h2>
+        <p>
+          Afin de répondre aux besoins de performance, l'architecture réseau a été repensée autour d'équipements <strong>Ubiquiti</strong> capables de gérer un débit réel de <strong>2,5 Gbit/s</strong>. 
+          Le schéma ci-dessous illustre l'architecture logique des points réseaux mis en place.
+        </p>
+        
+        <!-- Schéma Réseau généré avec Mermaid -->
+        <div class="mermaid-card">
+          <div class="mermaid">
+            graph TD
+              subgraph "Infrastructure Réseau (Ubiquiti 2.5 Gbps)"
+                  Router[Routeur / Pare-feu] --> CoreSwitch[Switch Core Ubiquiti EdgeSwitch]
+              end
+              subgraph "Datacenter / Baie Serveur"
+                  CoreSwitch --> ILO[Port Management HPE iLO 6]
+                  CoreSwitch --> HPE[Serveur HPE Alletra Storage]
+                  HPE --> Proxmox[Cluster Virtualisation Proxmox VE]
+                  HPE --> RAID6[(Volume Données RAID 6 - 64 To)]
+                  HPE --> RAID1[(Volume Système RAID 1 - SSD)]
+              end
+              subgraph "Postes Clients"
+                  CoreSwitch --> PC1[Windows 11 - TPM 2.0]
+                  CoreSwitch --> PC2[Windows 11 - Secure Boot]
+                  CoreSwitch --> PC3[VLAN Administration]
+              end
+
+              classDef network fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff;
+              classDef server fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff;
+              classDef storage fill:#0f172a,stroke:#f97316,stroke-width:2px,color:#fff;
+              
+              class CoreSwitch,Router network;
+              class HPE,Proxmox server;
+              class RAID6,RAID1 storage;
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Migration et Virtualisation (Proxmox VE)</h2>
+        <p>
+          L'un des enjeux majeurs a été l'abandon de VMware vSphere (en raison des coûts de licences) au profit d'une solution Open Source : <strong>Proxmox VE</strong>.
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Préparation et installation du système Proxmox sur des disques dédiés sécurisés en RAID 1.</li>
+          <li>Exportation des machines virtuelles existantes au format OVF/VMDK depuis l'ancien cluster VMware.</li>
+          <li>Conversion des disques au format QCOW2 et intégration dans l'environnement Proxmox.</li>
+          <li>Configuration des interfaces réseaux virtuelles (Linux Bridge) pour mapper les différents VLANs.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Stockage et Matériel (HPE Alletra)</h2>
+        <p>
+          Pour garantir la pérennité et la sécurité des données, nous avons racké et configuré un nouveau serveur <strong>HPE Alletra</strong>.
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Configuration du management à distance via l'interface <strong>iLO 6</strong> (attribution IP fixe sur un réseau d'administration isolé).</li>
+          <li>Création des volumes de stockage dans le contrôleur Smart Array.</li>
+          <li>Mise en place d'un volume capacitif de <strong>64 To en RAID 6</strong> pour tolérer la perte simultanée de deux disques.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>4. Optimisation du Réseau et Déploiement Postes Clients</h2>
+        <p>
+          Les points d'accès réseaux et les commutateurs ont été mis à niveau.
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li>Configuration des ports du switch Ubiquiti pour forcer la négociation en 2.5 Gbps sur les liens montants.</li>
+          <li>Déploiement d'un nouveau parc de postes sous <strong>Windows 11</strong>.</li>
+          <li>Activation et vérification des prérequis de sécurité matérielle : <strong>TPM 2.0</strong> et <strong>Secure Boot</strong> dans l'UEFI avant la création des masters de déploiement.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="stage.html" class="btn btn-outline">← Retour à la page Stage</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p>
+  </footer>
+</body>
+</html>
