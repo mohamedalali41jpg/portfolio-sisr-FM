@@ -47,7 +47,7 @@
 
 /* --- RESET & STRUCTURE --- */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 /* --- ANIMATED BACKGROUND --- */
 body {
@@ -91,13 +91,12 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; letter-spacing: -0.03em; }
   font-size: clamp(3rem, 6vw, 5rem);
   font-weight: 900;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
   color: var(--text-main);
   text-transform: uppercase;
   position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
+  display: block;
+  width: 100%;
 }
 
 .gradient-text {
