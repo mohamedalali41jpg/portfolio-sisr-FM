@@ -46,89 +46,87 @@
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Décembre 2025 : Attaque DDoS contre La Poste               -->
+        <!-- Décembre 2025 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Attaque DDoS contre La Poste par le groupe pro-russe NoName057</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Attaque DDoS</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Vulnérabilité dans React Server Components</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Vulnérabilité Web</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>22 décembre 2025</strong>, en pleine période de Noël, le groupe de hacktivistes pro-russes <strong>NoName057(16)</strong> a lancé une attaque par déni de service distribué (DDoS) massive contre les serveurs de La Poste. L'attaque a atteint un pic de <strong>2,5 milliards de paquets par seconde</strong>, une intensité historique pour une entreprise française.</p>
-          <p><strong>Impact :</strong> Les services en ligne du groupe ont été fortement perturbés : suivi de colis Colissimo, services de La Banque Postale, et coffre-fort numérique Digiposte étaient inaccessibles pendant plusieurs jours. Les perturbations ont perduré jusqu'au 1er janvier 2026.</p>
-          <p><strong>Données compromises :</strong> Aucune fuite de données personnelles n'a été constatée. L'attaque visait uniquement la disponibilité des services (saturation des serveurs).</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Intervention de la DGSI et de l'Unité nationale cyber (UNC). Mise en place de filtrage du trafic réseau, augmentation de la capacité d'absorption DDoS, et blocage des adresses IP d'attaque. La distribution physique du courrier n'a pas été impactée.</p>
-          <a href="https://www.lemondeinformatique.fr/actualites/lire-plusieurs-services-en-ligne-de-la-poste-bloques-par-une-attaque-ddos-98876.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Le Monde Informatique — « Plusieurs services en ligne de La Poste bloqués par une attaque DDoS »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>4 décembre 2025</strong>, le CERT-FR a relayé une alerte concernant une vulnérabilité critique affectant React Server Components. Cette faille permettait à un attaquant distant et non authentifié d'injecter du code malveillant sur les serveurs hébergeant des applications web utilisant cette technologie.</p>
+          <p><strong>Impact :</strong> Risque de compromission totale des serveurs web, fuite de données et exécution de code arbitraire à distance (RCE).</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise à jour immédiate des packages React vers les versions corrigées. Audit des logs serveurs pour vérifier toute tentative d'exploitation de la vulnérabilité avant l'application du correctif.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2025-ACT-053/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Vulnérabilité dans React Server Components »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Janvier 2026 : Piratage du fichier FICOBA                  -->
+        <!-- Janvier 2026 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Piratage du fichier FICOBA : 1,2 million de comptes bancaires exposés</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Usurpation d'identifiants</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Vulnérabilité critique dans le service telnetd</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Protocole Réseau</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Fin <strong>janvier 2026</strong>, un attaquant a réussi à <strong>usurper les identifiants d'un fonctionnaire</strong> disposant d'un accès légitime au fichier national des comptes bancaires (FICOBA), géré par la Direction Générale des Finances Publiques (DGFiP). L'attaquant a consulté et extrait des données pendant environ un mois avant d'être détecté.</p>
-          <p><strong>Impact :</strong> <strong>1,2 million de comptes</strong> concernés. Les données exposées comprennent : nom, adresse du titulaire, coordonnées bancaires (RIB/IBAN) et identifiant fiscal. Le fichier ne contient ni soldes ni détails de transactions.</p>
-          <p><strong>Risque principal :</strong> Campagnes de phishing ultra-ciblées et création de faux mandats de prélèvement SEPA grâce aux données volées.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Détection et blocage des accès illégitimes par la DGFiP. Notification individuelle de chaque personne concernée. Dépôt de plainte pénale et notification à la CNIL. Recommandation aux usagers de surveiller leurs comptes et de contester tout prélèvement suspect.</p>
-          <a href="https://www.01net.com/actualites/fichier-national-comptes-bancaires-pirate-12-million-de-comptes-sont-touches.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : 01net — « Fichier national des comptes bancaires piraté : 1,2 million de comptes touchés »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>21 janvier 2026</strong>, l'ANSSI a publié un avis sur une faille découverte dans le démon <code>telnetd</code> présent sur de nombreux équipements réseaux obsolètes ou mal configurés. Bien que Telnet soit déprécié au profit de SSH, il restait actif sur certains routeurs et commutateurs, permettant à des attaquants d'obtenir des accès privilégiés.</p>
+          <p><strong>Impact :</strong> Prise de contrôle à distance des équipements réseaux par des acteurs malveillants, permettant l'interception de trafic ou le pivotement vers le réseau interne de l'entreprise.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Désactivation immédiate du protocole Telnet sur l'ensemble des équipements réseaux, durcissement des configurations pour utiliser exclusivement SSH (v2) avec des méthodes d'authentification fortes, et mise à jour des firmwares.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Vulnérabilité dans telnetd »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Février 2026 : Cyberattaque contre Cegedim Santé           -->
+        <!-- Février 2026 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Fuite massive de données médicales chez Cegedim Santé (15 millions de patients)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Fuite de données sensibles</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Campagnes de Ransomwares (Bulletin d'actualité)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware / Phishing</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>26 février 2026</strong>, France 2 révèle l'ampleur d'une cyberattaque contre <strong>Cegedim Santé</strong>, éditeur du logiciel médical « MonLogicielMedical » (MLM). Les attaquants ont utilisé des identifiants de médecins (issus de fuites antérieures) pour accéder à un panneau de contrôle et extraire automatiquement (scraping) les données de <strong>1 500 praticiens</strong>.</p>
-          <p><strong>Impact :</strong> Jusqu'à <strong>15 millions de patients</strong> concernés. Les données administratives (nom, prénom, date de naissance, adresse, téléphone, e-mail, régime de Sécurité sociale) ont été exposées. Pour <strong>169 000 dossiers</strong>, des commentaires libres des médecins contenant des informations très sensibles (pathologies, orientations, convictions) ont été accessibles.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Cegedim Santé a circonscrit l'incident, notifié la CNIL et porté plainte. Les 1 500 médecins concernés ont été contactés dès janvier 2026. La Brigade de lutte contre la cybercriminalité (BL2C) a ouvert une enquête judiciaire. Le groupe de hackers « DumpSec » a été identifié.</p>
-          <a href="https://www.leparisien.fr/high-tech/fuite-de-donnees-medicales-5-minutes-pour-comprendre-laffaire-cegedim-27-02-2026-ORKGQC6CD5GZPDD3UBAA6CPWPE.php" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Le Parisien — « Fuite de données médicales : 5 minutes pour comprendre l'affaire Cegedim »</a>
+          <p><strong>Ce qui s'est passé :</strong> Dans son bulletin publié le <strong>23 février 2026</strong>, le CERT-FR a alerté sur une recrudescence massive d'attaques par rançongiciel ciblant les entreprises françaises, souvent initiées par des campagnes de phishing sophistiquées (usurpation d'identité d'institutions publiques).</p>
+          <p><strong>Impact :</strong> Chiffrement des serveurs de fichiers, vol de données sensibles avec double extorsion, et paralysie de l'activité des PME et ETI touchées.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Isolation immédiate des systèmes compromis. Restauration depuis des sauvegardes déconnectées (hors ligne/immuables). Renforcement de la sensibilisation des collaborateurs face à l'hameçonnage (phishing).</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-008/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité CERTFR-2026-ACT-008 »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mars 2026 : Cyberattaque contre le CNOUS                   -->
+        <!-- Mars 2026 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Cyberattaque contre le CNOUS : 770 000 étudiants touchés</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Intrusion & vol de données</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Activités Botnets et attaques DDoS (Bulletin d'actualité)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Botnet / DDoS</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>25 mars 2026</strong>, une cyberattaque a ciblé le <strong>Centre national des œuvres universitaires et scolaires (CNOUS)</strong>. Les attaquants ont exploité une vulnérabilité dans les systèmes pour accéder aux bases de données des étudiants boursiers et résidents des CROUS de toute la France.</p>
-          <p><strong>Impact :</strong> Les données personnelles de <strong>770 000 étudiants</strong> ont été compromises : nom, prénom, adresse, numéro étudiant, informations de bourse et, dans certains cas, des pièces justificatives (passeports, cartes d'identité). Le même mois, le ministère de l'Éducation nationale a aussi subi une attaque exposant 243 000 agents.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Isolation des systèmes compromis, colmatage de la faille exploitée, et notification des étudiants concernés. Le CNOUS a renforcé ses procédures d'authentification et mis en place un audit de sécurité complet de ses infrastructures. Les autorités ont alerté sur les risques de phishing ciblant les étudiants.</p>
-          <a href="https://www.01net.com/actualites/cyberattaque-contre-le-crous-les-donnees-de-774-000-etudiants-ont-ete-siphonnees.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : 01net — « Cyberattaque contre le Crous : les données de 774 000 étudiants ont été siphonnées »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>23 mars 2026</strong>, le CERT-FR a synthétisé les menaces pesant sur les infrastructures critiques. Le rapport a souligné l'activité croissante de botnets exploitant des failles IoT pour orchestrer des attaques par Déni de Service Distribué (DDoS) contre des services gouvernementaux.</p>
+          <p><strong>Impact :</strong> Indisponibilité temporaire de plusieurs services en ligne, surcharge de la bande passante et des pare-feux (firewalls) ciblés.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Implémentation de solutions anti-DDoS chez les fournisseurs d'accès (BGP Blackholing, filtrage de flux), limitation du taux de requêtes (rate limiting) et identification des adresses IP compromises pour les bloquer au niveau du pare-feu applicatif (WAF).</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-012/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité CERTFR-2026-ACT-012 »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Avril 2026 : Piratage de l'ANTS (France Titres)            -->
+        <!-- Avril 2026 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Piratage massif de l'ANTS (France Titres) : 11,7 millions de Français</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille IDOR</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Expiration de certificats Secure Boot</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Matérielle</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>15 avril 2026</strong>, l'Agence nationale des titres sécurisés (ANTS / France Titres) a été victime d'une intrusion informatique. Un adolescent de 15 ans a exploité une faille de type <strong>IDOR</strong> (Insecure Direct Object Reference) — qualifiée par lui-même de « stupide » — pour accéder à des millions de dossiers en modifiant simplement un paramètre dans les requêtes HTTP.</p>
-          <p><strong>Impact :</strong> <strong>11,7 millions de comptes</strong> compromis. Les données exposées incluent : noms, prénoms, adresses e-mail, dates de naissance, numéros de téléphone et adresses postales. Les documents d'identité et données biométriques n'ont pas été touchés.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> L'adolescent a été interpellé et mis en examen. Le gouvernement a annoncé le <strong>1er mai 2026</strong> une enveloppe d'urgence de <strong>200 millions d'euros</strong> pour renforcer la cybersécurité de l'État et la création d'une « Autorité nationale pour le numérique et l'IA » pour centraliser la défense numérique des administrations.</p>
-          <a href="https://securite.developpez.com/actu/382382/Modifier-un-chiffre-dans-une-URL-pour-acceder-aux-donnees-de-19-millions-de-Francais-le-portail-de-l-ANTS-cede-face-a-une-vulnerabilite-basique-votre-nom-prenom-date-de-naissance-sont-peut-etre-en-vente/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Developpez.com — « Le portail de l'ANTS cède face à une vulnérabilité basique »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>2 avril 2026</strong>, une alerte concernant l'expiration imminente des certificats utilisés pour valider le processus de démarrage sécurisé (Secure Boot) UEFI sur de nombreux systèmes a été publiée. Si un attaquant a un accès physique ou réseau suffisant, cette faille dans la chaîne de confiance peut être exploitée.</p>
+          <p><strong>Impact :</strong> Contournement des mécanismes de sécurité au démarrage. Possibilité pour un attaquant d'installer des rootkits ou des bootkits indétectables par le système d'exploitation et les antivirus classiques.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement en urgence de mises à jour de firmware (BIOS/UEFI) fournies par les constructeurs afin de renouveler la base de données de signatures autorisées (db/dbx) et de révoquer les anciens certificats vulnérables.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-014/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Expiration de certificats Secure Boot en juin 2026 »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mai 2026 : Piratage d'Almerys (tiers payant)               -->
+        <!-- Mai 2026 -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Piratage d'Almerys : 15 millions de numéros de Sécurité sociale exposés</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Intrusion système santé</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Vulnérabilité dans Firefox pour iOS</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Vulnérabilité Mobile</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Fin <strong>mai 2026</strong>, l'opérateur de tiers payant <strong>Almerys</strong> a subi une cyberattaque ciblant son site de délivrance des prises en charge (PEC). C'est la deuxième fois en deux ans que cet opérateur est touché (après une première attaque début 2024).</p>
-          <p><strong>Impact :</strong> <strong>15 millions de numéros de Sécurité sociale</strong> exposés, accompagnés d'informations d'état civil (nom, prénom, date de naissance), numéros de contrats santé, noms des organismes complémentaires et dates de couverture. Les informations bancaires et données de soins n'ont pas été touchées.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Les organismes complémentaires (Alan, Ampli, etc.) ont informé directement leurs assurés. Une enquête a été ouverte par la section de lutte contre la cybercriminalité du parquet de Paris. Almerys a renforcé ses systèmes d'authentification sur le portail PEC. Les usagers ont été alertés sur les risques de phishing et d'usurpation d'identité.</p>
-          <a href="https://www.01net.com/actualites/15-millions-de-numeros-de-securite-sociale-pirates-almerys-est-victime-dune-nouvelle-fuite-de-donnees.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : 01net — « 15 millions de numéros de sécurité sociale piratés : Almerys est victime d’une nouvelle fuite de données »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>26 mai 2026</strong>, un avis de sécurité a été émis pour le navigateur web Firefox sur la plateforme iOS (smartphones et tablettes Apple). La vulnérabilité découle d'un problème dans le moteur de rendu, pouvant être exploité via la simple visite d'une page web piégée.</p>
+          <p><strong>Impact :</strong> Exécution de code arbitraire sur le terminal mobile, vol de sessions actives et d'informations personnelles (historique, mots de passe enregistrés).</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Obligation de mettre à jour l'application Firefox pour iOS vers sa dernière version via l'App Store. Sur les parcs d'entreprise (MDM), forcer le déploiement de la mise à jour corrective sur les flottes de téléphones gérées.</p>
+          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0645/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Vulnérabilité dans Firefox pour iOS »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
