@@ -6,13 +6,7 @@
   <title>Compte Rendu - Stage de 1ère Année</title>
   <link rel="stylesheet" href="style.css?v=2">
   <script src="theme-toggle.js" defer></script>
-  <!-- Inclusion de Mermaid pour les schémas réseau -->
-  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-    });
-  </script>
+
   <style>
     .mermaid-card {
       background: rgba(15, 23, 42, 0.8);
@@ -65,9 +59,9 @@
           Les objectifs principaux de cette immersion professionnelle étaient d'assurer le support utilisateur, d'automatiser le déploiement logiciel et de sécuriser les accès réseau ainsi que la sauvegarde des données.
         </p>
         <div style="margin-top: 20px;">
-          <a href="docs/e5 (1).pdf" target="_blank" class="btn btn-outline">
+          <a href="docs/suivi-stage1.pdf" target="_blank" class="btn btn-outline">
             <svg style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
-            Consulter le Tableau de Synthèse E5
+            Consulter le Rapport de Stage (PDF)
           </a>
         </div>
       </div>
@@ -78,36 +72,9 @@
           Pour assurer une maintenance proactive et une gestion structurée du parc informatique, l'infrastructure s'articule autour de services d'administration centraux (Active Directory, OPSI, GLPI) interconnectés à travers des VLANs configurés sur des commutateurs Cisco.
         </p>
         
-        <!-- Schéma Réseau généré avec Mermaid -->
-        <div class="mermaid-card">
-          <div class="mermaid">
-            graph TD
-              subgraph "Administration & Automatisation (Interne)"
-                  Admin[Administrateur / Technicien] -->|Déploiement Paquets| OPSI[Serveur OPSI<br/>Télédistribution]
-                  Admin -->|Gestion Utilisateurs & GPO| AD[Active Directory<br/>Windows Server]
-                  Admin -->|Administration CLI / SSH| Cisco[Switch Cisco<br/>VLANs & Routage]
-              end
-              subgraph "Support & Services Utilisateurs"
-                  GLPI[Serveur GLPI<br/>Gestion Tickets / Helpdesk] <--|Ouverture de Tickets / Incidents| Client[Poste Client Utilisateur]
-                  OPSI -->|Installation automatique logiciels| Client
-                  AD -->|Authentification / Profils / GPO| Client
-                  Client -->|Accès Réseau segmenté| Cisco
-              end
-              subgraph "Sécurité & Continuité (Sauvegardes)"
-                  Cron[Tâches Planifiées cron] -->|Scripts Bash/Python| Backup[(Serveur de Sauvegarde<br/>Veeam & NAS)]
-                  AD -->|Sauvegarde état système| Backup
-              end
-
-              classDef network fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff;
-              classDef server fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff;
-              classDef client fill:#0f172a,stroke:#eab308,stroke-width:2px,color:#fff;
-              classDef storage fill:#0f172a,stroke:#f97316,stroke-width:2px,color:#fff;
-              
-              class Cisco network;
-              class OPSI,AD,GLPI server;
-              class Client client;
-              class Backup storage;
-          </div>
+        <!-- Schéma Réseau représenté par une image -->
+        <div class="mermaid-card" style="padding: 10px; display: flex; justify-content: center; align-items: center;">
+          <img src="assets/infra_stage1.png" alt="Infrastructure Réseau et Flux d'Administration - Stage 1" style="max-width: 100%; border-radius: var(--radius-lg); height: auto; display: block; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
         </div>
       </div>
 
