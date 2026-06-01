@@ -28,90 +28,79 @@
   <main>
     <div class="container">
       <h1 class="page-title reveal">Veille <span class="gradient-text">Technologique</span></h1>
+      
       <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted); text-align: center; font-weight: 500;">
-        Sujet : <strong>Sécurisation des infrastructures système et réseau (2026-2026)</strong>.
+        Sujet : <strong>La protection des données et sécurisation des accès réseau face aux rançongiciels (Ransomwares)</strong>
       </p>
 
+      <!-- Bandeau de compétence associée (Réf 1.6) -->
       <div class="bento-card reveal delay-2" style="margin-bottom: 40px; padding: 20px; background: rgba(var(--theme-rgb), 0.05); border-color: rgba(var(--theme-rgb), 0.2);">
         <p style="font-size: 1rem; font-weight: 700; margin: 0; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
           🎓 <strong>Compétence associée :</strong> <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin: 0; font-size: 0.8rem;">Référentiel 1.6 - Organiser son développement professionnel</span>
         </p>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px; margin-bottom: 0;">
-          Cette veille technologique démontre la mise en œuvre d'outils et de stratégies de veille informationnelle active sur la cybersécurité des systèmes et réseaux.
+          Cette veille technologique démontre la mise en œuvre d'outils et de stratégies de veille informationnelle active sur la protection des données et la sécurité des accès réseaux.
         </p>
       </div>
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
+        
+        <!-- Fiche 1 : Comprendre les rançongiciels -->
         <div class="bento-card reveal">
-          <h3>📅 Mai 2026 : Vulnérabilités multiples dans Microsoft</h3>
-          <p><strong>La Faille :</strong> De multiples vulnérabilités critiques ont été découvertes au sein des produits Microsoft (incluant Windows Server et Active Directory), permettant potentiellement des exécutions de code arbitraire.</p>
-          <p><strong>Impact SISR :</strong> Un attaquant peut exploiter ces failles pour prendre le contrôle total des serveurs de l'entreprise, exfiltrer des données ou déployer des ransomwares sur le domaine.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement immédiat des mises à jour cumulatives du Patch Tuesday de mai 2026 via WSUS ou SCCM sur l'ensemble du parc.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0526/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 1 : Les Rançongiciels (Ransomwares) et leurs vecteurs de propagation</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Alerte & Compréhension</span>
+          </div>
+          <p><strong>De quoi s'agit-il ?</strong> Un rançongiciel est un logiciel malveillant qui chiffre les données d'un système d'information et réclame une rançon en échange de la clé de déchiffrement. Les attaquants ciblent en priorité les serveurs de fichiers partagés et les systèmes de sauvegardes locales pour empêcher toute restauration rapide.</p>
+          <p><strong>Vecteurs d'entrée :</strong> Phishing (courriels frauduleux), exploitation de serveurs mal configurés ou exposés à Internet, ou introduction de périphériques USB infectés (nomadisme).</p>
+          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Mettre en place des stratégies GPO pour bloquer l'usage des clés USB non autorisées, sensibiliser les utilisateurs, et filtrer les flux aux frontières du réseau.</p>
+          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-pratiques/rancongiciels-ransomwares" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter la fiche pratique officielle : Cybermalveillance.gouv.fr</a>
         </div>
 
+        <!-- Fiche 2 : La stratégie de sauvegarde de l'ANSSI -->
         <div class="bento-card reveal">
-          <h3>📅 Avril 2026 : Élévation de privilèges sur VMware Tanzu</h3>
-          <p><strong>La Faille :</strong> Découverte de plusieurs vulnérabilités dans VMware Tanzu Kubernetes Runtime permettant à un attaquant de provoquer une élévation de privilèges.</p>
-          <p><strong>Impact SISR :</strong> Dans un environnement virtualisé et conteneurisé, ces failles permettent à un utilisateur malveillant de sortir du périmètre restreint d'un conteneur pour obtenir des droits d'administration sur le cluster Kubernetes.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise à jour des clusters VMware Tanzu vers les versions patchées recommandées par l'éditeur et restriction stricte des accès RBAC.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0527/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 2 : La stratégie de sauvegarde de l'ANSSI face aux rançongiciels</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Continuité de Service (PRA)</span>
+          </div>
+          <p><strong>Recommandation principale :</strong> L'ANSSI préconise d'appliquer strictement la <strong>règle de sauvegarde du 3-2-1</strong> (disposer de 3 copies des données, sur 2 supports différents, dont 1 copie stockée hors-ligne/déconnectée physiquement du réseau de production).</p>
+          <p><strong>Cloisonnement et gestion des droits :</strong> Les serveurs de sauvegardes doivent être isolés logiquement (VLANs dédiés) et protégés par une authentification forte, indépendante de l'Active Directory principal. Les droits de fichiers NTFS doivent respecter le principe du moindre privilège.</p>
+          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Mise en œuvre de scripts planifiés (cron) pour déporter des données, utilisation de solutions robustes de sauvegarde (comme Veeam Agent) pour des images systèmes complètes quotidiennes, et réalisation régulière de tests de restauration.</p>
+          <a href="https://www.cyber.gouv.fr/publications/sauvegarde-des-systemes-dinformation" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide de Sauvegarde de l'ANSSI : cyber.gouv.fr</a>
         </div>
 
+        <!-- Fiche 3 : Sécurisation Active Directory et protocoles obsolètes -->
         <div class="bento-card reveal">
-          <h3>📅 Mars 2026 : RCE et déni de service sur Apache HTTP Server</h3>
-          <p><strong>La Faille :</strong> De multiples vulnérabilités ont été identifiées dans les serveurs web Apache, permettant des exécutions de code arbitraire à distance (RCE) et des attaques par déni de service (DoS).</p>
-          <p><strong>Impact SISR :</strong> Risque d'indisponibilité totale des services web internes ou publics de l'entreprise, et compromission du serveur hébergeant l'application.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise à jour du paquet Apache HTTP Server sur les serveurs Linux/Windows et configuration de règles pare-feu applicatif (WAF) pour filtrer les requêtes anormales.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0530/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 3 : Sécurisation de l'Active Directory et désactivation des protocoles vulnérables</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Sécurité Active Directory</span>
+          </div>
+          <p><strong>L'enjeu :</strong> Une fois le réseau d'entreprise pénétré, les attaquants utilisent des protocoles obsolètes ou non chiffrés pour intercepter des identifiants d'administration (mots de passe en clair) et se propager latéralement jusqu'au contrôleur de domaine Active Directory.</p>
+          <p><strong>Protocoles à proscrire :</strong> Désactivation définitive de Telnet au profit de SSH, de SMBv1 (partage de fichiers vulnérable), et restriction de NTLMv1.</p>
+          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Remplacement de Telnet par SSH v2 avec mots de passe chiffrés pour l'administration en ligne de commande (CLI) des switchs Cisco via PuTTY, et durcissement des stratégies GPO Active Directory.</p>
+          <a href="https://www.cyber.gouv.fr/publications/recommandations-de-securite-relatives-active-directory" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide Active Directory de l'ANSSI : cyber.gouv.fr</a>
         </div>
 
+        <!-- Fiche 4 : Guide d'Hygiène Informatique de l'ANSSI -->
         <div class="bento-card reveal">
-          <h3>📅 Février 2026 : Failles de sécurité Microsoft (Patch Tuesday)</h3>
-          <p><strong>La Faille :</strong> Publication de correctifs pour de multiples failles critiques impactant notamment Microsoft Exchange Server et Microsoft SharePoint (contournements de sécurité, divulgation d'informations).</p>
-          <p><strong>Impact SISR :</strong> Compromission potentielle des communications internes (mails) et des données collaboratives. Les attaquants visent en priorité les serveurs Exchange exposés sur Internet.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Application stricte des Cumulative Updates (CU) pour Exchange 2016/2019 et audit régulier des journaux d'accès aux messageries.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0153/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 4 : Les règles fondamentales du Guide d'Hygiène Informatique</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Hygiène du Réseau & Systèmes</span>
+          </div>
+          <p><strong>Les fondamentaux :</strong> L'ANSSI liste 42 mesures essentielles pour sécuriser les réseaux d'entreprise. Pour le profil SISR, cela inclut le cloisonnement des réseaux d'administration et la sécurisation des connexions distantes.</p>
+          <p><strong>Mesures clés :</strong> Segmentation réseau physique ou logique (création de VLANs séparés sur commutateur pour isoler les flux d'administration, les flux utilisateurs et les flux serveurs), activation de pare-feu locaux sur tous les postes, et contrôle régulier des accès au réseau d'administration.</p>
+          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Configuration de VLANs d'accès et de ports d'administration sécurisés sur les switchs, activation de pare-feu locaux (Windows Firewall, Linux UFW), et audit régulier des ports d'écoute ouverts.</p>
+          <a href="https://www.cyber.gouv.fr/publications/guide-dhygiene-informatique" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide d'Hygiène Informatique de l'ANSSI : cyber.gouv.fr</a>
         </div>
 
+        <!-- Méthodologie -->
         <div class="bento-card reveal">
-          <h3>📅 Janvier 2026 : Exécution de code à distance sur Google Android</h3>
-          <p><strong>La Faille :</strong> Découverte d'une vulnérabilité majeure dans le système d'exploitation Google Android permettant à un attaquant de provoquer une exécution de code arbitraire à distance.</p>
-          <p><strong>Impact SISR :</strong> Dans le cadre d'une politique BYOD (Bring Your Own Device) ou d'une flotte mobile d'entreprise, les smartphones compromis peuvent servir de point de pivot pour attaquer le réseau Wi-Fi d'entreprise ou le VPN.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement des correctifs de sécurité via la solution MDM (Mobile Device Management) de l'entreprise et isolation des terminaux non conformes.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0534/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
-        </div>
-
-        <div class="bento-card reveal">
-          <h3>📅 Décembre 2026 : Atteinte à la confidentialité via Traefik</h3>
-          <p><strong>La Faille :</strong> Vulnérabilité découverte dans Traefik (routeur Edge / reverse proxy moderne) permettant une atteinte directe à la confidentialité des données qui transitent.</p>
-          <p><strong>Impact SISR :</strong> Interception possible des flux de données sensibles par contournement des règles de routage, mettant en péril les architectures microservices et les flux HTTPS de l'entreprise.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Application rapide du correctif logiciel fourni par l'éditeur de Traefik et révision des fichiers de configuration de routage.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0531/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
-        </div>
-
-        <div class="bento-card reveal">
-          <h3>📅 Novembre 2026 : Failles critiques dans Papercut</h3>
-          <p><strong>La Faille :</strong> De multiples vulnérabilités ont été découvertes dans la solution de gestion des impressions Papercut, menant à une atteinte à la confidentialité et au contournement de la politique de sécurité.</p>
-          <p><strong>Impact SISR :</strong> Les serveurs d'impression étant souvent centraux dans le LAN et bénéficiant de privilèges importants, une compromission de Papercut offre un accès direct aux documents imprimés et aux annuaires Active Directory liés.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise à niveau immédiate de l'application Papercut MF/NG et segmentation réseau du serveur d'impression vis-à-vis des postes de travail.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0533/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
-        </div>
-
-        <div class="bento-card reveal">
-          <h3>📅 Octobre 2026 : Élévation de privilèges dans Progress MOVEit</h3>
-          <p><strong>La Faille :</strong> Des vulnérabilités dans l'outil de transfert de fichiers géré (MFT) Progress MOVEit Automation permettent un contournement de sécurité et une élévation de privilèges.</p>
-          <p><strong>Impact SISR :</strong> Fuite massive de données critiques de l'entreprise, les attaquants ciblant ces solutions pour exfiltrer des bases de données de clients ou des documents confidentiels échangés avec des partenaires.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Application stricte des patchs de l'éditeur Progress, rotation immédiate des clés de chiffrement et audit des comptes de service associés.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0532/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR (ANSSI)</a>
-        </div>
-
-        <div class="bento-card reveal">
-          <h3>Méthodologie de veille informationnelle</h3>
-          <p style="margin-bottom: 16px;">Pour assurer la pérennité et la pertinence de mon environnement d'apprentissage, j'ai structuré ma veille autour de deux axes :</p>
-          <ul style="padding-left: 20px; font-weight: 500;">
-            <li><strong>Collecte (Push) :</strong> Utilisation de <strong>Feedly</strong> pour agréger les flux RSS du CERT-FR, de l'ANSSI et des bulletins de sécurité Microsoft.</li>
-            <li><strong>Organisation :</strong> Utilisation de <strong>Notion</strong> pour documenter chaque faille et préparer les fiches de remédiation technique utilisables en entreprise.</li>
+          <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Méthodologie de veille informationnelle</h3>
+          <p style="margin-bottom: 16px;">Pour assurer la pérennité et la pertinence de mon environnement d'apprentissage sur la sécurité des réseaux, j'ai structuré ma veille autour de deux axes :</p>
+          <ul style="padding-left: 20px; line-height: 1.8; font-weight: 500; color: var(--text-muted);">
+            <li><strong>Collecte Automatisée (Flux Push) :</strong> Utilisation de l'outil <strong>Feedly</strong> pour agréger les flux RSS et bulletins d'alerte officiels de l'ANSSI (CERT-FR) et de Cybermalveillance.gouv.fr.</li>
+            <li><strong>Curation et Analyse :</strong> Tri régulier des articles et stockage de fiches synthétiques sur un outil collaboratif (<strong>Notion</strong>) afin de capitaliser sur les bonnes pratiques de remédiation technique.</li>
+            <li><strong>Mise en œuvre pratique (Liaison Portfolio) :</strong> Les conclusions de cette veille ont directement guidé la réalisation de mes projets (sécurisation SSH de switch Cisco en CLI, GPOs de restriction Active Directory et déploiement de politiques de sauvegarde Veeam et cron durant mes stages).</li>
           </ul>
         </div>
       </div>
