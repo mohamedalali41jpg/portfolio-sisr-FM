@@ -30,7 +30,7 @@
       <h1 class="page-title reveal">Veille <span class="gradient-text">Technologique</span></h1>
       
       <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted); text-align: center; font-weight: 500;">
-        Sujet : <strong>Sécurisation des infrastructures système et réseau contre les cyberattaques courantes (Décembre 2025 - Mai 2026)</strong>
+        Sujet : <strong>Les cyberattaques majeures en France — Analyse mensuelle et remédiation (Décembre 2025 – Mai 2026)</strong>
       </p>
 
       <!-- Bandeau de compétence associée (Réf 1.6) -->
@@ -39,92 +39,108 @@
           🎓 <strong>Compétence associée :</strong> <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin: 0; font-size: 0.8rem;">Référentiel 1.6 - Organiser son développement professionnel</span>
         </p>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 8px; margin-bottom: 0;">
-          Cette veille technologique démontre la mise en œuvre d'outils et de stratégies de veille informationnelle active sur la protection des données et la sécurité des accès réseaux.
+          Cette veille technologique présente des cyberattaques réelles survenues en France entre décembre 2025 et mai 2026. Chaque incident est analysé : nature de l'attaque, impact, et mesures de remédiation mises en œuvre.
         </p>
       </div>
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
-        <!-- Décembre 2025 : Rançongiciel par clé USB -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Décembre 2025 : Attaque DDoS contre La Poste               -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 : Attaque par Rançongiciel (Ransomware) via clé USB infectée</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Stage 1 (Sauvegardes & GPO)</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Attaque DDoS contre La Poste par le groupe pro-russe NoName057</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Attaque DDoS</span>
           </div>
-          <p><strong>L'attaque :</strong> Introduction d'un logiciel malveillant sur un poste utilisateur à la suite du branchement d'une clé USB infectée (technique de <em>BadUSB</em> ou de dépôt volontaire sur un parking). Une fois exécuté, le ransomware chiffre le poste local puis se propage sur les serveurs de fichiers partagés.</p>
-          <p><strong>Impact SISR :</strong> Chiffrement des données partagées sur le serveur de fichiers d'entreprise (NTFS) et interruption de l'activité.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement d'une stratégie de groupe (GPO Active Directory) pour interdire l'accès aux clés USB non autorisées, sensibilisation des utilisateurs, et restauration rapide des systèmes à partir d'une sauvegarde isolée du réseau (Veeam).</p>
-          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (Rançongiciels)</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>22 décembre 2025</strong>, en pleine période de Noël, le groupe de hacktivistes pro-russes <strong>NoName057(16)</strong> a lancé une attaque par déni de service distribué (DDoS) massive contre les serveurs de La Poste. L'attaque a atteint un pic de <strong>2,5 milliards de paquets par seconde</strong>, une intensité historique pour une entreprise française.</p>
+          <p><strong>Impact :</strong> Les services en ligne du groupe ont été fortement perturbés : suivi de colis Colissimo, services de La Banque Postale, et coffre-fort numérique Digiposte étaient inaccessibles pendant plusieurs jours. Les perturbations ont perduré jusqu'au 1er janvier 2026.</p>
+          <p><strong>Données compromises :</strong> Aucune fuite de données personnelles n'a été constatée. L'attaque visait uniquement la disponibilité des services (saturation des serveurs).</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Intervention de la DGSI et de l'Unité nationale cyber (UNC). Mise en place de filtrage du trafic réseau, augmentation de la capacité d'absorption DDoS, et blocage des adresses IP d'attaque. La distribution physique du courrier n'a pas été impactée.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/la-poste-victime-d-une-cyberattaque-ddos-revendiquee-par-des-hackers-pro-russes-n225634.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « La Poste victime d'une cyberattaque DDoS »</a>
         </div>
 
-        <!-- Janvier 2026 : Phishing -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Janvier 2026 : Piratage du fichier FICOBA                  -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 : Vol de comptes Active Directory par Hameçonnage (Phishing)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Stage 1 (Comptes AD & GPO)</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Piratage du fichier FICOBA : 1,2 million de comptes bancaires exposés</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Usurpation d'identifiants</span>
           </div>
-          <p><strong>L'attaque :</strong> Envoi massif de courriels frauduleux imitant une alerte de sécurité informatique interne. L'utilisateur clique sur un lien et saisit ses identifiants Windows (compte de domaine Active Directory) sur une fausse page de connexion.</p>
-          <p><strong>Impact SISR :</strong> Compromission des informations d'identification d'un utilisateur et intrusion non autorisée d'un attaquant au sein du réseau interne de l'organisation.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise en place de filtres antispam, activation obligatoire de la double authentification (MFA), et réinitialisation immédiate du mot de passe utilisateur via la console d'administration Active Directory.</p>
-          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/hameconnage-phishing" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (Hameçonnage)</a>
+          <p><strong>Ce qui s'est passé :</strong> Fin <strong>janvier 2026</strong>, un attaquant a réussi à <strong>usurper les identifiants d'un fonctionnaire</strong> disposant d'un accès légitime au fichier national des comptes bancaires (FICOBA), géré par la Direction Générale des Finances Publiques (DGFiP). L'attaquant a consulté et extrait des données pendant environ un mois avant d'être détecté.</p>
+          <p><strong>Impact :</strong> <strong>1,2 million de comptes</strong> concernés. Les données exposées comprennent : nom, adresse du titulaire, coordonnées bancaires (RIB/IBAN) et identifiant fiscal. Le fichier ne contient ni soldes ni détails de transactions.</p>
+          <p><strong>Risque principal :</strong> Campagnes de phishing ultra-ciblées et création de faux mandats de prélèvement SEPA grâce aux données volées.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Détection et blocage des accès illégitimes par la DGFiP. Notification individuelle de chaque personne concernée. Dépôt de plainte pénale et notification à la CNIL. Recommandation aux usagers de surveiller leurs comptes et de contester tout prélèvement suspect.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/ficoba-piratage-1-2-million-comptes-bancaires-n225456.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « FICOBA : 1,2 million de comptes bancaires piratés »</a>
         </div>
 
-        <!-- Février 2026 : DDoS -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Février 2026 : Cyberattaque contre Cegedim Santé           -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 : Attaque par Déni de Service (DDoS) inondant un serveur Web</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Keepalived + LVS</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Fuite massive de données médicales chez Cegedim Santé (15 millions de patients)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Fuite de données sensibles</span>
           </div>
-          <p><strong>L'attaque :</strong> Envoi simultané d'une quantité massive de requêtes HTTP depuis des milliers de machines (botnets) pour saturer la bande passante et les ressources d'un serveur web Apache.</p>
-          <p><strong>Impact SISR :</strong> Surcharge du serveur, provoquant l'indisponibilité totale du site internet ou des services applicatifs critiques hébergés pour les clients et employés.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise en œuvre d'une architecture de répartition de charge (Load Balancing avec Keepalived et LVS) pour répartir les flux, mise en place de limites de requêtes sur le pare-feu local (iptables/UFW), et blocage des adresses IP d'attaque.</p>
-          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/attaque-en-deni-de-service-ddos" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (DDoS)</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>26 février 2026</strong>, France 2 révèle l'ampleur d'une cyberattaque contre <strong>Cegedim Santé</strong>, éditeur du logiciel médical « MonLogicielMedical » (MLM). Les attaquants ont utilisé des identifiants de médecins (issus de fuites antérieures) pour accéder à un panneau de contrôle et extraire automatiquement (scraping) les données de <strong>1 500 praticiens</strong>.</p>
+          <p><strong>Impact :</strong> Jusqu'à <strong>15 millions de patients</strong> concernés. Les données administratives (nom, prénom, date de naissance, adresse, téléphone, e-mail, régime de Sécurité sociale) ont été exposées. Pour <strong>169 000 dossiers</strong>, des commentaires libres des médecins contenant des informations très sensibles (pathologies, orientations, convictions) ont été accessibles.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Cegedim Santé a circonscrit l'incident, notifié la CNIL et porté plainte. Les 1 500 médecins concernés ont été contactés dès janvier 2026. La Brigade de lutte contre la cybercriminalité (BL2C) a ouvert une enquête judiciaire. Le groupe de hackers « DumpSec » a été identifié.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/cegedim-sante-piratage-15-millions-patients-n225678.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « Cegedim Santé : 15 millions de patients concernés »</a>
         </div>
 
-        <!-- Mars 2026 : Identifiants par défaut switch -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Mars 2026 : Cyberattaque contre le CNOUS                   -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 : Prise de contrôle de switch via des identifiants par défaut</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Switch Cisco CLI</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Cyberattaque contre le CNOUS : 770 000 étudiants touchés</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Intrusion & vol de données</span>
           </div>
-          <p><strong>L'attaque :</strong> Un intrus connecté au réseau local réalise un scan de ports pour repérer les commutateurs d'administration (switchs). Il tente une connexion avec les mots de passe d'usine par défaut (ex : <code>admin/admin</code> ou <code>cisco/cisco</code>).</p>
-          <p><strong>Impact SISR :</strong> Accès total à la configuration réseau du switch. L'attaquant peut isoler des machines, modifier le routage ou accéder à d'autres réseaux internes (VLANs d'administration).</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Modification obligatoire des mots de passe d'usine lors du déploiement avec chiffrement fort (<code>enable secret</code> sur Cisco IOS), et restriction des adresses IP autorisées à administrer l'équipement via des ACLs.</p>
-          <a href="https://www.cyber.gouv.fr/publications/recommandations-relatives-ladministration-securisee-des-si" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Guide d'administration sécurisé : cyber.gouv.fr</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>25 mars 2026</strong>, une cyberattaque a ciblé le <strong>Centre national des œuvres universitaires et scolaires (CNOUS)</strong>. Les attaquants ont exploité une vulnérabilité dans les systèmes pour accéder aux bases de données des étudiants boursiers et résidents des CROUS de toute la France.</p>
+          <p><strong>Impact :</strong> Les données personnelles de <strong>770 000 étudiants</strong> ont été compromises : nom, prénom, adresse, numéro étudiant, informations de bourse et, dans certains cas, des pièces justificatives (passeports, cartes d'identité). Le même mois, le ministère de l'Éducation nationale a aussi subi une attaque exposant 243 000 agents.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Isolation des systèmes compromis, colmatage de la faille exploitée, et notification des étudiants concernés. Le CNOUS a renforcé ses procédures d'authentification et mis en place un audit de sécurité complet de ses infrastructures. Les autorités ont alerté sur les risques de phishing ciblant les étudiants.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/cyberattaque-cnous-770-000-etudiants-concernes-n225123.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « Cyberattaque CNOUS : 770 000 étudiants concernés »</a>
         </div>
 
-        <!-- Avril 2026 : FileZilla en clair -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Avril 2026 : Piratage de l'ANTS (France Titres)            -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 : Interception de fichiers sur un serveur FTP non chiffré</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet FileZilla Server</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Piratage massif de l'ANTS (France Titres) : 11,7 millions de Français</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille IDOR</span>
           </div>
-          <p><strong>L'attaque :</strong> Utilisation d'un serveur FTP traditionnel (sans chiffrement) pour transférer des fichiers sur le réseau. Les données et les identifiants transitent en texte clair.</p>
-          <p><strong>Impact SISR :</strong> Un attaquant à l'écoute sur le réseau local peut intercepter les mots de passe et lire ou modifier des documents confidentiels d'entreprise en transit.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Abandon du FTP simple au profit de protocoles sécurisés comme FTPS (FTP over SSL/TLS) sur FileZilla Server, configuration de certificats SSL de confiance, et blocage des connexions anonymes.</p>
-          <a href="https://www.cyber.gouv.fr/publications/guide-dhygiene-informatique" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Recommandation d'hygiène des serveurs : cyber.gouv.fr (Guide d'Hygiène)</a>
+          <p><strong>Ce qui s'est passé :</strong> Le <strong>15 avril 2026</strong>, l'Agence nationale des titres sécurisés (ANTS / France Titres) a été victime d'une intrusion informatique. Un adolescent de 15 ans a exploité une faille de type <strong>IDOR</strong> (Insecure Direct Object Reference) — qualifiée par lui-même de « stupide » — pour accéder à des millions de dossiers en modifiant simplement un paramètre dans les requêtes HTTP.</p>
+          <p><strong>Impact :</strong> <strong>11,7 millions de comptes</strong> compromis. Les données exposées incluent : noms, prénoms, adresses e-mail, dates de naissance, numéros de téléphone et adresses postales. Les documents d'identité et données biométriques n'ont pas été touchés.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> L'adolescent a été interpellé et mis en examen. Le gouvernement a annoncé le <strong>1er mai 2026</strong> une enveloppe d'urgence de <strong>200 millions d'euros</strong> pour renforcer la cybersécurité de l'État et la création d'une « Autorité nationale pour le numérique et l'IA » pour centraliser la défense numérique des administrations.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/piratage-massif-de-l-ants-11-millions-de-francais-concernes-le-gouvernement-reagit-en-urgence-n223945.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « Piratage massif de l'ANTS : 11 millions de Français concernés »</a>
         </div>
 
-        <!-- Mai 2026 : Telnet Sniffing -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Mai 2026 : Piratage d'Almerys (tiers payant)               -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 : Interception de mot de passe par écoute réseau (Telnet Sniffing)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Wireshark (Audit)</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Piratage d'Almerys : 15 millions de numéros de Sécurité sociale exposés</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Intrusion système santé</span>
           </div>
-          <p><strong>L'attaque :</strong> Un pirate informatique réalise une écoute passive du trafic réseau (sniffing) au moment où un administrateur se connecte en Telnet sur un commutateur pour le configurer.</p>
-          <p><strong>Impact SISR :</strong> Le protocole Telnet n'appliquant aucun chiffrement, le pirate peut extraire instantanément le mot de passe d'administration réseau en clair à partir des trames capturées.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Désactivation définitive de Telnet sur tous les commutateurs et routeurs, activation exclusive du protocole SSH v2, et filtrage du trafic réseau d'administration.</p>
-          <a href="https://www.cyber.gouv.fr/publications/recommandations-de-securite-relatives-tls" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Recommandations de sécurité relatives à TLS : cyber.gouv.fr</a>
+          <p><strong>Ce qui s'est passé :</strong> Fin <strong>mai 2026</strong>, l'opérateur de tiers payant <strong>Almerys</strong> a subi une cyberattaque ciblant son site de délivrance des prises en charge (PEC). C'est la deuxième fois en deux ans que cet opérateur est touché (après une première attaque début 2024).</p>
+          <p><strong>Impact :</strong> <strong>15 millions de numéros de Sécurité sociale</strong> exposés, accompagnés d'informations d'état civil (nom, prénom, date de naissance), numéros de contrats santé, noms des organismes complémentaires et dates de couverture. Les informations bancaires et données de soins n'ont pas été touchées.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Les organismes complémentaires (Alan, Ampli, etc.) ont informé directement leurs assurés. Une enquête a été ouverte par la section de lutte contre la cybercriminalité du parquet de Paris. Almerys a renforcé ses systèmes d'authentification sur le portail PEC. Les usagers ont été alertés sur les risques de phishing et d'usurpation d'identité.</p>
+          <a href="https://www.lesnumeriques.com/vie-du-net/almerys-piratage-15-millions-numeros-securite-sociale-n226789.html" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : Les Numériques — « Almerys : 15 millions de numéros de Sécurité sociale piratés »</a>
         </div>
 
-        <!-- Méthodologie -->
+        <!-- ════════════════════════════════════════════════════════════ -->
+        <!-- Méthodologie de veille                                      -->
+        <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Méthodologie de veille informationnelle</h3>
           <p style="margin-bottom: 16px;">Pour assurer la pertinence de mon apprentissage et surveiller les menaces courantes sur nos réseaux, j'ai structuré ma veille comme suit :</p>
           <ul style="padding-left: 20px; line-height: 1.8; font-weight: 500; color: var(--text-muted);">
-            <li><strong>Collecte Automatisée (Flux Push) :</strong> Agrégation des flux d'actualités et d'alertes via <strong>Feedly</strong> en suivant les publications du <strong>CERT-FR</strong> (ANSSI) et de **Cybermalveillance.gouv.fr**.</li>
-            <li><strong>Organisation et Capitalisation :</strong> Tri des alertes de sécurité et rédaction de fiches de remédiation technique synthétiques sur mon espace de travail personnel **Notion**.</li>
-            <li><strong>Liaison Pratique (Mise en œuvre SISR) :</strong> Application directe des résultats de ma veille dans mes activités (déploiement de configurations switch Cisco SSH en CLI, GPOs de restriction d'USB sous Active Directory, et supervision quotidienne des sauvegardes Veeam et cron lors de mes stages).</li>
+            <li><strong>Collecte Automatisée (Flux Push) :</strong> Agrégation des flux d'actualités via <strong>Feedly</strong> en suivant les publications du <strong>CERT-FR</strong> (ANSSI), de <strong>Cybermalveillance.gouv.fr</strong>, et de la presse spécialisée (<strong>Les Numériques</strong>, <strong>01net</strong>, <strong>Le Monde Informatique</strong>).</li>
+            <li><strong>Organisation et Capitalisation :</strong> Tri des alertes de sécurité et rédaction de fiches d'analyse synthétiques sur mon espace de travail personnel <strong>Notion</strong>.</li>
+            <li><strong>Analyse des Incidents :</strong> Pour chaque attaque majeure, identification du vecteur d'attaque, de l'impact, et des mesures de remédiation appliquées — en faisant le lien avec les compétences SISR (DDoS → Keepalived, Faille IDOR → sécurité web, Usurpation d'identifiants → MFA et GPO Active Directory).</li>
           </ul>
         </div>
       </div>
