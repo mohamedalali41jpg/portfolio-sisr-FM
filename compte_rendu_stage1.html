@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compte Rendu - Stage de 1ère Année</title>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="theme-toggle.js" defer></script>
+  <!-- Inclusion de Mermaid pour les schémas réseau -->
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    });
+  </script>
+  <style>
+    .mermaid-card {
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      margin: 40px 0;
+      border: 1px solid var(--border-color);
+      box-shadow: inset 0 0 0 1px var(--border-glow);
+      text-align: center;
+      overflow-x: auto;
+    }
+    .report-section {
+      margin-bottom: 50px;
+    }
+    .report-section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: var(--theme-color);
+      border-bottom: 2px solid rgba(var(--theme-rgb), 0.3);
+      padding-bottom: 10px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body class="page-stage">
+  <header>
+    <div class="container">
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="projets.html">Projets</a></li>
+          <li><a href="stage.html" class="active">Stage</a></li>
+          <li><a href="competences.html">Compétences</a></li>
+          <li><a href="certifications.html">Certifications</a></li>
+          <li><a href="veilles.html">Veilles</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="theme-toggle" aria-label="Basculer thème" title="Basculer thème"></button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h1 class="page-title reveal delay-1">Compte Rendu <span class="gradient-text">Stage 1</span></h1>
+      
+      <div class="bento-card reveal delay-2" style="margin-bottom: 40px;">
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          Ce compte-rendu détaille mes interventions techniques lors de mon stage de 1ère année en <strong>BTS SIO SISR</strong> (Mai - Juin 2026).
+          Les objectifs principaux de cette immersion professionnelle étaient d'assurer le support utilisateur, d'automatiser le déploiement logiciel et de sécuriser les accès réseau ainsi que la sauvegarde des données.
+        </p>
+        <div style="margin-top: 20px;">
+          <a href="docs/e5 (1).pdf" target="_blank" class="btn btn-outline">
+            <svg style="width: 20px; height: 20px; margin-right: 8px; vertical-align: middle;" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z" clip-rule="evenodd"></path></svg>
+            Consulter le Tableau de Synthèse E5
+          </a>
+        </div>
+      </div>
+
+      <div class="report-section reveal delay-3">
+        <h2>1. Topologie Fonctionnelle et Flux d'Administration</h2>
+        <p>
+          Pour assurer une maintenance proactive et une gestion structurée du parc informatique, l'infrastructure s'articule autour de services d'administration centraux (Active Directory, OPSI, GLPI) interconnectés à travers des VLANs configurés sur des commutateurs Cisco.
+        </p>
+        
+        <!-- Schéma Réseau généré avec Mermaid -->
+        <div class="mermaid-card">
+          <div class="mermaid">
+            graph TD
+              subgraph "Administration & Automatisation (Interne)"
+                  Admin[Administrateur / Technicien] -->|Déploiement Paquets| OPSI[Serveur OPSI<br/>Télédistribution]
+                  Admin -->|Gestion Utilisateurs & GPO| AD[Active Directory<br/>Windows Server]
+                  Admin -->|Administration CLI / SSH| Cisco[Switch Cisco<br/>VLANs & Routage]
+              end
+              subgraph "Support & Services Utilisateurs"
+                  GLPI[Serveur GLPI<br/>Gestion Tickets / Helpdesk] <--|Ouverture de Tickets / Incidents| Client[Poste Client Utilisateur]
+                  OPSI -->|Installation automatique logiciels| Client
+                  AD -->|Authentification / Profils / GPO| Client
+                  Client -->|Accès Réseau segmenté| Cisco
+              end
+              subgraph "Sécurité & Continuité (Sauvegardes)"
+                  Cron[Tâches Planifiées cron] -->|Scripts Bash/Python| Backup[(Serveur de Sauvegarde<br/>Veeam & NAS)]
+                  AD -->|Sauvegarde état système| Backup
+              end
+
+              classDef network fill:#0f172a,stroke:#3b82f6,stroke-width:2px,color:#fff;
+              classDef server fill:#0f172a,stroke:#10b981,stroke-width:2px,color:#fff;
+              classDef client fill:#0f172a,stroke:#eab308,stroke-width:2px,color:#fff;
+              classDef storage fill:#0f172a,stroke:#f97316,stroke-width:2px,color:#fff;
+              
+              class Cisco network;
+              class OPSI,AD,GLPI server;
+              class Client client;
+              class Backup storage;
+          </div>
+        </div>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>2. Gestion du Parc et Support Helpdesk (OPSI & GLPI)</h2>
+        <p>
+          L'optimisation du support informatique et la centralisation des installations logicielles ont été portées par deux solutions clés :
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Gestion des Incidents (GLPI) :</strong> Réception, qualification et traitement des tickets d'incidents matériels et logiciels via le helpdesk. Cette méthode a permis de suivre les indicateurs de résolution et de documenter les pannes fréquentes dans la base de connaissances.</li>
+          <li><strong>Télédistribution et Inventaire (OPSI) :</strong> Administration du serveur OPSI pour automatiser le déploiement et la mise à jour silencieuse des paquets logiciels (navigateurs, suites bureautiques, agents de sécurité) sur les postes clients, réduisant considérablement le temps d'installation manuelle.</li>
+          <li><strong>Procédures :</strong> Rédaction de documentations techniques d'installation et mise en œuvre des bonnes pratiques de maintenance préventive.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>3. Administration Active Directory (GPO & Habilitations NTFS)</h2>
+        <p>
+          La sécurisation des ressources et des accès logiques au sein du domaine Windows Server a été structurée autour de l'Active Directory :
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Cycle de vie des comptes :</strong> Migration d'utilisateurs, gestion des arrivées/départs, et structuration des Unités Organisationnelles (OU).</li>
+          <li><strong>Stratégies de Groupe (GPO) :</strong> Configuration fine et application de stratégies de sécurité globale (comme la restriction stricte de l'usage des clés USB pour prévenir les fuites de données et virus, configuration des fonds d'écran d'entreprise et paramétrages réseau).</li>
+          <li><strong>Sécurité des Fichiers (NTFS) :</strong> Attribution rigoureuse des droits de lecture/écriture/modification sur les serveurs de fichiers partagés, selon le principe du moindre privilège.</li>
+        </ul>
+      </div>
+
+      <div class="report-section reveal">
+        <h2>4. Sécurisation, Sauvegardes et Commutation Cisco</h2>
+        <p>
+          Pour garantir la haute disponibilité et la protection des données face aux menaces, plusieurs mesures de bas niveau ont été déployées :
+        </p>
+        <ul style="padding-left: 20px; line-height: 1.8; margin-top: 10px;">
+          <li><strong>Stratégie de Sauvegarde :</strong> Mise en œuvre de scripts planifiés (cron sous Linux) et utilisation de Veeam Agent pour sauvegarder quotidiennement l'état du système et les fichiers critiques vers un stockage sécurisé. Suivi régulier des journaux d'exécution (logs).</li>
+          <li><strong>Segmentation Réseau (VLANs) :</strong> Création et configuration de VLANs sur des commutateurs Cisco (attribution de ports d'accès pour les utilisateurs et ports Trunk pour l'interconnexion) afin d'isoler les flux (VLAN Administration, VLAN Utilisateurs, VLAN Serveurs).</li>
+          <li><strong>Administration Sécurisée :</strong> Configuration du protocole SSH sur les commutateurs Cisco pour remplacer le protocole non chiffré Telnet, permettant une télé-administration sécurisée via PuTTY.</li>
+        </ul>
+      </div>
+
+      <div style="text-align: center; margin-top: 60px;" class="reveal">
+        <a href="stage.html" class="btn btn-outline">← Retour à la page Stage</a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mohamed‑Ali Filali — BTS SIO SISR.</p>
+  </footer>
+</body>
+</html>
