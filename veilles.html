@@ -30,7 +30,7 @@
       <h1 class="page-title reveal">Veille <span class="gradient-text">Technologique</span></h1>
       
       <p style="margin-bottom: 40px; font-size: 1.1rem; color: var(--text-muted); text-align: center; font-weight: 500;">
-        Sujet : <strong>La protection des données et sécurisation des accès réseau face aux rançongiciels (Ransomwares)</strong>
+        Sujet : <strong>Sécurisation des infrastructures système et réseau contre les cyberattaques courantes (Décembre 2025 - Mai 2026)</strong>
       </p>
 
       <!-- Bandeau de compétence associée (Réf 1.6) -->
@@ -45,62 +45,86 @@
 
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
-        <!-- Fiche 1 : Comprendre les rançongiciels -->
+        <!-- Décembre 2025 : Rançongiciel par clé USB -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 1 : Les Rançongiciels (Ransomwares) et leurs vecteurs de propagation</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Alerte & Compréhension</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 : Attaque par Rançongiciel (Ransomware) via clé USB infectée</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Stage 1 (Sauvegardes & GPO)</span>
           </div>
-          <p><strong>De quoi s'agit-il ?</strong> Un rançongiciel est un logiciel malveillant qui chiffre les données d'un système d'information et réclame une rançon en échange de la clé de déchiffrement. Les attaquants ciblent en priorité les serveurs de fichiers partagés et les systèmes de sauvegardes locales pour empêcher toute restauration rapide.</p>
-          <p><strong>Vecteurs d'entrée :</strong> Phishing (courriels frauduleux), exploitation de serveurs mal configurés ou exposés à Internet, ou introduction de périphériques USB infectés (nomadisme).</p>
-          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Mettre en place des stratégies GPO pour bloquer l'usage des clés USB non autorisées, sensibiliser les utilisateurs, et filtrer les flux aux frontières du réseau.</p>
-          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-pratiques/rancongiciels-ransomwares" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter la fiche pratique officielle : Cybermalveillance.gouv.fr</a>
+          <p><strong>L'attaque :</strong> Introduction d'un logiciel malveillant sur un poste utilisateur à la suite du branchement d'une clé USB infectée (technique de <em>BadUSB</em> ou de dépôt volontaire sur un parking). Une fois exécuté, le ransomware chiffre le poste local puis se propage sur les serveurs de fichiers partagés.</p>
+          <p><strong>Impact SISR :</strong> Chiffrement des données partagées sur le serveur de fichiers d'entreprise (NTFS) et interruption de l'activité.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement d'une stratégie de groupe (GPO Active Directory) pour interdire l'accès aux clés USB non autorisées, sensibilisation des utilisateurs, et restauration rapide des systèmes à partir d'une sauvegarde isolée du réseau (Veeam).</p>
+          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-pratiques/rancongiciels-ransomwares" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (Rançongiciels)</a>
         </div>
 
-        <!-- Fiche 2 : La stratégie de sauvegarde de l'ANSSI -->
+        <!-- Janvier 2026 : Phishing -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 2 : La stratégie de sauvegarde de l'ANSSI face aux rançongiciels</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Continuité de Service (PRA)</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 : Vol de comptes Active Directory par Hameçonnage (Phishing)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Stage 1 (Comptes AD & GPO)</span>
           </div>
-          <p><strong>Recommandation principale :</strong> L'ANSSI préconise d'appliquer strictement la <strong>règle de sauvegarde du 3-2-1</strong> (disposer de 3 copies des données, sur 2 supports différents, dont 1 copie stockée hors-ligne/déconnectée physiquement du réseau de production).</p>
-          <p><strong>Cloisonnement et gestion des droits :</strong> Les serveurs de sauvegardes doivent être isolés logiquement (VLANs dédiés) et protégés par une authentification forte, indépendante de l'Active Directory principal. Les droits de fichiers NTFS doivent respecter le principe du moindre privilège.</p>
-          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Mise en œuvre de scripts planifiés (cron) pour déporter des données, utilisation de solutions robustes de sauvegarde (comme Veeam Agent) pour des images systèmes complètes quotidiennes, et réalisation régulière de tests de restauration.</p>
-          <a href="https://www.cyber.gouv.fr/publications/sauvegarde-des-systemes-dinformation" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide de Sauvegarde de l'ANSSI : cyber.gouv.fr</a>
+          <p><strong>L'attaque :</strong> Envoi massif de courriels frauduleux imitant une alerte de sécurité informatique interne. L'utilisateur clique sur un lien et saisit ses identifiants Windows (compte de domaine Active Directory) sur une fausse page de connexion.</p>
+          <p><strong>Impact SISR :</strong> Compromission des informations d'identification d'un utilisateur et intrusion non autorisée d'un attaquant au sein du réseau interne de l'organisation.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise en place de filtres antispam, activation obligatoire de la double authentification (MFA), et réinitialisation immédiate du mot de passe utilisateur via la console d'administration Active Directory.</p>
+          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-pratiques/hameconnage-phishing" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (Hameçonnage)</a>
         </div>
 
-        <!-- Fiche 3 : Sécurisation Active Directory et protocoles obsolètes -->
+        <!-- Février 2026 : DDoS -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 3 : Sécurisation de l'Active Directory et désactivation des protocoles vulnérables</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Sécurité Active Directory</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 : Attaque par Déni de Service (DDoS) inondant un serveur Web</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Keepalived + LVS</span>
           </div>
-          <p><strong>L'enjeu :</strong> Une fois le réseau d'entreprise pénétré, les attaquants utilisent des protocoles obsolètes ou non chiffrés pour intercepter des identifiants d'administration (mots de passe en clair) et se propager latéralement jusqu'au contrôleur de domaine Active Directory.</p>
-          <p><strong>Protocoles à proscrire :</strong> Désactivation définitive de Telnet au profit de SSH, de SMBv1 (partage de fichiers vulnérable), et restriction de NTLMv1.</p>
-          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Remplacement de Telnet par SSH v2 avec mots de passe chiffrés pour l'administration en ligne de commande (CLI) des switchs Cisco via PuTTY, et durcissement des stratégies GPO Active Directory.</p>
-          <a href="https://www.cyber.gouv.fr/publications/recommandations-de-securite-relatives-active-directory" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide Active Directory de l'ANSSI : cyber.gouv.fr</a>
+          <p><strong>L'attaque :</strong> Envoi simultané d'une quantité massive de requêtes HTTP depuis des milliers de machines (botnets) pour saturer la bande passante et les ressources d'un serveur web Apache.</p>
+          <p><strong>Impact SISR :</strong> Surcharge du serveur, provoquant l'indisponibilité totale du site internet ou des services applicatifs critiques hébergés pour les clients et employés.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise en œuvre d'une architecture de répartition de charge (Load Balancing avec Keepalived et LVS) pour répartir les flux, mise en place de limites de requêtes sur le pare-feu local (iptables/UFW), et blocage des adresses IP d'attaque.</p>
+          <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-pratiques/attaque-par-deni-de-service-ddos" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article & Conseils officiels : Cybermalveillance.gouv.fr (DDoS)</a>
         </div>
 
-        <!-- Fiche 4 : Guide d'Hygiène Informatique de l'ANSSI -->
+        <!-- Mars 2026 : Identifiants par défaut switch -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">Fiche 4 : Les règles fondamentales du Guide d'Hygiène Informatique</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Hygiène du Réseau & Systèmes</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 : Prise de contrôle de switch via des identifiants par défaut</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Switch Cisco CLI</span>
           </div>
-          <p><strong>Les fondamentaux :</strong> L'ANSSI liste 42 mesures essentielles pour sécuriser les réseaux d'entreprise. Pour le profil SISR, cela inclut le cloisonnement des réseaux d'administration et la sécurisation des connexions distantes.</p>
-          <p><strong>Mesures clés :</strong> Segmentation réseau physique ou logique (création de VLANs séparés sur commutateur pour isoler les flux d'administration, les flux utilisateurs et les flux serveurs), activation de pare-feu locaux sur tous les postes, et contrôle régulier des accès au réseau d'administration.</p>
-          <p style="margin-bottom: 16px;"><strong>Solutions SISR :</strong> Configuration de VLANs d'accès et de ports d'administration sécurisés sur les switchs, activation de pare-feu locaux (Windows Firewall, Linux UFW), et audit régulier des ports d'écoute ouverts.</p>
-          <a href="https://www.cyber.gouv.fr/publications/guide-dhygiene-informatique" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Consulter le Guide d'Hygiène Informatique de l'ANSSI : cyber.gouv.fr</a>
+          <p><strong>L'attaque :</strong> Un intrus connecté au réseau local réalise un scan de ports pour repérer les commutateurs d'administration (switchs). Il tente une connexion avec les mots de passe d'usine par défaut (ex : <code>admin/admin</code> ou <code>cisco/cisco</code>).</p>
+          <p><strong>Impact SISR :</strong> Accès total à la configuration réseau du switch. L'attaquant peut isoler des machines, modifier le routage ou accéder à d'autres réseaux internes (VLANs d'administration).</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Modification obligatoire des mots de passe d'usine lors du déploiement avec chiffrement fort (<code>enable secret</code> sur Cisco IOS), et restriction des adresses IP autorisées à administrer l'équipement via des ACLs.</p>
+          <a href="https://www.cyber.gouv.fr/publications/recommandations-de-securite-relatives-au-deploiement-des-moyens-dadministration" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Guide d'administration sécurisé : cyber.gouv.fr</a>
+        </div>
+
+        <!-- Avril 2026 : FileZilla en clair -->
+        <div class="bento-card reveal">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 : Interception de fichiers sur un serveur FTP non chiffré</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet FileZilla Server</span>
+          </div>
+          <p><strong>L'attaque :</strong> Utilisation d'un serveur FTP traditionnel (sans chiffrement) pour transférer des fichiers sur le réseau. Les données et les identifiants transitent en texte clair.</p>
+          <p><strong>Impact SISR :</strong> Un attaquant à l'écoute sur le réseau local peut intercepter les mots de passe et lire ou modifier des documents confidentiels d'entreprise en transit.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Abandon du FTP simple au profit de protocoles sécurisés comme FTPS (FTP over SSL/TLS) sur FileZilla Server, configuration de certificats SSL de confiance, et blocage des connexions anonymes.</p>
+          <a href="https://www.cyber.gouv.fr/publications/guide-dhygiene-informatique" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Recommandation d'hygiène des serveurs : cyber.gouv.fr (Guide d'Hygiène)</a>
+        </div>
+
+        <!-- Mai 2026 : Telnet Sniffing -->
+        <div class="bento-card reveal">
+          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 : Interception de mot de passe par écoute réseau (Telnet Sniffing)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #a855f7, rgba(168, 85, 247, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Projet Wireshark (Audit)</span>
+          </div>
+          <p><strong>L'attaque :</strong> Un pirate informatique réalise une écoute passive du trafic réseau (sniffing) au moment où un administrateur se connecte en Telnet sur un commutateur pour le configurer.</p>
+          <p><strong>Impact SISR :</strong> Le protocole Telnet n'appliquant aucun chiffrement, le pirate peut extraire instantanément le mot de passe d'administration réseau en clair à partir des trames capturées.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Désactivation définitive de Telnet sur tous les commutateurs et routeurs, activation exclusive du protocole SSH v2, et filtrage du trafic réseau d'administration.</p>
+          <a href="https://www.cyber.gouv.fr/publications/recommandations-de-securite-relatives-active-directory" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Recommandations de sécurité des protocoles : cyber.gouv.fr</a>
         </div>
 
         <!-- Méthodologie -->
         <div class="bento-card reveal">
           <h3 style="font-size: 1.5rem; margin-bottom: 16px;">Méthodologie de veille informationnelle</h3>
-          <p style="margin-bottom: 16px;">Pour assurer la pérennité et la pertinence de mon environnement d'apprentissage sur la sécurité des réseaux, j'ai structuré ma veille autour de deux axes :</p>
+          <p style="margin-bottom: 16px;">Pour assurer la pertinence de mon apprentissage et surveiller les menaces courantes sur nos réseaux, j'ai structuré ma veille comme suit :</p>
           <ul style="padding-left: 20px; line-height: 1.8; font-weight: 500; color: var(--text-muted);">
-            <li><strong>Collecte Automatisée (Flux Push) :</strong> Utilisation de l'outil <strong>Feedly</strong> pour agréger les flux RSS et bulletins d'alerte officiels de l'ANSSI (CERT-FR) et de Cybermalveillance.gouv.fr.</li>
-            <li><strong>Curation et Analyse :</strong> Tri régulier des articles et stockage de fiches synthétiques sur un outil collaboratif (<strong>Notion</strong>) afin de capitaliser sur les bonnes pratiques de remédiation technique.</li>
-            <li><strong>Mise en œuvre pratique (Liaison Portfolio) :</strong> Les conclusions de cette veille ont directement guidé la réalisation de mes projets (sécurisation SSH de switch Cisco en CLI, GPOs de restriction Active Directory et déploiement de politiques de sauvegarde Veeam et cron durant mes stages).</li>
+            <li><strong>Collecte Automatisée (Flux Push) :</strong> Agrégation des flux d'actualités et d'alertes via <strong>Feedly</strong> en suivant les publications du <strong>CERT-FR</strong> (ANSSI) et de **Cybermalveillance.gouv.fr**.</li>
+            <li><strong>Organisation et Capitalisation :</strong> Tri des alertes de sécurité et rédaction de fiches de remédiation technique synthétiques sur mon espace de travail personnel **Notion**.</li>
+            <li><strong>Liaison Pratique (Mise en œuvre SISR) :</strong> Application directe des résultats de ma veille dans mes activités (déploiement de configurations switch Cisco SSH en CLI, GPOs de restriction d'USB sous Active Directory, et supervision quotidienne des sauvegardes Veeam et cron lors de mes stages).</li>
           </ul>
         </div>
       </div>
