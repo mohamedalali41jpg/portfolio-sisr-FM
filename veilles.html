@@ -46,87 +46,87 @@
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Décembre 2025 : Ransomware -->
+        <!-- Décembre 2025 : Faille Webmail -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Attaque par Ransomware (ESXiArgs) sur des hébergeurs</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Faille d'injection de code sur la messagerie Roundcube</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Webmail</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Des pirates ont exploité une faille de sécurité sur les serveurs de virtualisation VMware ESXi utilisés par de nombreux hébergeurs et entreprises. Ils ont chiffré les disques des machines virtuelles (Ransomware), paralysant ainsi les services et demandant une rançon pour restituer les données.</p>
-          <p><strong>Lien avec mon parcours :</strong> Lors de mon <strong>Stage sur Proxmox</strong>, j'ai vu que l'isolation des serveurs virtuels, les mises à jour régulières des hyperviseurs et la mise en place de sauvegardes immuables sont les seules parades face à ces rançongiciels.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR expliquant la vulnérabilité exploitée et comment appliquer les correctifs de sécurité.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-015/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2023-ALE-015 : Campagne d'exploitation d'une vulnérabilité affectant VMware ESXi</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Roundcube est une interface pour lire ses emails depuis un navigateur. Une faille de sécurité permettait à un pirate d'envoyer un simple email malveillant. Si l'employé ouvrait l'email, un script invisible s'exécutait pour voler sa session et pirater sa boîte mail.</p>
+          <p><strong>Lien avec mon parcours :</strong> En <strong>BTS SIO SISR</strong>, j'ai appris l'importance d'appliquer les mises à jour (patchs) de sécurité rapidement sur tous les services exposés sur Internet, comme les serveurs web et messageries, pour éviter que de telles failles (XSS) soient exploitées.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR expliquant la vulnérabilité sur Roundcube et appelant à la mise à jour urgente.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-008/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2025-ALE-008 : Vulnérabilité dans Roundcube</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Janvier 2026 : Faille et Fuite de données -->
+        <!-- Janvier 2026 : Terminaux Mobiles -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Fuite massive de données via l'outil MOVEit Transfer</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille / Fuite de données</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Faille d'accès sur le gestionnaire de mobiles (Ivanti EPMM)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Contournement</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Le logiciel "MOVEit Transfer", très utilisé par les grandes entreprises pour transférer des fichiers sensibles, contenait une faille inconnue (0-day). Des pirates l'ont exploitée pour voler discrètement des bases de données entières de clients et d'employés avant de faire du chantage à la divulgation.</p>
-          <p><strong>Lien avec mon parcours :</strong> Dans le cadre de mon déploiement de logiciels via <strong>OPSI</strong>, cela souligne l'importance vitale de la veille pour déployer immédiatement des patchs de sécurité (correctifs) sur tous les postes dès la publication d'une faille critique.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Synthèse du CERT-FR sur l'exploitation de la vulnérabilité et les mesures pour sécuriser l'application.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2023-ALE-005/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Synthèse sur l'exploitation d'une vulnérabilité dans MOVEit Transfer (CERTFR-2023-ALE-005)</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Les entreprises utilisent des logiciels (MDM) pour gérer les téléphones portables professionnels de leurs employés (installation d'applis, sécurité). Une faille critique a permis à des attaquants d'accéder à ce système sans mot de passe, leur permettant de voler les données des téléphones de tous les employés.</p>
+          <p><strong>Lien avec mon parcours :</strong> En administration réseau (SISR), la gestion de flotte mobile est vitale. J'ai vu qu'il est nécessaire de bloquer les interfaces d'administration depuis l'extérieur (Internet) et de n'autoriser la connexion qu'en réseau local pour pallier ce type de failles.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte listant les vulnérabilités sur les terminaux mobiles et recommandant la mise à jour immédiate.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-001 : Vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Février 2026 : Faille Réseau VPN -->
+        <!-- Février 2026 : Équipement Réseau -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Intrusion via les accès VPN Ivanti Connect Secure</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Réseau / Accès Distant</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Vulnérabilité sur les routeurs Cisco Catalyst</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Équipement Réseau</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> De nombreuses entreprises utilisent des VPN Ivanti pour permettre à leurs employés de se connecter au réseau de l'entreprise depuis chez eux. Une faille majeure a permis à des pirates de contourner l'authentification et de s'infiltrer silencieusement sur le réseau interne des entreprises touchées.</p>
-          <p><strong>Lien avec mon parcours :</strong> Lors de ma <strong>certification CyberOps</strong>, j'ai étudié comment un accès VPN compromis expose l'ensemble du réseau local. Pour pallier cela, il faut segmenter le réseau et surveiller les flux suspects à l'aide d'un pare-feu.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR listant les vulnérabilités dans Ivanti Connect et comment protéger ces passerelles.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-001/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2024-ALE-001 : Multiples vulnérabilités dans Ivanti Connect Secure</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Cisco fabrique des équipements essentiels (routeurs/switchs) qui dirigent le trafic Internet de l'entreprise. Une faille a été découverte dans leur système : en envoyant un trafic réseau spécialement manipulé vers l'équipement, un pirate externe pouvait faire planter le routeur (Déni de Service) ou y exécuter des commandes.</p>
+          <p><strong>Lien avec mon parcours :</strong> En configurant des routeurs et switchs en <strong>TP de réseau</strong>, j'ai appris que l'OS d'un équipement Cisco (l'IOS) n'est jamais infaillible. Il est impératif d'activer des listes de contrôle d'accès (ACL) strictes pour bloquer le trafic entrant suspect.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR listant les vulnérabilités dans le logiciel Cisco SD-WAN et recommandant la mise à jour.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-002/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-002 : Vulnérabilité dans Cisco Catalyst SD-WAN</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mars 2026 : AnyDesk et Ingénierie Sociale -->
+        <!-- Mars 2026 : Phishing / Messagerie Instantanée -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Compromissions liées au logiciel AnyDesk</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Vol d'accès / Phishing</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Piratage via les messageries instantanées d'entreprise</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Phishing / Ingénierie Sociale</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Le célèbre logiciel de prise en main à distance "AnyDesk" a subi une cyberattaque entraînant une possible fuite de données de ses systèmes. En parallèle, ce type d'outil est très souvent utilisé par des cybercriminels qui se font passer pour le support informatique (Phishing / Ingénierie sociale) afin de forcer un employé à leur donner le contrôle de son ordinateur.</p>
-          <p><strong>Lien avec mon parcours :</strong> Durant mon <strong>Stage 1 avec GLPI</strong>, j'ai géré le support utilisateur. La remédiation face à ce type d'attaque passe par la sensibilisation des employés et le principe de moindre privilège (limiter les droits d'installation des utilisateurs sur leur poste).</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR sur l'incident affectant AnyDesk et les recommandations de changement de mots de passe.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2024-ALE-003 : Incident affectant les solutions AnyDesk</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Très classique mais très efficace : des pirates usurpent l'identité de collègues ou de dirigeants sur les tchats de l'entreprise (comme Teams, WhatsApp, Slack). Ils envoient un lien prétextant une urgence ("mot de passe expiré") et récupèrent ainsi les accès de l'employé pour s'introduire dans le réseau interne.</p>
+          <p><strong>Lien avec mon parcours :</strong> J'ai vu l'importance d'activer systématiquement l'<strong>Authentification à Double Facteur (MFA)</strong> en entreprise. Même si le pirate vole le mot de passe via un faux lien, il ne pourra pas se connecter sans la validation sur le téléphone de l'employé. Sensibiliser les utilisateurs est aussi primordial.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR concernant le ciblage et le détournement des messageries instantanées.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-003 : Ciblage des messageries instantanées</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Avril 2026 : Cheval de Troie via Outlook -->
+        <!-- Avril 2026 : Faille Passerelle BIG-IP -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Vulnérabilité Microsoft Outlook (Cheval de Troie)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Cheval de Troie / Mail</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Vulnérabilité de contournement sur passerelle F5 BIG-IP</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Contournement Authentification</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Une faille de sécurité majeure dans l'application de messagerie Microsoft Outlook a permis à des attaquants d'exécuter du code malveillant (Cheval de Troie) sur l'ordinateur de la victime simplement en lui envoyant un email spécialement conçu. Même pas besoin que la victime clique sur un lien !</p>
-          <p><strong>Lien avec mon parcours :</strong> J'ai étudié les mécanismes d'attaques sur les clients de messagerie en <strong>CyberOps</strong>. Pour pallier cela, l'entreprise doit forcer les mises à jour Windows/Office via une GPO Active Directory et bloquer les scripts malveillants au niveau de l'antivirus.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte de sécurité du CERT-FR imposant l'installation immédiate des correctifs Microsoft.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-005/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2024-ALE-005 : Vulnérabilité dans Microsoft Outlook</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Le F5 BIG-IP sert de passerelle d'accès (comme un vigile) pour vérifier qui peut accéder aux applications d'une entreprise. Une erreur critique dans la conception logicielle a permis à des attaquants externes de contourner entièrement cette vérification d'identité pour s'introduire dans le réseau interne.</p>
+          <p><strong>Lien avec mon parcours :</strong> Tout comme je configure le pare-feu et les accès distants en <strong>SISR</strong>, il faut comprendre qu'un système d'accès unique non sécurisé peut exposer tout le réseau. La meilleure façon de pallier cela est d'appliquer le patch fourni par le constructeur en priorité absolue.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte de sécurité du CERT-FR détaillant la vulnérabilité sur les produits F5.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-004 : Vulnérabilité dans F5 BIG-IP Access Policy Manager</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mai 2026 : Faille Firewall Palo Alto -->
+        <!-- Mai 2026 : Faille Messagerie Serveur Exchange -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Faille critique sur les pare-feu Palo Alto Networks</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Contournement Firewall</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Faille d'élévation de privilèges sur Serveur Exchange</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Serveur / Mail</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Les équipements pare-feu (Firewall) sont censés protéger le réseau des entreprises. Cependant, une faille critique dans le système GlobalProtect de Palo Alto a permis à des attaquants non authentifiés de prendre le contrôle de l'équipement lui-même depuis Internet et de pénétrer dans le réseau.</p>
-          <p><strong>Lien avec mon parcours :</strong> Durant l'apprentissage de la <strong>Sécurité Réseau (CyberOps)</strong>, j'ai vu que même l'équipement de sécurité doit être sécurisé. La palliation consiste à restreindre l'accès à l'interface d'administration, activer les journaux d'audit et patcher le firmware en urgence.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte critique du CERT-FR sur la menace et l'atténuation d'urgence de la vulnérabilité.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-006/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2024-ALE-006 : Vulnérabilité dans Palo Alto Networks GlobalProtect</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Microsoft Exchange est le serveur utilisé par d'innombrables entreprises pour gérer les emails de leurs employés. Une faille majeure permettait à un attaquant, même avec peu de droits, de manipuler le serveur pour devenir "Administrateur" de la boîte mail. Il pouvait alors tout lire, voler des données, ou diffuser des virus aux collègues.</p>
+          <p><strong>Lien avec mon parcours :</strong> Ce type de vulnérabilité s'appelle "l'élévation de privilèges". En administration Active Directory (SISR), j'ai vu qu'il est capital de vérifier que les utilisateurs standards ne peuvent pas obtenir les droits administrateurs via une mauvaise configuration logicielle et d'isoler les serveurs sensibles.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte urgente du CERT-FR enjoignant les administrateurs systèmes à patcher leurs serveurs de messagerie.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-005/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-005 : Vulnérabilité dans Microsoft Exchange Server</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
