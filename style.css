@@ -65,23 +65,15 @@ body {
 body::before, body::after {
   content: '';
   position: fixed;
-  top: -50%; left: -50%;
-  width: 200%; height: 200%;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
   z-index: -1;
-  background: radial-gradient(circle, rgba(var(--theme-rgb), 0.15) 0%, transparent 40%),
-              radial-gradient(circle at 80% 20%, rgba(var(--theme-rgb), 0.1) 0%, transparent 30%);
-  animation: bgRotate 30s linear infinite;
+  background: radial-gradient(circle at 10% 20%, rgba(var(--theme-rgb), 0.15) 0%, transparent 40%),
+              radial-gradient(circle at 80% 80%, rgba(var(--theme-rgb), 0.1) 0%, transparent 30%);
   pointer-events: none;
 }
 body::after {
-  animation: bgRotate 40s linear infinite reverse;
-  background: radial-gradient(circle at 20% 80%, rgba(var(--theme-rgb), 0.12) 0%, transparent 30%);
-}
-
-@keyframes bgRotate {
-  0% { transform: rotate(0deg) scale(1); }
-  50% { transform: rotate(180deg) scale(1.1); }
-  100% { transform: rotate(360deg) scale(1); }
+  background: radial-gradient(circle at 50% 50%, rgba(var(--theme-rgb), 0.05) 0%, transparent 50%);
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 5vw; }
@@ -119,8 +111,8 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; letter-spacing: -0.03em; }
 /* --- ANIMATIONS "REVEAL" --- */
 .reveal {
   opacity: 0;
-  transform: translateY(60px) scale(0.9);
-  transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  transform: translateY(30px);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
   will-change: transform, opacity;
 }
 .reveal.active {
@@ -139,8 +131,8 @@ header {
   top: 25px;
   z-index: 1000;
   background: var(--bg-header);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-pill);
   padding: 10px 20px;
@@ -148,7 +140,7 @@ header {
   max-width: 95vw;
   margin: 0 auto;
   box-shadow: var(--shadow-base);
-  animation: dropIn 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  animation: dropIn 0.4s cubic-bezier(0.25, 1, 0.5, 1) forwards;
 }
 
 @keyframes dropIn {
@@ -207,8 +199,8 @@ main { padding-top: 60px; padding-bottom: 120px; perspective: 1500px; }
 
 .bento-card {
   background: var(--bg-card);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(10px) saturate(150%);
+  -webkit-backdrop-filter: blur(10px) saturate(150%);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 45px;
