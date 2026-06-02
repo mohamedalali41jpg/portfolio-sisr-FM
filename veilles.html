@@ -46,87 +46,87 @@
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Décembre 2025 -->
+        <!-- Décembre 2025 : Phishing -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Exploitation de pare-feux VPN (Bulletin d'actualité)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Vulnérabilité Réseau / Pare-feu</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Campagne de Phishing (Hameçonnage) en France</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Phishing</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>15 décembre 2025</strong>, le CERT-FR a publié un bulletin d'actualité insistant sur l'exploitation active de vulnérabilités critiques affectant des passerelles VPN et des pare-feux d'entreprise (type Fortinet / Palo Alto). Les attaquants exploitent ces failles de sécurité pour s'introduire dans les réseaux locaux d'entreprises.</p>
-          <p><strong>Impact :</strong> Contournement de l'authentification réseau, obtention d'un accès initial (Initial Access Broker), et rebond vers les contrôleurs de domaine Active Directory pour élever les privilèges.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Application stricte des correctifs fournis par les constructeurs réseau. Segmentation des réseaux (VLAN), restriction d'accès aux interfaces d'administration et obligation d'utilisation d'une authentification multifacteur (MFA) pour tous les accès VPN externes.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2025-ACT-055/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité CERTFR-2025-ACT-055 »</a>
+          <p><strong>Ce qui s'est passé :</strong> Dans son bulletin de décembre 2025, le CERT-FR a mis en évidence une vague d'emails frauduleux (phishing) ciblant les entreprises françaises. Les pirates se font passer pour des services connus (La Poste, banques) pour piéger les employés.</p>
+          <p><strong>Impact :</strong> Les victimes cliquent sur un faux lien, entrent leur mot de passe, et les pirates volent ces identifiants pour s'introduire dans le réseau de l'entreprise.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Sensibilisation des employés pour ne pas cliquer sur des liens suspects, et mise en place de la double authentification (MFA) pour qu'un mot de passe volé ne suffise pas aux pirates.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2025-ACT-056/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Campagnes d'attaques) »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Janvier 2026 -->
+        <!-- Janvier 2026 : Ransomware -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Vulnérabilité critique dans le service telnetd</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Protocole Réseau</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Attaque par Ransomware (Rançongiciel) sur un hôpital</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>21 janvier 2026</strong>, l'ANSSI a publié un avis sur une faille découverte dans le démon <code>telnetd</code> présent sur de nombreux équipements réseaux obsolètes ou mal configurés. Bien que Telnet soit déprécié au profit de SSH, il restait actif sur certains routeurs et commutateurs, permettant à des attaquants d'obtenir des accès privilégiés.</p>
-          <p><strong>Impact :</strong> Prise de contrôle à distance des équipements réseaux par des acteurs malveillants, permettant l'interception de trafic ou le pivotement vers le réseau interne de l'entreprise.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Désactivation immédiate du protocole Telnet sur l'ensemble des équipements réseaux, durcissement des configurations pour utiliser exclusivement SSH (v2) avec des méthodes d'authentification fortes, et mise à jour des firmwares.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Vulnérabilité dans telnetd »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le CERT-FR a rapporté une attaque classique par rançongiciel (virus qui bloque les ordinateurs) touchant des établissements de santé en Europe et en France. Le virus s'introduit souvent via une simple pièce jointe malveillante.</p>
+          <p><strong>Impact :</strong> Tous les fichiers des serveurs sont chiffrés (verrouillés). Les médecins ne peuvent plus accéder aux dossiers des patients, et les pirates réclament de l'argent pour débloquer le système.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Ne jamais payer la rançon. La solution technique est de déconnecter les PC infectés, de nettoyer le réseau, et de tout restaurer à partir de sauvegardes saines (qui doivent être stockées hors-ligne).</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-002/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Menaces Ransomware) »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Février 2026 -->
+        <!-- Février 2026 : DDoS -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Campagnes de Ransomwares (Bulletin d'actualité)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware / Phishing</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Attaque DDoS (Déni de Service) contre des sites publics</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">DDoS</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Dans son bulletin publié le <strong>23 février 2026</strong>, le CERT-FR a alerté sur une recrudescence massive d'attaques par rançongiciel ciblant les entreprises françaises, souvent initiées par des campagnes de phishing sophistiquées (usurpation d'identité d'institutions publiques).</p>
-          <p><strong>Impact :</strong> Chiffrement des serveurs de fichiers, vol de données sensibles avec double extorsion, et paralysie de l'activité des PME et ETI touchées.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Isolation immédiate des systèmes compromis. Restauration depuis des sauvegardes déconnectées (hors ligne/immuables). Renforcement de la sensibilisation des collaborateurs face à l'hameçonnage (phishing).</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-008/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité CERTFR-2026-ACT-008 »</a>
+          <p><strong>Ce qui s'est passé :</strong> Des groupes de hackers ont lancé des attaques DDoS contre des sites web d'institutions gouvernementales en France. C'est une attaque très courante où des milliers d'ordinateurs zombies envoient des requêtes en même temps vers un même site.</p>
+          <p><strong>Impact :</strong> Le serveur web est complètement saturé (bouchon de trafic). Le site internet devient indisponible et "plante" pour les vrais utilisateurs pendant plusieurs heures.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Mise en place de filtres anti-DDoS chez l'hébergeur pour bloquer le faux trafic et trier les requêtes illégitimes, permettant ainsi au site de respirer et de fonctionner à nouveau.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-006/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Attaques en Déni de Service) »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mars 2026 -->
+        <!-- Mars 2026 : Cheval de Troie -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Activités Botnets et attaques DDoS (Bulletin d'actualité)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Botnet / DDoS</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Infection par Cheval de Troie (Trojan) en entreprise</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Virus / Malware</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>23 mars 2026</strong>, le CERT-FR a synthétisé les menaces pesant sur les infrastructures critiques. Le rapport a souligné l'activité croissante de botnets exploitant des failles IoT pour orchestrer des attaques par Déni de Service Distribué (DDoS) contre des services gouvernementaux.</p>
-          <p><strong>Impact :</strong> Indisponibilité temporaire de plusieurs services en ligne, surcharge de la bande passante et des pare-feux (firewalls) ciblés.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Implémentation de solutions anti-DDoS chez les fournisseurs d'accès (BGP Blackholing, filtrage de flux), limitation du taux de requêtes (rate limiting) et identification des adresses IP compromises pour les bloquer au niveau du pare-feu applicatif (WAF).</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-012/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité CERTFR-2026-ACT-012 »</a>
+          <p><strong>Ce qui s'est passé :</strong> Le CERT-FR alerte sur la propagation d'un Cheval de Troie. Il s'agit d'un virus caché dans un logiciel qui semble légitime (par exemple, un faux lecteur PDF téléchargé sur internet).</p>
+          <p><strong>Impact :</strong> Une fois installé, le Cheval de Troie ouvre une "porte dérobée" (backdoor). Le pirate peut alors fouiller dans l'ordinateur à distance, voler des documents confidentiels, ou installer d'autres virus.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Utilisation d'un antivirus à jour, interdiction de télécharger des logiciels hors des sites officiels, et suppression des droits "Administrateur" pour les employés sur leur poste de travail.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-010/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Codes malveillants) »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Avril 2026 -->
+        <!-- Avril 2026 : Fuite de données -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Expiration de certificats Secure Boot</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Matérielle</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Fuite de données (Data Leak) dans une grande entreprise</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Fuite de données</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>2 avril 2026</strong>, une alerte concernant l'expiration imminente des certificats utilisés pour valider le processus de démarrage sécurisé (Secure Boot) UEFI sur de nombreux systèmes a été publiée. Si un attaquant a un accès physique ou réseau suffisant, cette faille dans la chaîne de confiance peut être exploitée.</p>
-          <p><strong>Impact :</strong> Contournement des mécanismes de sécurité au démarrage. Possibilité pour un attaquant d'installer des rootkits ou des bootkits indétectables par le système d'exploitation et les antivirus classiques.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déploiement en urgence de mises à jour de firmware (BIOS/UEFI) fournies par les constructeurs afin de renouveler la base de données de signatures autorisées (db/dbx) et de révoquer les anciens certificats vulnérables.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-014/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Expiration de certificats Secure Boot en juin 2026 »</a>
+          <p><strong>Ce qui s'est passé :</strong> Une entreprise européenne a été victime d'une extraction massive de sa base de données à cause d'un serveur mal sécurisé sur internet (sans mot de passe robuste).</p>
+          <p><strong>Impact :</strong> Les informations de milliers de clients français (noms, numéros de téléphone, adresses e-mail) se retrouvent en vente sur le Dark Web. Ces données servent ensuite à lancer des campagnes de SMS frauduleux.</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déclaration obligatoire de la fuite à la CNIL (loi RGPD). Audit de sécurité des serveurs, changement de tous les mots de passe de l'entreprise, et avertissement des clients concernés.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-014/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Incidents de sécurité) »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mai 2026 -->
+        <!-- Mai 2026 : Faille navigateur -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Multiples vulnérabilités dans Veeam Backup & Replication</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Sauvegarde / Infrastructure</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Vulnérabilité classique sur un Navigateur Web (Chrome/Firefox)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Mise à jour logicielle</span>
           </div>
-          <p><strong>Ce qui s'est passé :</strong> Le <strong>27 mai 2026</strong>, l'ANSSI a émis un avis critique (CERTFR-2026-AVI-0652) concernant de multiples vulnérabilités dans <strong>Veeam Backup & Replication</strong>, la solution de sauvegarde d'infrastructure virtualisée (VMware/Hyper-V) la plus utilisée en entreprise.</p>
-          <p><strong>Impact :</strong> L'exploitation de ces vulnérabilités par un attaquant réseau permet l'exécution de code arbitraire avec les privilèges les plus élevés (SYSTEM) sur le serveur de sauvegarde. Cela donne accès aux sauvegardes de toute l'entreprise, ouvrant la porte aux attaques par rançongiciel (chiffrement ou suppression des backups).</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Installation immédiate des patchs de sécurité fournis par Veeam (mise à jour de la console et des agents). Isolation réseau stricte des serveurs de sauvegarde (VLAN de management dédié), implémentation de stockages de sauvegarde immuables (S3 Object Lock) ou de sauvegardes hors ligne (air-gap) pour résister aux ransomwares.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0652/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Multiples vulnérabilités dans Veeam Backup & Replication »</a>
+          <p><strong>Ce qui s'est passé :</strong> L'ANSSI a publié une alerte urgente demandant la mise à jour des navigateurs internet (comme Chrome ou Firefox) à cause d'une faille de sécurité classique, souvent appelée "Zero-Day".</p>
+          <p><strong>Impact :</strong> Si un utilisateur visite un site web piégé avec un vieux navigateur non mis à jour, le virus s'installe tout seul sans même qu'il n'ait besoin de cliquer sur quoi que ce soit (attaque "Drive-by download").</p>
+          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Il s'agit de la base de l'administration système : mettre en place un système de déploiement automatique des mises à jour (patch management) pour que tous les PC de l'entreprise soient corrigés instantanément.</p>
+          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0655/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Avis de sécurité sur Google Chrome »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
