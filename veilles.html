@@ -61,33 +61,33 @@
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Janvier 2026 : Terminaux Mobiles -->
+        <!-- Janvier 2026 : Ransomware -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Faille d'accès sur le gestionnaire de mobiles (Ivanti EPMM)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Contournement</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Attaque par Ransomware (LockBit) sur un centre hospitalier</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Attaque Ransomware</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Les entreprises utilisent des logiciels (MDM) pour gérer les téléphones portables professionnels de leurs employés (installation d'applis, sécurité). Une faille critique a permis à des attaquants d'accéder à ce système sans mot de passe, leur permettant de voler les données des téléphones de tous les employés.</p>
-          <p><strong>Lien avec mon parcours :</strong> En administration réseau (SISR), la gestion de flotte mobile est vitale et doit être sécurisée.</p>
-          <p><strong>Comment y remédier ?</strong> Bloquer l'interface d'administration depuis Internet (la rendre accessible uniquement en réseau local) et installer la mise à jour.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte listant les vulnérabilités sur les terminaux mobiles et recommandant la mise à jour immédiate.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-001 : Vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Des pirates ont réussi à s'introduire dans le réseau d'un hôpital. Ils ont utilisé un "Ransomware" (un logiciel rançonneur) pour chiffrer et bloquer tous les ordinateurs et les données médicales. Ils demandent ensuite une rançon en argent pour tout débloquer.</p>
+          <p><strong>Lien avec mon parcours :</strong> En tant que technicien réseau (SISR), mon rôle est de configurer des sauvegardes régulières et isolées pour ne jamais avoir à payer de rançon.</p>
+          <p><strong>Comment y remédier ?</strong> Il faut isoler les machines infectées du réseau, restaurer les données à partir de sauvegardes saines déconnectées, et sensibiliser les employés aux e-mails frauduleux qui amènent le virus.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Bulletin d'actualité du CERT-FR détaillant les campagnes de ransomwares ciblant les institutions.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-001/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Bulletin d'actualité CERTFR-2026-ACT-001 : Campagnes de Ransomware</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Février 2026 : Équipement Réseau -->
+        <!-- Février 2026 : Attaque DDoS -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Vulnérabilité sur les routeurs Cisco Catalyst</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Équipement Réseau</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Attaque par Déni de Service (DDoS) sur des services web</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Attaque DDoS</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Cisco fabrique des équipements essentiels (routeurs/switchs) qui dirigent le trafic Internet de l'entreprise. Une faille a été découverte dans leur système : en envoyant un trafic réseau spécialement manipulé vers l'équipement, un pirate externe pouvait faire planter le routeur (Déni de Service) ou y exécuter des commandes.</p>
-          <p><strong>Lien avec mon parcours :</strong> En configurant des routeurs et switchs en <strong>TP de réseau</strong>, j'ai appris que le système d'un équipement Cisco n'est jamais infaillible.</p>
-          <p><strong>Comment y remédier ?</strong> Mettre en place des listes de contrôle d'accès (ACL) pour bloquer le trafic suspect et mettre à jour le routeur.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR listant les vulnérabilités dans le logiciel Cisco SD-WAN et recommandant la mise à jour.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-002/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-002 : Vulnérabilité dans Cisco Catalyst SD-WAN</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Une attaque DDoS consiste à inonder un site internet de fausses requêtes. C'est comme si 10 000 personnes entraient en même temps dans un petit magasin : le magasin est saturé et les vrais clients ne peuvent plus y accéder. Des pirates ont utilisé cette technique pour rendre des sites d'entreprises complètement inaccessibles.</p>
+          <p><strong>Lien avec mon parcours :</strong> En cours, j'ai appris que la disponibilité du réseau est essentielle (notamment avec mon projet Keepalived).</p>
+          <p><strong>Comment y remédier ?</strong> Utiliser des services de protection "anti-DDoS" (comme Cloudflare) ou configurer le pare-feu pour filtrer et bloquer les adresses IP suspectes qui envoient trop de requêtes.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Bulletin d'actualité du CERT-FR sur la recrudescence des attaques par déni de service.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-006/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Bulletin d'actualité CERTFR-2026-ACT-006 : Campagnes d'attaques DDoS</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
@@ -106,18 +106,18 @@
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Avril 2026 : Faille Passerelle BIG-IP -->
+        <!-- Avril 2026 : Phishing / Virus -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Vulnérabilité de contournement sur passerelle F5 BIG-IP</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Contournement Authentification</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Phishing diffusant un Cheval de Troie (Virus)</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Attaque Phishing / Virus</span>
           </div>
-          <p><strong>L'attaque simple à expliquer :</strong> Le F5 BIG-IP sert de passerelle d'accès (comme un vigile) pour vérifier qui peut accéder aux applications d'une entreprise. Une erreur critique dans la conception logicielle a permis à des attaquants externes de contourner entièrement cette vérification d'identité pour s'introduire dans le réseau interne.</p>
-          <p><strong>Lien avec mon parcours :</strong> En <strong>SISR</strong>, je configure des pare-feu et des accès distants, et je sais qu'un équipement non sécurisé expose tout le réseau.</p>
-          <p><strong>Comment y remédier ?</strong> Installer en urgence le correctif de sécurité du constructeur pour boucher la faille.</p>
-          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte de sécurité du CERT-FR détaillant la vulnérabilité sur les produits F5.</p>
-          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-004 : Vulnérabilité dans F5 BIG-IP Access Policy Manager</a>
+          <p><strong>L'attaque simple à expliquer :</strong> Des pirates ont envoyé massivement de faux e-mails (Phishing) se faisant passer pour les impôts ou des livreurs de colis. En cliquant sur le lien ou la pièce jointe, un "Cheval de Troie" (un virus silencieux) s'installe sur l'ordinateur pour voler les mots de passe et espionner ce que la victime tape sur son clavier.</p>
+          <p><strong>Lien avec mon parcours :</strong> En tant que futur administrateur, je sais que l'utilisateur est souvent la plus grande faille de sécurité.</p>
+          <p><strong>Comment y remédier ?</strong> Former les employés à reconnaître les faux e-mails (Phishing), utiliser un filtre anti-spam performant, et avoir un bon antivirus (EDR) mis à jour pour bloquer l'exécution du virus.</p>
+          <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Bulletin d'actualité du CERT-FR alertant sur les campagnes d'ingénierie sociale et d'hameçonnage.</p>
+          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-015/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Bulletin d'actualité CERTFR-2026-ACT-015 : Campagnes d'hameçonnage (Phishing)</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
