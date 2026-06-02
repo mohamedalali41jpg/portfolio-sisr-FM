@@ -54,7 +54,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Webmail</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Roundcube est une interface pour lire ses emails depuis un navigateur. Une faille de sécurité permettait à un pirate d'envoyer un simple email malveillant. Si l'employé ouvrait l'email, un script invisible s'exécutait pour voler sa session et pirater sa boîte mail.</p>
-          <p><strong>Lien avec mon parcours :</strong> En <strong>BTS SIO SISR</strong>, j'ai appris l'importance d'appliquer les mises à jour (patchs) de sécurité rapidement sur tous les services exposés sur Internet, comme les serveurs web et messageries, pour éviter que de telles failles (XSS) soient exploitées.</p>
+          <p><strong>Lien avec mon parcours :</strong> En <strong>BTS SIO SISR</strong>, j'ai appris l'importance de sécuriser les services exposés sur Internet comme les serveurs web et les messageries.</p>
+          <p><strong>Comment y remédier ?</strong> Appliquer immédiatement la mise à jour (patch de sécurité) fournie par l'éditeur du logiciel.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR expliquant la vulnérabilité sur Roundcube et appelant à la mise à jour urgente.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2025-ALE-008/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2025-ALE-008 : Vulnérabilité dans Roundcube</a>
         </div>
@@ -68,7 +69,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Contournement</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Les entreprises utilisent des logiciels (MDM) pour gérer les téléphones portables professionnels de leurs employés (installation d'applis, sécurité). Une faille critique a permis à des attaquants d'accéder à ce système sans mot de passe, leur permettant de voler les données des téléphones de tous les employés.</p>
-          <p><strong>Lien avec mon parcours :</strong> En administration réseau (SISR), la gestion de flotte mobile est vitale. J'ai vu qu'il est nécessaire de bloquer les interfaces d'administration depuis l'extérieur (Internet) et de n'autoriser la connexion qu'en réseau local pour pallier ce type de failles.</p>
+          <p><strong>Lien avec mon parcours :</strong> En administration réseau (SISR), la gestion de flotte mobile est vitale et doit être sécurisée.</p>
+          <p><strong>Comment y remédier ?</strong> Bloquer l'interface d'administration depuis Internet (la rendre accessible uniquement en réseau local) et installer la mise à jour.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte listant les vulnérabilités sur les terminaux mobiles et recommandant la mise à jour immédiate.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-001 : Vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
         </div>
@@ -82,7 +84,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille Équipement Réseau</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Cisco fabrique des équipements essentiels (routeurs/switchs) qui dirigent le trafic Internet de l'entreprise. Une faille a été découverte dans leur système : en envoyant un trafic réseau spécialement manipulé vers l'équipement, un pirate externe pouvait faire planter le routeur (Déni de Service) ou y exécuter des commandes.</p>
-          <p><strong>Lien avec mon parcours :</strong> En configurant des routeurs et switchs en <strong>TP de réseau</strong>, j'ai appris que l'OS d'un équipement Cisco (l'IOS) n'est jamais infaillible. Il est impératif d'activer des listes de contrôle d'accès (ACL) strictes pour bloquer le trafic entrant suspect.</p>
+          <p><strong>Lien avec mon parcours :</strong> En configurant des routeurs et switchs en <strong>TP de réseau</strong>, j'ai appris que le système d'un équipement Cisco n'est jamais infaillible.</p>
+          <p><strong>Comment y remédier ?</strong> Mettre en place des listes de contrôle d'accès (ACL) pour bloquer le trafic suspect et mettre à jour le routeur.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR listant les vulnérabilités dans le logiciel Cisco SD-WAN et recommandant la mise à jour.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-002/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-002 : Vulnérabilité dans Cisco Catalyst SD-WAN</a>
         </div>
@@ -96,7 +99,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Phishing / Ingénierie Sociale</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Très classique mais très efficace : des pirates usurpent l'identité de collègues ou de dirigeants sur les tchats de l'entreprise (comme Teams, WhatsApp, Slack). Ils envoient un lien prétextant une urgence ("mot de passe expiré") et récupèrent ainsi les accès de l'employé pour s'introduire dans le réseau interne.</p>
-          <p><strong>Lien avec mon parcours :</strong> J'ai vu l'importance d'activer systématiquement l'<strong>Authentification à Double Facteur (MFA)</strong> en entreprise. Même si le pirate vole le mot de passe via un faux lien, il ne pourra pas se connecter sans la validation sur le téléphone de l'employé. Sensibiliser les utilisateurs est aussi primordial.</p>
+          <p><strong>Lien avec mon parcours :</strong> J'ai appris l'importance de sécuriser les identités des utilisateurs sur le réseau de l'entreprise.</p>
+          <p><strong>Comment y remédier ?</strong> Activer la double authentification (MFA) pour bloquer l'accès même si le mot de passe est volé, et sensibiliser les employés aux arnaques.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte du CERT-FR concernant le ciblage et le détournement des messageries instantanées.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-003 : Ciblage des messageries instantanées</a>
         </div>
@@ -110,7 +114,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Contournement Authentification</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Le F5 BIG-IP sert de passerelle d'accès (comme un vigile) pour vérifier qui peut accéder aux applications d'une entreprise. Une erreur critique dans la conception logicielle a permis à des attaquants externes de contourner entièrement cette vérification d'identité pour s'introduire dans le réseau interne.</p>
-          <p><strong>Lien avec mon parcours :</strong> Tout comme je configure le pare-feu et les accès distants en <strong>SISR</strong>, il faut comprendre qu'un système d'accès unique non sécurisé peut exposer tout le réseau. La meilleure façon de pallier cela est d'appliquer le patch fourni par le constructeur en priorité absolue.</p>
+          <p><strong>Lien avec mon parcours :</strong> En <strong>SISR</strong>, je configure des pare-feu et des accès distants, et je sais qu'un équipement non sécurisé expose tout le réseau.</p>
+          <p><strong>Comment y remédier ?</strong> Installer en urgence le correctif de sécurité du constructeur pour boucher la faille.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte de sécurité du CERT-FR détaillant la vulnérabilité sur les produits F5.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-004 : Vulnérabilité dans F5 BIG-IP Access Policy Manager</a>
         </div>
@@ -124,7 +129,8 @@
             <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Serveur / Mail</span>
           </div>
           <p><strong>L'attaque simple à expliquer :</strong> Microsoft Exchange est le serveur utilisé par d'innombrables entreprises pour gérer les emails de leurs employés. Une faille majeure permettait à un attaquant, même avec peu de droits, de manipuler le serveur pour devenir "Administrateur" de la boîte mail. Il pouvait alors tout lire, voler des données, ou diffuser des virus aux collègues.</p>
-          <p><strong>Lien avec mon parcours :</strong> Ce type de vulnérabilité s'appelle "l'élévation de privilèges". En administration Active Directory (SISR), j'ai vu qu'il est capital de vérifier que les utilisateurs standards ne peuvent pas obtenir les droits administrateurs via une mauvaise configuration logicielle et d'isoler les serveurs sensibles.</p>
+          <p><strong>Lien avec mon parcours :</strong> En administration Active Directory (SISR), j'ai vu qu'il est capital de vérifier que les utilisateurs standards n'ont pas accès aux droits administrateurs.</p>
+          <p><strong>Comment y remédier ?</strong> Appliquer le patch de Microsoft et isoler le serveur de messagerie du reste du réseau critique.</p>
           <p style="margin-bottom: 16px;"><strong>Source Officielle :</strong> Alerte urgente du CERT-FR enjoignant les administrateurs systèmes à patcher leurs serveurs de messagerie.</p>
           <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-005/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 CERT-FR — Alerte CERTFR-2026-ALE-005 : Vulnérabilité dans Microsoft Exchange Server</a>
         </div>
