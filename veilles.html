@@ -46,87 +46,87 @@
       <div class="bento-grid" style="grid-template-columns: 1fr;">
         
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Décembre 2025 : Phishing -->
+        <!-- Attaque 1 : Phishing -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Décembre 2025 — Phishing et compromission chez Viamedis / Almerys</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Phishing / Vol d'accès</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Le Phishing (Hameçonnage) chez Microsoft</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ef4444, rgba(239, 68, 68, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Phishing</span>
           </div>
-          <p><strong>Cas Réel :</strong> Fin 2025, les médias et le CERT-FR font écho aux cyberattaques visant les tiers payants français (comme Viamedis). L'attaque a commencé par un <strong>Phishing (Hameçonnage)</strong> ciblant le compte d'un professionnel de santé, permettant aux pirates d'entrer dans le système central.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> Cela illustre parfaitement nos cours sur la gestion des identités (IAM) et l'importance cruciale d'imposer la double authentification (MFA). Sans MFA, un simple mot de passe volé compromet tout un réseau.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Révocation des accès compromis, obligation du MFA, et formation des utilisateurs à détecter les faux e-mails.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2025-ACT-056/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Campagnes d'attaques) »</a>
+          <p><strong>L'attaque réelle :</strong> En janvier 2024, le géant <strong>Microsoft</strong> a lui-même été victime d'une attaque. Les pirates ont utilisé l'hameçonnage (phishing) et des devinettes de mots de passe pour voler les comptes e-mails de certains directeurs de l'entreprise.</p>
+          <p><strong>Lien avec mon parcours :</strong> J'ai étudié cela lors de ma <strong>certification CyberOps</strong>, où l'on apprend ce qu'est "l'ingénierie sociale" : les pirates manipulent les gens pour qu'ils donnent leurs mots de passe au lieu de hacker le serveur.</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Ne pas utiliser de mots de passe trop simples et activer la validation par téléphone (double authentification).</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Compromission d'environnements Microsoft »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Janvier 2026 : Ransomware -->
+        <!-- Attaque 2 : Ransomware -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Janvier 2026 — Ransomware LockBit sur les Hôpitaux Français (ex: Cannes)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware LockBit</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Le Ransomware (Rançongiciel) à l'Hôpital de Versailles</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #f59e0b, rgba(245, 158, 11, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Ransomware</span>
           </div>
-          <p><strong>Cas Réel :</strong> Les établissements de santé, comme l'Hôpital de Cannes, ont été victimes du <strong>Ransomware (Rançongiciel) LockBit 3.0</strong>. Les attaquants ont chiffré les serveurs de l'hôpital et volé les dossiers des patients, demandant une forte rançon pour la clé de déchiffrement.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> En cours de systèmes, nous avons étudié les Plans de Reprise d'Activité (PRA). J'ai moi-même appris à configurer des serveurs de sauvegarde déconnectés du réseau (Veeam/Proxmox) pour pouvoir restaurer des machines chiffrées sans payer de rançon.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Isoler le réseau d'urgence, nettoyer les serveurs et remonter l'infrastructure depuis des sauvegardes "Air-Gap" (immuables).</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-002/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Menaces Ransomware) »</a>
+          <p><strong>L'attaque réelle :</strong> <strong>L'Hôpital de Versailles</strong> a été complètement bloqué par le ransomware LockBit. Ce virus chiffre (verrouille avec un mot de passe) tous les ordinateurs. Les pirates ont réclamé de l'argent pour rendre l'accès aux dossiers médicaux.</p>
+          <p><strong>Lien avec mon parcours :</strong> Cela me rappelle directement mon <strong>Stage 2</strong>. J'ai configuré un gros serveur de sauvegarde (HPE Alletra) sous Proxmox. Si un hôpital a de bonnes sauvegardes, il peut restaurer ses fichiers sans payer la rançon.</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Débrancher les PC infectés, ne jamais payer les pirates, et tout restaurer grâce aux sauvegardes.</p>
+          <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2023-CTI-003/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « La menace ransomware LockBit »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Février 2026 : DDoS -->
+        <!-- Attaque 3 : DDoS -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Février 2026 — Attaque DDoS contre le Réseau Interministériel de l'État</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">DDoS Botnet</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 L'attaque DDoS contre l'Assemblée Nationale</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #ec4899, rgba(236, 72, 153, 0.5)); margin-bottom: 0; font-size: 0.75rem;">DDoS</span>
           </div>
-          <p><strong>Cas Réel :</strong> Des groupes d'hacktivistes ont saturé les sites publics du gouvernement français (RIE) via une <strong>attaque DDoS (Déni de Service Distribué)</strong> d'une ampleur inédite, utilisant un "Botnet" (armée d'objets connectés piratés) pour inonder les serveurs de requêtes web.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> Lors de mes TP sur les commutateurs et routeurs Cisco, j'ai appris à mettre en place des règles de filtrage (ACL) pour rejeter les paquets anormaux, ce qui est la première ligne de défense contre une attaque DDoS.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Redirection du trafic vers des services spécialisés (Anti-DDoS Cloud) pour absorber la charge et filtrer les fausses requêtes (Blackholing).</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-006/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Attaques en Déni de Service) »</a>
+          <p><strong>L'attaque réelle :</strong> Le site web de <strong>l'Assemblée Nationale</strong> a été rendu indisponible par une attaque DDoS (Déni de Service). Des milliers d'ordinateurs zombies ont envoyé des fausses requêtes en même temps pour faire "planter" le site.</p>
+          <p><strong>Lien avec mon parcours :</strong> J'ai vu ce type d'attaque dans la <strong>certification CyberOps</strong>. J'y ai appris ce qu'est un "Botnet" (un réseau de machines piratées contrôlées à distance par un pirate pour inonder un site web).</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Utiliser des pare-feux pour filtrer le trafic réseau et bloquer les fausses connexions.</p>
+          <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2023-CTI-005/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Les attaques DDoS hacktivistes »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mars 2026 : Cheval de Troie -->
+        <!-- Attaque 4 : Cheval de Troie -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mars 2026 — Le Cheval de Troie (Trojan) bancaire Qakbot en Europe</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Trojan Qakbot</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Le Cheval de Troie (Trojan) au Tribunal de Paris</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #3b82f6, rgba(59, 130, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Cheval de Troie</span>
           </div>
-          <p><strong>Cas Réel :</strong> Le CERT-FR alerte régulièrement sur le malware <strong>Qakbot</strong>, un <strong>Cheval de Troie (Trojan)</strong> très virulent en Europe. Il arrive sous forme de faux document Office (macro activée) et ouvre une porte dérobée discrète sur les PC des comptables d'entreprises.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> Ce type d'infection génère des communications anormales sur le réseau. En cours, nous utilisons l'outil <strong>Wireshark</strong> pour "sniffer" (analyser) les trames réseau et détecter ce genre de flux suspects vers l'extérieur.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Blocage des macros Office par GPO (stratégie de groupe) sous Windows Server, et utilisation de sondes réseau pour détecter les communications du Cheval de Troie.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-010/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Codes malveillants) »</a>
+          <p><strong>L'attaque réelle :</strong> Le <strong>Tribunal de Paris</strong> a été touché par le virus Emotet. C'est un Cheval de Troie : il se cache dans une fausse facture envoyée par mail. Quand l'employé ouvre la facture, le virus s'installe discrètement.</p>
+          <p><strong>Lien avec mon parcours :</strong> Lors de mon <strong>Stage 1 (Helpdesk)</strong>, j'ai aidé les utilisateurs avec GLPI. L'une des missions principales du support informatique est d'installer des antivirus sur tous les postes pour bloquer ces mauvaises pièces jointes.</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Éduquer les employés à ne pas ouvrir les pièces jointes bizarres et installer un bon antivirus.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2020-ALE-019/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Campagnes du code malveillant Emotet »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Avril 2026 : Fuite de données -->
+        <!-- Attaque 5 : Le Ver (Worm) -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Avril 2026 — Fuite de données (Data Leak) chez de grands e-commerçants (ex: LDLC)</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Data Leak / SQL</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Le Ver informatique (Worm) qui a bloqué Renault</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #8b5cf6, rgba(139, 92, 246, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Le Ver (Worm)</span>
           </div>
-          <p><strong>Cas Réel :</strong> De grandes enseignes françaises (comme LDLC ou Boulanger) ont subi des <strong>Fuites de données massives (Data Leak)</strong>. Des millions de fiches clients ont été exfiltrées et revendues sur le Dark Web à cause de vulnérabilités sur leurs bases de données exposées.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> Nous avons vu en cours de base de données l'importance de bloquer les "Injections SQL". De plus, nous avons appris qu'on ne stocke jamais un mot de passe en clair, mais on utilise des fonctions de <strong>Hachage</strong> (comme SHA-256) pour le protéger en cas de fuite.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Déclaration obligatoire à la CNIL (RGPD), correction des failles SQL, et chiffrement obligatoire des bases de données sensibles.</p>
-          <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-014/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Bulletin d'actualité (Incidents de sécurité) »</a>
+          <p><strong>L'attaque réelle :</strong> <strong>Renault</strong> a dû arrêter la production de ses usines en France à cause de WannaCry. WannaCry est un "Ver" (Worm) : une fois dans l'entreprise, il se copie tout seul de PC en PC sans que personne ne clique sur rien.</p>
+          <p><strong>Lien avec mon parcours :</strong> Dans la <strong>certification CyberOps</strong>, nous avons appris la différence entre un virus classique (qui a besoin qu'un humain clique dessus) et un Ver (qui voyage tout seul sur les câbles du réseau de l'entreprise).</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Faire les mises à jour de Windows régulièrement pour boucher les trous qui laissent passer les Vers.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2017-ALE-010/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Attaques du Ver WannaCry »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
-        <!-- Mai 2026 : Vulnérabilité Serveur / VPN -->
+        <!-- Attaque 6 : Le Virus / Malware -->
         <!-- ════════════════════════════════════════════════════════════ -->
         <div class="bento-card reveal">
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 16px; gap: 10px;">
-            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Mai 2026 — Faille 0-Day exploitée sur les serveurs VPN Fortinet</h3>
-            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Faille 0-Day Serveur</span>
+            <h3 style="margin-bottom: 0; font-size: 1.5rem;">📅 Le Virus destructeur chez Saint-Gobain</h3>
+            <span class="meta-tag" style="background: linear-gradient(135deg, #14b8a6, rgba(20, 184, 166, 0.5)); margin-bottom: 0; font-size: 0.75rem;">Virus (Wiper)</span>
           </div>
-          <p><strong>Cas Réel :</strong> L'ANSSI publie constamment des avis d'urgence concernant des failles <strong>"0-Day"</strong> (failles inconnues jusqu'alors) sur des équipements très utilisés en France, comme les routeurs/VPN Fortinet ou les serveurs Microsoft Exchange, permettant la compromission complète de mairies françaises.</p>
-          <p><strong>Lien avec mes cours (BTS SIO) :</strong> Cela souligne l'importance vitale du <strong>Patch Management (Gestion des mises à jour)</strong>. En administration Windows Server, j'ai vu qu'il est indispensable d'automatiser les mises à jour de sécurité pour éviter de laisser une faille ouverte sur le réseau.</p>
-          <p style="margin-bottom: 16px;"><strong>Remédiation :</strong> Appliquer immédiatement le correctif fourni par l'éditeur (Patching) et vérifier dans les logs d'accès si le serveur n'a pas été piraté avant la mise à jour.</p>
-          <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0655/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Avis de sécurité (Vulnérabilités critiques) »</a>
+          <p><strong>L'attaque réelle :</strong> L'entreprise française <strong>Saint-Gobain</strong> a été infectée par NotPetya, un virus très méchant. Au lieu de demander une rançon, ce virus avait pour seul but d'effacer et de détruire complètement les disques durs des PC.</p>
+          <p><strong>Lien avec mon parcours :</strong> Pour contrer ça, il faut déployer des correctifs de sécurité rapidement. Lors de mon <strong>Stage 1</strong>, j'ai utilisé l'outil "OPSI" qui permet d'installer des logiciels à distance sur les PC pour les protéger.</p>
+          <p style="margin-bottom: 16px;"><strong>Solution simple :</strong> Mettre à jour automatiquement les ordinateurs des employés pour que le virus ne puisse pas s'installer.</p>
+          <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2017-ALE-012/" target="_blank" style="color: var(--theme-color); font-weight: 800;">🔗 Article complet : CERT-FR — « Campagne d'attaques du virus NotPetya »</a>
         </div>
 
         <!-- ════════════════════════════════════════════════════════════ -->
